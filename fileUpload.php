@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
     <br>
-        <title>IRBApp</title>
+        <title>IRB APP</title>
         <h1 style="color: brown; text-align: center; font-size: 50px"> Internal Review Board Application </h1>
         <hr>
         
