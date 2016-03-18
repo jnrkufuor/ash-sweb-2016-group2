@@ -27,9 +27,6 @@
                                             <span class="menuitem">search</span>		
                                     </div  -->
         <?php
-        //initialize
-
-
         $strStatusMessage = "Add new user";
         if (isset($_REQUEST['id'])) {
             $id = $_REQUEST['id'];
@@ -39,8 +36,8 @@
             $fax = $_REQUEST['fax'];
             $phone = $_REQUEST['phone'];
             $email = $_REQUEST['email'];
-            $department=$_REQUEST['department'];
-            $type=$_REQUEST['type']; 
+            $department = $_REQUEST['department'];
+            $type = $_REQUEST['type'];
             include_once("users.php");
             $obj = new users();
             $r = $obj->addUser($id, $firstname, $lastname, $department, $type, $email, $phone, $fax, $password);
@@ -109,14 +106,14 @@
                                         include_once("users.php");
                                         $user = new users();
                                         $result = $user->getDep();
-                                        //echo $strQuery;
+//echo $strQuery;
                                         if ($result == false) {
                                             //
                                             echo "result is false";
                                         } else {
-                                           
+
                                             while ($row = $user->fetch()) {
-                                             
+
                                                 echo "<option value='{$row['Name']}'>{$row['Name']}</option>";
                                             }
                                         }
@@ -124,7 +121,7 @@
                                     </select></br>
                                 </div>
                             </div>
-                            
+
                             <div class='row'>
                                 <div class='small-4 columns'>
                                     <label for='typ'> User Type</label>
@@ -133,14 +130,14 @@
                                         include_once("users.php");
                                         $user = new users();
                                         $result = $user->getType();
-                                        
+
                                         if ($result == false) {
-                                           
+
                                             echo "result is false";
                                         } else {
-                                           
+
                                             while ($row = $user->fetch()) {
-                                             
+
                                                 echo "<option value='{$row['Type']}'>{$row['Type']}</option>";
                                             }
                                         }
@@ -148,12 +145,15 @@
                                     </select></br>
                                 </div>
                             </div>
-                            <input class='btn btn-default' type='submit' value='Add' >
+
                         </div>
+
                     </fieldset>
                 </div>
             </div>
-
+            <fieldset class="addbtn">
+                <input class='btn btn-default' type='submit' value='Add' >
+            </fieldset>
 
         </form>							
     </body>
