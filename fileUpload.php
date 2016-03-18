@@ -16,15 +16,15 @@
         include_once('upload.php');
         $user = new upload();
         
-        
-        
         if(isset($_POST['manga'])){
              
             $error = array();
-            $filename = $_FILES['doc']['name'];    
-            $filetemp = $_FILES['doc']['tmp_name'];
-            $filesize = $_FILES['doc']['size'];
-            $fileext = strtolower(end(explode('.', $filename)));
+            $filename = $_FILES['doc']['name']; //filename
+            $filetemp = $_FILES['doc']['tmp_name']; //temporary file
+            $filesize = $_FILES['doc']['size']; //size of file in bytes
+            $fileext = strtolower(end(explode('.', $filename))); //extension of file
+            
+            
             
             $folder = "consentForms/"; //folder in IRBApp folder where consent forms are stored
             $extensions = array('docx','txt','xlsx','pdf'); //accepted file extensions
@@ -39,18 +39,22 @@
                 $error [] = "Wrong file extension";
             }
             
-            //stores file on server if there are no errors and enters file details into database
+            
+            //Add file and file information on database if there are no errors 
             if(empty($error)==true){
                 move_uploaded_file($filetemp, $folder.$filename);
-                $user->addFile($filename, '.txt', $filesize);
+                if($user->addFile($filename, '.txt', $filesize,$filetemp)){
+                    echo "$filename.$fileext Succesfully added";
+                }
+                else{
+                    echo "File add failed! ";
+                }        
             }
             
             else
                 print_r($error);
-           
         }
-           
-            
+       
         ?>
        
         
