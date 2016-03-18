@@ -106,7 +106,6 @@
                                         include_once("users.php");
                                         $user = new users();
                                         $result = $user->getDep();
-//echo $strQuery;
                                         if ($result == false) {
                                             //
                                             echo "result is false";
