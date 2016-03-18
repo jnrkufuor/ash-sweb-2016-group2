@@ -20,6 +20,7 @@ padding: 20px 20px 0 20px;
 
 .btn-default {
   border: 0;
+float=right;
   background: #648880;
   padding: 7px 15px;
   font-size: 14px;
@@ -66,7 +67,7 @@ input {
   color: #fff;
   cursor: pointer;
   font-weight: bold;
-  float: left;
+  float: right;
   padding: 8px 16px;
 }
 .account-action label {
@@ -74,4 +75,10 @@ input {
   font-size: 12spx;
   float: left;
   margin: 10px 0 0 20px;
+}
+.change_link{
+ color: #395870;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 20px;
 }

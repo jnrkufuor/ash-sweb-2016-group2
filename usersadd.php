@@ -42,7 +42,10 @@
             $obj = new users();
             $r = $obj->addUser($id, $firstname, $lastname, $department, $type, $email, $phone, $fax, $password);
             if ($r == false) {
-                $strStatusMessage = "error while adding user";
+                window.alert("error while adding user");
+            }
+            else{
+                header("Location:userlogin.php");
             }
         }
         ?>
