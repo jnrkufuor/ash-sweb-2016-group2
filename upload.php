@@ -18,10 +18,9 @@ class upload extends control {
      * @param type $file Filename
      * @return type boolean depending on method execution success
      */
-    function addFile($fileName, $fileType, $fileSize){
-        $strQuery = "INSERT INTO informedconsentform(FileName, FileType, FileSize) VALUES('$fileName', '$fileType', '$fileSize')";    
+    public function addFile($fileName, $fileType, $fileSize, $file){
+        $strQuery = "INSERT INTO informedconsentform(FileName, FileType, FileSize, File) VALUES('$fileName', '$fileType', '$fileSize','$file')";    
         return $this->query($strQuery);
     }
-    
     
 }
