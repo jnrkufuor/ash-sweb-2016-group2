@@ -53,27 +53,7 @@ class control{
         return true;
         
     }
-    
-    
-    /**
-     * Method fetches data from the database
-     * @return a row of data from database
-     */
-    function fetch(){
         
-        if($this->result==null){
-            return false;
-        }
-        
-        if($this->result==false){
-            return false;
-        }
-        
-        return $this->result->fetch_assoc();
-        
-    }
-        
-    
 }
 
 ?>
