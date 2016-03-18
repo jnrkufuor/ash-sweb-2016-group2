@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Sign Up</title>
-
+        <link rel="stylesheet" href="css/style.css">
         <script>
                 <!--add validation js script here
         </script>
@@ -39,6 +39,8 @@
             $fax = $_REQUEST['fax'];
             $phone = $_REQUEST['phone'];
             $email = $_REQUEST['email'];
+            $department=$_REQUEST['department'];
+            $type=$_REQUEST['type']; 
             include_once("users.php");
             $obj = new users();
             $r = $obj->addUser($id, $firstname, $lastname, $department, $type, $email, $phone, $fax, $password);
@@ -48,7 +50,7 @@
         }
         ?>
 
-        <form action="" method="GET">
+        <form action="" method="GET" >
             <div class='row'>
                 <div class='large-1 small centered columns' >
                     <fieldset>
@@ -56,44 +58,44 @@
                         <div class='row'>
                             <div class='small-12 columns'>
                                 <label  for='id'>ID</label>
-                                <br><input type="text" name="id"/></br>
+                                <br><input type="text" name="id" placeholder="27302017" required/></br>
                             </div>
                         </div>
                         <div class='row'>
                             <div class='small-12 columns'>
                                 <label  for='id'>First Name</label>
-                                <br><input type="text" name="firstname"/></br> 
+                                <br><input type="text" name="firstname" placeholder='John' required/></br> 
                             </div>
-                        </div
+                        </div>
                         <div class='row'>
                             <div class='small-12 columns'>
                                 <label for='id'>Last Name</label>
-                                <br><input type="text" name="lastname"/></br> 
+                                <br><input type="text" name="lastname" placeholder='Doe' required/></br> 
                             </div>
 
                             <div class='row'>
                                 <div class='small-12 columns'>
                                     <label for='id'>Password</label>
-                                    <br><input type="password" name="pword"/></br> 
+                                    <br><input type="password" name="pword" required /></br> 
                                 </div>
                             </div>
                             <div class='row'>
                                 <div class='small-12 columns'>
                                     <label for='id'>Email</label>
-                                    <br><input type="text" name="email"/></br> 
+                                    <br><input type="text" name="email" placeholder='john.doe@ashesi.edu.gh' required/></br> 
                                 </div>
                             </div>
                             <div class='row'>
                                 <div class='small-8 columns'>
                                     <label for='id'>Phone</label>
-                                    <br><input type="text" name="phone"/></br> 
+                                    <br><input type="text" name="phone" placeholder='0202021010'/></br> 
                                 </div>
                             </div>
 
                             <div class='row'>
                                 <div class='small-4 columns'>
                                     <label for='id'>Fax</label>
-                                    <br><input type="text" name="fax"/></br>
+                                    <br><input type="text" name="fax" placeholder='020912333'/></br>
                                 </div>
                             </div>
 
@@ -101,26 +103,52 @@
 
                             <div class='row'>
                                 <div class='small-4 columns'>
-                                    Department: 
-                                    <select name="department">
+                                    <label for='dep'> Department</label>
+                                    <br><select name="department" >
                                         <?php
                                         include_once("users.php");
                                         $user = new users();
-                                        $result = $user->getUser();
+                                        $result = $user->getDep();
                                         //echo $strQuery;
                                         if ($result == false) {
                                             //
                                             echo "result is false";
                                         } else {
+                                           
                                             while ($row = $user->fetch()) {
-                                                echo "<option value='{$row['DEPARTMENT']}'>{$row['DEPARTMENT']}</option>";
+                                             
+                                                echo "<option value='{$row['Name']}'>{$row['Name']}</option>";
                                             }
                                         }
                                         ?>				
-                                    </select>
+                                    </select></br>
                                 </div>
                             </div>
-                            <div><input type='submit' value='Add'></div>
+                            
+                            <div class='row'>
+                                <div class='small-4 columns'>
+                                    <label for='typ'> User Type</label>
+                                    <br><select name="type" required >
+                                        <?php
+                                        include_once("users.php");
+                                        $user = new users();
+                                        $result = $user->getType();
+                                        
+                                        if ($result == false) {
+                                           
+                                            echo "result is false";
+                                        } else {
+                                           
+                                            while ($row = $user->fetch()) {
+                                             
+                                                echo "<option value='{$row['Type']}'>{$row['Type']}</option>";
+                                            }
+                                        }
+                                        ?>				
+                                    </select></br>
+                                </div>
+                            </div>
+                            <input class='btn btn-default' type='submit' value='Add' >
                         </div>
                     </fieldset>
                 </div>
@@ -128,7 +156,5 @@
 
 
         </form>							
-
-
     </body>
 </html>	
