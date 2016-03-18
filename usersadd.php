@@ -1,109 +1,134 @@
 <html>
-	<head>
-		<title>Add New User</title>
-		<link rel="stylesheet" href="css/style.css">
-		<script>
-			<!--add validation js script here
-		</script>
-	</head>
-	<body>
-		<table>
-			<tr>
-				<td colspan="2" id="pageheader">
-					Application Header
-				</td>
-			</tr>
-			<tr>
-				<td id="mainnav">
-					<div class="menuitem">menu 1</div>
-					<div class="menuitem">menu 2</div>
-					<div class="menuitem">menu 3</div>
-					<div class="menuitem">menu 4</div>
-				</td>
-				<td id="content">
-					<div id="divPageMenu">
-						<span class="menuitem" onclick="window.location.href='userslist.php'">User List</span>
-						<input type="text" id="txtSearch" />
-						<span class="menuitem">search</span>		
-					</div>
-<?php
-			//initialize
-			
-			
-		$strStatusMessage ="Add new user";
-			$username="";
-			$firstname="";
-			$lastname="";
-			$usergroup=0;
-			$status=0;
-			//1) what is the purpose of this if block
-			if(isset($_REQUEST['username'])){
-				$username=$_REQUEST['username'];
-				$firstname=$_REQUEST['firstname'];
-				$password=$_REQUEST['pword'];
-				$lastname=$_REQUEST['lastname'];
-				$usergroup=$_REQUEST['usergroup'];
-				$permission=3;
-				$status=$_REQUEST['status'];
-				include_once("users.php");
-				$obj=new users();
-				$r=$obj->addUser($username,$firstname,$lastname,$password,$usergroup,$permission,$status);
-				//1) what is the purpose of this if block
-				if($r==false){
-					$strStatusMessage="error while adding user";
-				}else{
-					$strStatusMessage="$username upadted";
-				}
+    <head>
+        <title>Sign Up</title>
 
-			}
-?>
-					<div id="divStatus" class="status">
-						<?php echo  $strStatusMessage ?>
-					</div>
-					<div id="divContent">
-						Content space                                                                                          
-						<form action="" method="GET">
-			<div>Username: <input type="text" name="username" value="<?php echo $username;  ?>"/></div>
-			<div>First Name: <input type="text" name="firstname" value="<?php echo $firstname ?>"/>
-			<div>Last Name: <input type="text" name="lastname" value="<?php echo $lastname ?>"/>
-			<div>Password: <input type="password" name="pword"/></div>
-			<div>
-	<!--In this example the checkboxes are grouped as an array-->		
-				Permission :<input type="checkbox" value="1" name="permission[]"> View
-<input type="checkbox" value="2" name="permission[]"> Edit
-<input type="checkbox" value="4" name="permission[]"> Delete				
-			</div>
-			<div>
-				Account Status: <input type="radio" value="1"> Enabled
-				<input type="radio" value="0"> Disabled
-			</div>
-			<div>User Group: 
-				<select name="usergroup">
-<?php
-	//a call to the class
-	include_once("usergroups.php");
-	$usergroup= new usergroups();
-	$result=$usergroup->getAllUserGroups();
-	//echo $strQuery;
-	if($result==false){
-		//
-		echo "result is false";
-	}else{
-		while($row=$usergroup->fetch()){
-			echo "<option value='{$row['USERGROUP_ID']}'>{$row['GROUPNAME']}</option>";
-		}
-	}
-	
-	//display in loop
-?>				
-				</select>
-			</div>
-			<input type='submit' value='Add'>;
-			
-		</form>							
-					</div>
-				</td>
-			</tr>
-		</table>
-	</body>
+        <script>
+                <!--add validation js script here
+        </script>
+    </head>
+    <body>
+            <!-- <table>
+                    <tr>
+                            <td colspan="2" id="pageheader">
+                                    Application Header
+                            </td>
+                    </tr>
+                    <tr>
+                            <td id="mainnav">
+                                    <div class="menuitem">menu 1</div>
+                                    <div class="menuitem">menu 2</div>
+                                    <div class="menuitem">menu 3</div>
+                                    <div class="menuitem">menu 4</div>
+                            </td>
+                            <td id="content">
+                                    <div id="divPageMenu">
+                                            <span class="menuitem" onclick="window.location.href='userslist.php'">User List</span>
+                                            <input type="text" id="txtSearch" />
+                                            <span class="menuitem">search</span>		
+                                    </div  -->
+        <?php
+        //initialize
+
+
+        $strStatusMessage = "Add new user";
+        if (isset($_REQUEST['id'])) {
+            $id = $_REQUEST['id'];
+            $firstname = $_REQUEST['firstname'];
+            $password = $_REQUEST['pword'];
+            $lastname = $_REQUEST['lastname'];
+            $fax = $_REQUEST['fax'];
+            $phone = $_REQUEST['phone'];
+            $email = $_REQUEST['email'];
+            include_once("users.php");
+            $obj = new users();
+            $r = $obj->addUser($id, $firstname, $lastname, $department, $type, $email, $phone, $fax, $password);
+            if ($r == false) {
+                $strStatusMessage = "error while adding user";
+            }
+        }
+        ?>
+
+        <form action="" method="GET">
+            <div class='row'>
+                <div class='large-1 small centered columns' >
+                    <fieldset>
+                        <legend> Sign Up </legend>
+                        <div class='row'>
+                            <div class='small-12 columns'>
+                                <label  for='id'>ID</label>
+                                <br><input type="text" name="id"/></br>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='small-12 columns'>
+                                <label  for='id'>First Name</label>
+                                <br><input type="text" name="firstname"/></br> 
+                            </div>
+                        </div
+                        <div class='row'>
+                            <div class='small-12 columns'>
+                                <label for='id'>Last Name</label>
+                                <br><input type="text" name="lastname"/></br> 
+                            </div>
+
+                            <div class='row'>
+                                <div class='small-12 columns'>
+                                    <label for='id'>Password</label>
+                                    <br><input type="password" name="pword"/></br> 
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='small-12 columns'>
+                                    <label for='id'>Email</label>
+                                    <br><input type="text" name="email"/></br> 
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='small-8 columns'>
+                                    <label for='id'>Phone</label>
+                                    <br><input type="text" name="phone"/></br> 
+                                </div>
+                            </div>
+
+                            <div class='row'>
+                                <div class='small-4 columns'>
+                                    <label for='id'>Fax</label>
+                                    <br><input type="text" name="fax"/></br>
+                                </div>
+                            </div>
+
+
+
+                            <div class='row'>
+                                <div class='small-4 columns'>
+                                    Department: 
+                                    <select name="department">
+                                        <?php
+                                        include_once("users.php");
+                                        $user = new users();
+                                        $result = $user->getUser();
+                                        //echo $strQuery;
+                                        if ($result == false) {
+                                            //
+                                            echo "result is false";
+                                        } else {
+                                            while ($row = $user->fetch()) {
+                                                echo "<option value='{$row['DEPARTMENT']}'>{$row['DEPARTMENT']}</option>";
+                                            }
+                                        }
+                                        ?>				
+                                    </select>
+                                </div>
+                            </div>
+                            <div><input type='submit' value='Add'></div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+
+        </form>							
+
+
+    </body>
 </html>	
