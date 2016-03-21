@@ -1,5 +1,9 @@
 <?php
 
+	/**
+	*This script retrieves submission input and inserts it into the submission table in the database
+	*/
+
 	include_once ("submission.php");
 	$obj = new submission();
 
@@ -7,6 +11,9 @@
 		exit();	
 	}
 
+   	/**
+	retrieving input data from url
+	*/
 	$exemption = $_REQUEST['exemption'];
 	$title = $_REQUEST['title'];
 	$subjectCharacteristics = $_REQUEST['subjectCharacteristics'];
@@ -27,19 +34,23 @@
 	if(isset($_REQUEST['procedureRisks'])){
 		$procedureRisks= $_REQUEST['procedureRisks'];
 		if($procedureRisks != ""){
-		//$procedureRisks = implode(",", $procedureRisks);
+		$procedureRisks = implode(",", $procedureRisks); //converting risk array to string
 	}
 	}
 
+	
+	//insert query to insert into submission table using makesubmission method
 	$r = $obj -> makeSubmission($title, $exemption, $subjectCharacteristics, $specialClasses, $recruitment,
 							$partcipnatInfo, $researchMethod, $dataSources, $procedureRisks, $procedureDetails, $confidentialityExtent, $dataStorage, $resultDissemination, $subjectInfo, 
 							$confidentialityProtection, $participantConpensation, $participantBenefits);
+
+
+	//display result of query 
 	if($r == false){
 		echo "error";
 	}
 	else{
 		echo "Submission successful";
-		//header("Location:userslist.php?stat=Data Updated");
 
 	}
 ?>
