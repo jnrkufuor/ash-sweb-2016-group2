@@ -1,0 +1,94 @@
+
+2. Algorithms for encryption and decryption in Java:
+							(a) AES
+							(b) DES
+							(c) DESede
+							(d) RSA			
+
+[Source: http://www.codejava.net/coding/file-encryption-and-decryption-simple-example]
+
+
+3. HttpRequest
+
+[Source: http://www.cs.umd.edu/class/fall2003/cmsc433/projects/p3/javadoc/cmsc433/http/HttpRequest.html]
+
+
+4. Web Server Software:
+				(a) XAMPP
+				(b) Zend Server
+				(c) PoorMan
+				(d) WAMPP
+				(e) Netscape Application Server
+
+
+
+5. IDEs for Web Applications:
+				(a) Eclipse
+				(b) Netbeans
+				(c) DrJava
+				(d) Aptana
+				(e) Bluefish
+
+6. Web Hosting Companies:
+				(a) GoDaddy
+				(b) DreamHost - They offer virtual private servers.
+						There is a 24/7 customer service, in the case of server downtime
+						They allow unlimited FTP transfers
+						
+				(c) LiquidWeb
+				(d) HostGator
+				(e) BlueHost
+
+   [Source: http://www.pcmag.com/article2/0,2817,2487406,00.asp]
+
+
+7. (a) DNS - Each website is a computer(server) on a network. Each website hence has a unique address for identification 
+ 	     called the IP address. DNS is a naming system used for translating proper names (host names) to this rather 
+ 	     difficult-to-remember IP addresses. Without these easy-to-remember host names, the website cannot be accessed.
+
+   (b) DHCP - The Dynamic Host Control Protocol as a network protocol automatically assigns IP addresses to devices 
+	      connected on a network. These IP addresses are what enable the devices to communicate on a network using
+	      the Internet Protocol. Without these IP addresses, no device can access websites on the internet.
+
+   (c) Firewall - The firewall is configured or set up to block unauthorized access to or from a private network.
+		  This firewall blocks unauthorized access to the website saved on the web server from hackers,
+ 		  viruses, worms and other harmful attacks to steal or destroy data on the webpage.
+
+
+   (d) FTP - The File Transfer Protocol transfers the webpage you create on your computer to the server.
+	     The server then hosts the webpage and releases it as requests for it are made by the client.
+
+   [Sources: 	http://www.comentum.com/allabout-domain-name-system-dns-servers.html
+		http://searchunifiedcommunications.techtarget.com/definition/DHCP
+		http://pcsupport.about.com/od/termsd/g/dhcp-dynamic-host-configuration-protocol.htm
+		http://www.webopedia.com/TERM/F/firewall.html
+		https://www.microsoft.com/security/pc-security/firewalls-whatis.aspx]
+
+8. (a) Google Engine - Go, PHP, Java 
+   (b) Microsoft Azure -  .NET, Node.js, Python
+   (c) Amazon EC2 - Ruby, PHP, Java
+
+       [Sources: https://aws.amazon.com/ec2/developer-resources/
+		 https://azure.microsoft.com/en-us/documentation/scenarios/web-app/
+
+9. A content management software is an application that helps you to manage - edit, publish, delete, organize, etc - your
+   content - music, videos, files, or anything - from a central interface. This central interface is mostly the internet.
+   Very popular in the area of websites, they help any non-expert user to manage a webpage using very easy-to-use tools.
+
+   [Sources: https://www.joomla.org/about-joomla.html
+	    https://en.wikipedia.org/wiki/Content_management_system]
+
+	   
+	(a) Joomla
+	(b) Moodle
+	(c) Drupal
+	(d) Magento
+	(e) Serendipity
+
+   [Source: https://en.wikipedia.org/wiki/List_of_content_management_systems]
+
+10. Add-on SDK 	
+
+   [Source: https://addons.mozilla.org/en-us/firefox/collections/the-shareaholic-team/extendfirefox/]
+		
+	

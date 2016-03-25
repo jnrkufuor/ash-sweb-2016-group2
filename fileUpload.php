@@ -59,7 +59,8 @@
        
         
         <p style="text-align: center; font-size: 40px"> File Upload </p>
-        
+        <br>
+        <p style="text-align: center;color: #1e5eb6"> File extensions allowed are .txt, .docx, .pdf and .xlsx </p>
         <form action="fileUpload.php" method="POST" enctype="multipart/form-data">
             <div style="text-align: center"> <input type="file" name="doc" >
                 <input type="submit" name="manga"> </div>
