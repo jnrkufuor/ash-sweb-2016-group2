@@ -1,12 +1,16 @@
 <html>
     <head>
         <title>Sign Up</title>
+
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/main.css">
+         
         <script>
                 <!--add validation js script here
         </script>
     </head>
-    <body>
+    <header class="header"> </header>
+    <body class="follow">
    
         <?php
         $strStatusMessage = "Add new user";
