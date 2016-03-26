@@ -21,7 +21,7 @@ if (isset($_REQUEST['id'])) {
         if (!$row) {
             header("Location:login.php?error=$err");
         } else {
-            header("Location:dashboard.php?rid=$id & type={$row['type']}");
+            header("Location:home.html?rid=$id & type={$row['type']}");
         }
     }
 }
