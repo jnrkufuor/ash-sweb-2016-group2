@@ -4,16 +4,13 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <?php
-        if (isset($_REQUEST['submit'])) {
-            $password = $_REQUEST['password'];
-            $id = $_REQUEST['id'];
-            header("Location:userlogin.php?id=$id&password=$password");
-        } else if (isset($_REQUEST['add'])) {
-            header("Location:usersadd.php");
-        }
-        ?>
-        <form>
+         <?php
+		 if(isset($_REQUEST['error']))
+		 {
+			  echo "<script type='text/javascript'> alert('Wrong Username or ID'); </script>";
+		 }
+		 ?>
+        <form action='userlogin.php' method='GET'>
 
             <fieldset class="account-info">
                 <label>

@@ -7,25 +7,7 @@
         </script>
     </head>
     <body>
-            <!-- <table>
-                    <tr>
-                            <td colspan="2" id="pageheader">
-                                    Application Header
-                            </td>
-                    </tr>
-                    <tr>
-                            <td id="mainnav">
-                                    <div class="menuitem">menu 1</div>
-                                    <div class="menuitem">menu 2</div>
-                                    <div class="menuitem">menu 3</div>
-                                    <div class="menuitem">menu 4</div>
-                            </td>
-                            <td id="content">
-                                    <div id="divPageMenu">
-                                            <span class="menuitem" onclick="window.location.href='userslist.php'">User List</span>
-                                            <input type="text" id="txtSearch" />
-                                            <span class="menuitem">search</span>		
-                                    </div  -->
+   
         <?php
         $strStatusMessage = "Add new user";
         if (isset($_REQUEST['id'])) {
@@ -36,16 +18,16 @@
             $fax = $_REQUEST['fax'];
             $phone = $_REQUEST['phone'];
             $email = $_REQUEST['email'];
-            $department = $_REQUEST['department'];
-            $type = $_REQUEST['type'];
+			$co = $_REQUEST['co_researcher'];
             include_once("users.php");
             $obj = new users();
-            $r = $obj->addUser($id, $firstname, $lastname, $department, $type, $email, $phone, $fax, $password);
+            $r = $obj->addUser($id, $firstname, $lastname, $co, $email, $phone, $fax, $password);
             if ($r == false) {
-                window.alert("error while adding user");
+              echo '<script> window.alert("error while adding user")</script>';
             }
             else{
-                header("Location:userlogin.php");
+                echo "<script type='text/javascript'> alert('User Successfully Added'); </script>";
+                 echo '<script>window.location.href = "login.php";</script>';
             }
         }
         ?>
@@ -72,7 +54,12 @@
                                 <label for='id'>Last Name</label>
                                 <br><input type="text" name="lastname" placeholder='Doe' required/></br> 
                             </div>
-
+                        <div class='row'>
+                            <div class='small-12 columns'>
+                                <label  for='id'>Co-Researcher</label>
+                                <br><input type="text" name="co_researcher" placeholder='James McAvoy' /></br> 
+                            </div>
+                        </div>
                             <div class='row'>
                                 <div class='small-12 columns'>
                                     <label for='id'>Password</label>
@@ -101,52 +88,6 @@
 
 
 
-                            <div class='row'>
-                                <div class='small-4 columns'>
-                                    <label for='dep'> Department</label>
-                                    <br><select name="department" >
-                                        <?php
-                                        include_once("users.php");
-                                        $user = new users();
-                                        $result = $user->getDep();
-                                        if ($result == false) {
-                                            //
-                                            echo "result is false";
-                                        } else {
-
-                                            while ($row = $user->fetch()) {
-
-                                                echo "<option value='{$row['Name']}'>{$row['Name']}</option>";
-                                            }
-                                        }
-                                        ?>				
-                                    </select></br>
-                                </div>
-                            </div>
-
-                            <div class='row'>
-                                <div class='small-4 columns'>
-                                    <label for='typ'> User Type</label>
-                                    <br><select name="type" required >
-                                        <?php
-                                        include_once("users.php");
-                                        $user = new users();
-                                        $result = $user->getType();
-
-                                        if ($result == false) {
-
-                                            echo "result is false";
-                                        } else {
-
-                                            while ($row = $user->fetch()) {
-
-                                                echo "<option value='{$row['Type']}'>{$row['Type']}</option>";
-                                            }
-                                        }
-                                        ?>				
-                                    </select></br>
-                                </div>
-                            </div>
 
                         </div>
 
