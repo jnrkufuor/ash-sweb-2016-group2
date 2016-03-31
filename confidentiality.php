@@ -41,12 +41,13 @@
 			<?php
 			if(isset($_REQUEST['procedureRisks'])){
 			$procedureRisks= $_REQUEST['procedureRisks'];
-			}
+			
 			$count = 0;
 			foreach($procedureRisks as $value){
 			echo "<input type='hidden' name='procedureRisks[]' value='$procedureRisks[$count]'/></div>";
 			$count++;
 			}
+		}
 			?>
 			<div><input type="hidden" name="procedureDetails" value="<?php echo $procedureDetails ?>"/></div>
 			<h2>Confidentiality</h2>

@@ -62,12 +62,13 @@
 			<?php
 			if(isset($_REQUEST['procedureRisks'])){
 			$procedureRisks= $_REQUEST['procedureRisks'];
-			}
+			
 			$count = 0;
 			foreach($procedureRisks as $value){
 			echo "<input type='hidden' name='procedureRisks[]' value='$procedureRisks[$count]'/></div>";
 			$count++;
 			}
+		}
 			?>
 
 			<!-- Allows user to enter inputs with regards to benefits section of the submission -->
