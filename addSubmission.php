@@ -1,6 +1,7 @@
 <?php
 
 	/**
+	*@author Anna Addei
 	*This script retrieves submission input and inserts it into the submission table in the database
 	*/
 

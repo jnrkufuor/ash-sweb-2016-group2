@@ -1,3 +1,4 @@
+
 <html>
 	<!-- This script allows a user to input data about their submission with regards to the benefits section -->
 	<head>
@@ -74,9 +75,9 @@
 			<!-- Allows user to enter inputs with regards to benefits section of the submission -->
 			<h2>Describe Any Anticipated Benefits To Subjects From Participation In This Research</h2>
 			<div><p>A. Will participants / subjects / respondents be compensated or rewarded in any way?</p></div>
-			<div><textarea name="participantConpensation" cols="100" rows="5"></textarea></div>
+			<div><textarea name="participantConpensation" cols="100" rows="5" required></textarea></div>
 			<div><p>B. What intrinsic benefit will participants / subjects / respondents receive? </p></div>
-			<div><textarea name="participantBenefits" cols="100" rows="5"></textarea></div>
+			<div><textarea name="participantBenefits" cols="100" rows="5" required></textarea></div>
 			<br/>
 			<div>Progress:<progress value="100" max="100"></progress> &nbsp; &nbsp; &nbsp;<a href="confidentiality.php">Back</a> &nbsp;  <input type="submit" value="Submit"></div> 
 		</form>

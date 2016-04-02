@@ -52,15 +52,15 @@
 			<div><input type="hidden" name="procedureDetails" value="<?php echo $procedureDetails ?>"/></div>
 			<h2>Confidentiality</h2>
 			<div><p>A. To what extent is the information confidential and to what extent are provisions made so that subjects are not identified?</p></div>
-			<div><textarea name="confidentialityExtent" cols="100" rows="5"></textarea></div>
+			<div><textarea name="confidentialityExtent" cols="100" rows="5" required></textarea></div>
 			<div><p>B. What are the procedures for handling and storing data so that confidentiality of the subjects and privacy are protected? Particular attention should be given if research data will include photographs, video and audio recordings, computer files, organizational records, medical records, financial records with individual or corporate information. </p></div>
-			<div><textarea name="dataStorage" cols="100" rows="5"></textarea></div>
+			<div><textarea name="dataStorage" cols="100" rows="5" required></textarea></div>
 			<div><p>C. How will the results of the research be disseminated?</p></div>
-			<div><textarea name="resultDissemination" cols="100" rows="5"></textarea></div>
+			<div><textarea name="resultDissemination" cols="100" rows="5" required></textarea></div>
 			<div><p> How will the subjects be informed of the results?</p></div>
-			<div><textarea name="subjectInfo" cols="100" rows="5"></textarea></div>
+			<div><textarea name="subjectInfo" cols="100" rows="5" required></textarea></div>
 			<div><p> How will confidentiality of subjects or organizations be protected in the dissemination?</p></div>
-			<div><textarea name="confidentialityProtection" cols="100" rows="5"></textarea></div>
+			<div><textarea name="confidentialityProtection" cols="100" rows="5" required></textarea></div>
 			<br/>
 			<div>Progress:<progress value="80" max="100"></progress> &nbsp; &nbsp; &nbsp;<a href="risk.php">Back</a> &nbsp;  <input type="submit" value="Next" >  </div> 
 		</form>

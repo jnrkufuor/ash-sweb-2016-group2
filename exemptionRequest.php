@@ -4,7 +4,7 @@
 	</head>
 	<body>
 		<form action="subjects.php" method="GET">
-			<div><h2>Title of Project:</h2> <input type="text" name="title"/></div>
+			<div><h2>Title of Project:</h2> <input type="text" name="title" required/></div>
 			<h2>Exemption Request</h2>
 			<div><p>If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption. 
 					Click <a href=''>here</a> to see the list of exempt project types. Skip of you are not requesting exemption.</p></div>
