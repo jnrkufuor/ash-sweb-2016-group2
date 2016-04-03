@@ -43,7 +43,15 @@ class users extends adb {
 	function validateReviewer($id, $password){
 		return $this->query("select type from review where RID='$id' and PASSWORD='$password'");
 	}
+    
+    function deleteUser($id)
+    {
+        return $this->query("delete from irb_user where user_id='$id'");
+    }
 
+     function editUser($usercode, $firstname, $lastname, $co , $email, $phone, $fax) {
+        return $this->query("Update irb_user set FIRSTNAME='$firstname', LASTNAME='$lastname',CO_RESEARCHER='$co', EMAIL='$email',PHONE='$phone',FAX='$fax' where USER_ID=$usercode");
+    }
 }
 
 ?>
