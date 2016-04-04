@@ -1,19 +1,20 @@
 <html>
-	<head>
-	<title> Submission </title>
-	<link rel="stylesheet" type="text/css" href="applicationStyle.css">
-	</head>
-	<body>
-	<div id="header"> 
-		<img style="float:left" src="logo.jpg"> IRB Application Form
-		</div>
-		<div align="center">
-                    <ul id="menu" >
-                    <li><a href="">DASHBOARD</a></li>
-                    <li><a href="">UPLOAD DOCUMENTS</a></li>
-                    <li><a href="">SIGN OUT</a></li>
-                  </ul>  
-                    </div>
+<head>
+	<link href="../UI template/index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+	<header><a href="irbinterface.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
+	<div class="side1">
+		<a href="irbinterface.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
+		<a href="deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
+		<a href="review.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
+	</div>
+	<!-- <div class="side2" >Side bar</div>-->
+	<div class="menu">
+		<span>Application Form (Demo for incomplete/failed input)</span>
+	</div>
+	<br><br>
 		<?php
 		$exemption ="";
 		$title ="";
@@ -51,8 +52,8 @@
 		
 		
 		?>
-		<div style="height:400px" id="mainDiv">
-		<form action="addSubmission.php?" method="GET">
+		<form style="margin-left:22%"action="addSubmission.php?" method="GET">
+		<div style="height:300px" class="mainDiv">
 			<div><input type="hidden" name="exemption" value="<?php echo $exemption ?>"/></div>
 			<div><input type="hidden" name="title" value="<?php echo $title ?>"/></div>
 			<div><input type="hidden" name="subjectCharacteristics" value="<?php echo $subjectCharacteristics ?>"/></div>
@@ -86,7 +87,14 @@
 			<br/>
 			<br/>
 			<div>Progress:<progress value="100" max="100"></progress> &nbsp; &nbsp; &nbsp;<input style="float:right;" type="submit" value="Submit"> <a style="float:right; margin-right: 40px"href="confidentiality.php">Back</a> &nbsp;  </div> 
+		</div><br><br>
 		</form>
-		</div>
-	</body>
+	<footer><p>Ashesi University College. | All rights reserved. | University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana | Phone: +233.302.610.330</p>
+	</footer>
+	<script>
+function myFunction() {
+    alert("You have not completed the form");
+}
+</script>
+</body>
 </html>

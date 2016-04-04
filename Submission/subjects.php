@@ -1,19 +1,21 @@
 <html>
-	<head>
-	<title> Submission </title>
-	<link rel="stylesheet" type="text/css" href="applicationStyle.css">
-	</head>
-	<body>
-	<div id="header"> 
-		<img style="float:left" src="logo.jpg"> IRB Application Form
-		</div>
-		<div align="center">
-                    <ul id="menu" >
-                    <li><a href="">DASHBOARD</a></li>
-                    <li><a href="">UPLOAD DOCUMENTS</a></li>
-                    <li><a href="">SIGN OUT</a></li>
-                  </ul>  
-                    </div>
+<head>
+	<link href="../UI template/index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+	<header><a href="irbinterface.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
+	<div class="side1">
+		<a href="irbinterface.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
+		<a href="deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
+		<a href="review.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
+	</div>
+	<!-- <div class="side2" >Side bar</div>-->
+	<div class="menu">
+		<span>Application Form (Demo for incomplete/failed input)</span>
+	</div>
+	<br><br>
+			
 		<?php
 		$exemption ="";
 		$title ="";
@@ -22,9 +24,10 @@
 			$title = $_REQUEST['title'];
 		}
 		?>
-		<div style="height:950px" id="mainDiv">
-		<form action="risk.php?" method="GET">
-			<h2 id="headings">Numbers, Types and Recruitment of Subjects</h2>
+		<form style="margin-left:22%"action="risk.php?" method="GET">
+		<div style="height:1000px" class="mainDiv">
+		
+			<h2>Numbers, Types and Recruitment of Subjects</h2>
 			<div><input type="hidden" name="exemption" value="<?php echo $exemption ?>"/></div>
 			<div><input type="hidden" name="title" value="<?php echo $title ?>"/></div>
 			<div><p>A. Identify the numbers and characteristics of subjects (eg. age ranges, sex, ethnic background, health status, disabilities , etc.) It is recommended to provide the breakdown based on your sampling strategy.</p></div>
@@ -40,8 +43,15 @@
 			<div><p>F. Specify the data sources you will use for your reserach. (eg. questionnaire, audio recording human resource files, experiment data, etc.)</p></div>
 			<div><textarea name="dataSources" style="width:97%; height: 8%" required></textarea></div>
 			<br/>
-			<div>Progress:</b> &nbsp;<progress value="40" max="100"></progress> <input style="float:right;" type="submit" value="Next" >  &nbsp; &nbsp; &nbsp; <a style="float:right; margin-right: 40px" href="exemptionRequest.php">Back</a> &nbsp; </div> 
+			<div style="margin-top: 20px">Progress:</b> &nbsp;<progress value="40" max="100"></progress> <input style="float:right;" type="submit" value="Next" >  &nbsp; &nbsp; &nbsp; <a style="float:right; margin-right: 40px" href="exemptionRequest.php">Back</a> &nbsp; </div> 
 		</form>
-		</div>
-	</body>
+		</div><br><br>
+	<footer><p>Ashesi University College. | All rights reserved. | University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana | Phone: +233.302.610.330</p>
+	</footer>
+	<script>
+function myFunction() {
+    alert("You have not completed the form");
+}
+</script>
+</body>
 </html>
