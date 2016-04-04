@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header><a href="#" title=""><img src="images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
+	<div class="side1">
+		<a href="index.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
+		<a href="deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
+		<a href="review.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
+	</div>
+	<div class="menu"><span>Uploaded Files</span></div>
+	<!-- <h3>Uploaded Files</h3> -->
+	<div class="tab">
+		<table class="deltab">
+		<tr id="hd">
+			<td></td>
+			<td>File Name</td>
+			<!-- <td>Action</td> -->
+		</tr>
+		<tr id="r1">
+			<td>1</td>
+			<td>IRB Questionnaire 1</td>
+			<td id="action"><button onclick="myFunction()"><img class="bin" src="images/delete.png"></button></td>
+		</tr>
+		<tr id="r2">
+			<td>2</td>
+			<td>IRB Questionnaire 2</td>
+			<td id="action"><button onclick="myFunction()"><img class="bin" src="images/delete.png"></button></td>
+		</tr>
+		<tr id="r3">
+			<td>3</td>
+			<td>IRB Questionnaire 3</td>
+			<td id="action"><button onclick="myFunction()"><img class="bin" src="images/delete.png"></button></td>
+		</tr>
+		<tr id="r4">
+			<td>4</td>
+			<td>IRB Questionnaire 4</td>
+			<td id="action"><button onclick="myFunction()"><img class="bin" src="images/delete.png"></button></td>
+		</tr>
+	</table>
+	</div>
+	<br><br><br><br><br><br><br><br>
+	<footer><p>Ashesi University College. | All rights reserved. | University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana | Phone: +233.302.610.330</p>
+	</footer>
+	<script>
+function myFunction() {
+    confirm("Are you sure you want to delete this file?");
+}
+</script>
+
+</body>
+</html>
