@@ -2,8 +2,8 @@
     <head>
         <title>Sign Up</title>
 
-            <!-- <link rel="stylesheet" href="css/style.css">
-            <link rel="stylesheet" href="css/main.css"> -->
+            <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="css/main.css"> 
          
         <script>
                 <!--add validation js script here
@@ -13,30 +13,7 @@
     <body class="follow">
    
         <?php
-        if (isset($_REQUEST['edit'])) {
-          if (isset($_REQUEST['id'])) {
-            $id = $_REQUEST['id'];
-            $fn = $_REQUEST['fn'];
-            $ln = $_REQUEST['ln'];
-            $fax = $_REQUEST['fax'];
-            $phone = $_REQUEST['phone'];
-            $email = $_REQUEST['email'];
-            $cr = $_REQUEST['cr'];
-            if (isset($_REQUEST['submit'])){
-            include_once("users.php");
-            $obj = new users();
-            $r = $obj->editUser($id, $fn, $ln, $co, $email, $phone, $fax);
-            if ($r == false) {
-              echo '<script> window.alert("error while editing user")</script>';
-            }
-            else{
-                echo "<script type='text/javascript'> alert('User Successfully Edited'); </script>";
-                 echo '<script>window.location.href = "home.php";</script>';
-            }
-        }
-        }  
-        }
-        else{
+       
         if (isset($_REQUEST['id'])) {
             $id = $_REQUEST['id'];
             $firstname = $_REQUEST['firstname'];
@@ -57,11 +34,11 @@
                  echo '<script>window.location.href = "login.php";</script>';
             }
         }
-    }
+    
         ?>
 
 
-        <form action="" method="GET" >
+        <form action="" method="GET" class="form" >
             <div class='row'>
                 <div class='large-1 small centered columns' >
                     <fieldset>

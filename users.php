@@ -20,7 +20,10 @@ class users extends adb {
     function addUser($usercode, $firstname, $lastname, $co , $email, $phone, $fax, $password) {
         return $this->query("Insert into irb_user set USER_ID ='$usercode', FIRSTNAME='$firstname', LASTNAME='$lastname',CO_RESEARCHER='$co', EMAIL='$email',PHONE='$phone',FAX='$fax', PASSWORD = MD5('$password')");
     }
-
+    
+	function addReviewer($usercode,$password,$type) {
+        return $this->query("Insert into reviewer set RID ='$usercode', TYPE=$type, PASSWORD = MD5('$password')");
+    }
   
 
     /**
@@ -29,6 +32,10 @@ class users extends adb {
      */
     function getUser() {
         return $this->query("select USER_ID , FIRSTNAME, LASTNAME, CO_RESEARCHER, EMAIL,PHONE,FAX, PASSWORD from irb_user");
+    }
+	
+	function getLec() {
+        return $this->query("select RID, TYPE  from reviewer");
     }
 
     /**
@@ -41,7 +48,7 @@ class users extends adb {
         return $this->query("select type from irb_user where USER_ID='$id' and PASSWORD='$password'");
     }
 	function validateReviewer($id, $password){
-		return $this->query("select type from review where RID='$id' and PASSWORD='$password'");
+		return $this->query("select type from reviewer where RID='$id' and PASSWORD='$password'");
 	}
     
     function deleteUser($id)
@@ -49,6 +56,10 @@ class users extends adb {
         return $this->query("delete from irb_user where user_id='$id'");
     }
 
+	function deleteLec($id)
+    {
+        return $this->query("delete from reviewer where rid='$id'");
+    }
      function editUser($usercode, $firstname, $lastname, $co , $email, $phone, $fax) {
         return $this->query("Update irb_user set FIRSTNAME='$firstname', LASTNAME='$lastname',CO_RESEARCHER='$co', EMAIL='$email',PHONE='$phone',FAX='$fax' where USER_ID=$usercode");
     }

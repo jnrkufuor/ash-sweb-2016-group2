@@ -49,14 +49,13 @@ li a.active {
 <div>
 <ul>
   <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">About Us</a></li>
-  <li><a href="anna/exemptionRequest.php">Apply</a></li>
-  <li><a href="#about">Upload File</a></li>
+  <li><a href="Submission/viewAllSubmissions.php">View Submissions</a></li>
+  <li><a href="anna/exemptionRequest.php">View Files</a></li>
 </ul>
 </div>
 
+<div>
 
-<div> 
 <br> <br> <br> <br> <br> <br>
 <br> <br> <br> <br> <br> <br>
 <br> <br> <br>

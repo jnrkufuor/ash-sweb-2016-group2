@@ -11,7 +11,19 @@
 	  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
 	  overflow: hidden;
 	  width: 280px;
-	  height: 318px;
+	  height: 314px;
+	  position: relative;
+	  left: 500px;
+	  top: 180px;
+	}
+.form {
+	 margin-bottom: 22px;
+	  border: 2px solid #c6c7cc;
+	  border-radius: 5px;
+	  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	  overflow: hidden;
+	  width: 280px;
+	  height: 380px;
 	  position: relative;
 	  left: 500px;
 	  top: 180px;

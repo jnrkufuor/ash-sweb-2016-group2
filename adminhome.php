@@ -48,24 +48,26 @@ li a.active {
 
 <div>
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">About Us</a></li>
-  <li><a href="anna/exemptionRequest.php">Apply</a></li>
-  <li><a href="#about">Upload File</a></li>
+  <li><a class="active" href="adminhome.php">Home</a></li>
+  <li><a href="adminhome.php?purpose=user">View Users</a></li>
+  <li><a href="Submission/viewAllSubmissions.php">View Submissions</a></li>
+  <li><a href="adminhome.php?purpose=lec">View Lecturers</a></li>
 </ul>
 </div>
 
-<div>
+<div style="margin: 0 auto; width=10px;" >
 <?php
 if(isset($_REQUEST['success']))
 {
   if ($_REQUEST['success']=='false')
-    echo '<script> window.alert("User Could Not Be Deleted")</script>';
+    echo '<script> window.alert("Successful")</script>';
 }
 
 include("users.php");
-$obj = new users();
 
+if(isset($_REQUEST['purpose']) &&$_REQUEST['purpose']=="user"){
+
+$obj = new users();
 if(!$obj->getUser())
 {
   echo "Error getting Users";
@@ -90,13 +92,41 @@ while($row=$obj->fetch())
   <td>{$row['EMAIL']}</td>
   <td>{$row['PHONE']}</td>
    <td>{$row['FAX']}</td>
-   <td><a href='usersadd.php?edit=true&id={$row['USER_ID']}&fn= {$row['FIRSTNAME']} &ln= {$row['LASTNAME']} &cr={$row['CO_RESEARCHER']}&email={$row['EMAIL']} &phone={$row['PHONE']} &fax={$row['FAX']}'> Edit User</a><td>
     <td><a href='userdelete.php?id={$row['USER_ID']}'>Delete User</a><td>
-  </tr>";
-  
+  </tr>"; 
 }
 echo "</table>";
+}
+
+
+
+else if(isset($_REQUEST['purpose'])&&$_REQUEST['purpose']=="lec"){
+$lec= new users();
+if(!$lec->getLec())
+{
+  echo "Error getting Lecturers";
+}
+echo" <table border='1' style='align=center;'>
+    <tr>
+    <th>Lecturer ID </th>
+  
+    </tr>";
+while($tbl=$lec->fetch())
+{
+  echo" <tr>
+  <td>{$tbl['RID']}</td>
+  <td>{$tbl['TYPE']}</td>
+    <td><a href='userdelete.php?rid={$tbl['RID']}'>Delete Lecturer</a><td>
+  </tr>";
+}
+echo "</table>";
+}
+else
+{
+	echo "<h1>Welcome to the Admin Page</h1>";
+}
 ?> 
+
 <br> <br> <br> <br> <br> <br>
 <br> <br> <br> <br> <br> <br>
 <br> <br> <br>
