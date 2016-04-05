@@ -10,7 +10,7 @@
 	    <a href="adminIndex.php?" style ="text-decoration:none"><div id="appcen"><h3>Home</h3></div></a>   
 		<a href="adminIndex.php?purpose=user" style ="text-decoration:none"><div id="appcen"><h3>IRB Users</h3></div></a>
 		<a href="adminIndex.php?purpose=lec" style ="text-decoration:none"><div id="filesys"><h3>IRB Reviewers</h3></div></a>
-		<a href="../Submission/review_exemption.php" style ="text-decoration:none"><div id="appcen"><h3>IRB Submissions</h3></div></a>
+		<a href="../Submission/review_exemption.php" style ="text-decoration:none"><div id="sub"><h3>IRB Submissions</h3></div></a>
 	</div>
 	<!-- <div class="side2" >Side bar</div>-->
 	<div class="mainmenu">
@@ -93,7 +93,7 @@ else
 			
 			
 	</div>
-	<br>
+	<br></br><br></br><br></br><br></br>
 	<footer><p>Ashesi University College. | All rights reserved. | University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana | Phone: +233.302.610.330</p>
 	</footer>
 	</div>

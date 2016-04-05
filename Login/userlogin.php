@@ -34,7 +34,7 @@ if (isset($_REQUEST['id'])) {
         $type=$tbl['type'];
         }
 	if ($type=="Applicant") {
-            header("Location:userIndex.php?id=$id");
+            header("Location:../UI template/index.html?id=$id");
         }
 	if ($type=="Reviewer") {
             header("Location:reviewerIndex.php?id=$id");
