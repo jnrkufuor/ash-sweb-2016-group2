@@ -1,47 +1,71 @@
 <html>
-	<head>
-	<title> Submission </title>
-	<link rel="stylesheet" type="text/css" href="applicationStyle.css">
-	</head>
-	<body>
-	<div id="header"> 
-		<img style="float:left" src="logo.jpg"> IRB Application Form
-		</div>
-		<div align="center">
-                    <ul id="menu" >
-                    <li><a href="">DASHBOARD</a></li>
-                    <li><a href="">UPLOAD DOCUMENTS</a></li>
-                    <li><a href="">SIGN OUT</a></li>
-                  </ul>  
-                    </div>
+<head>
+	<link href="../UI template/index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+	<header><a href="irbinterface.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
+	<div class="side1">
+		<a href="irbinterface.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
+		<a href="deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
+		<a href="review.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
+	</div>
+	<!-- <div class="side2" >Side bar</div>-->
+	<div class="menu">
+		<span>Application Form (Demo for incomplete/failed input)</span>
+	</div>
+	<br><br>
 		<?php
-		$exemption ="";
-		$title ="";
-		if(isset($_REQUEST['exemption'])){
-			$exemption = $_REQUEST['exemption'];
-			$title = $_REQUEST['title'];
+		include_once("submission.php");
+		$obj = new submission();
+							   
+		$r = $obj-> getSubmissionId();
+		if(!$r){
+		echo "result is false";
 		}
-		?>
-		<div style="height:950px" id="mainDiv">
-		<form action="risk.php?" method="GET">
-			<h2 id="headings">Numbers, Types and Recruitment of Subjects</h2>
-			<div><input type="hidden" name="exemption" value="<?php echo $exemption ?>"/></div>
-			<div><input type="hidden" name="title" value="<?php echo $title ?>"/></div>
+		else{
+		//fetch
+		$result=$obj ->fetch();
+		
+
+			$id = $result['submissionID'];
+			
+	}
+
+
+		$r = $obj -> getSubmissionByCode($id);
+								
+		if(!$r){
+			echo "Error getting the user to edit";
+			exit();
+		}
+		else{
+		$row = $obj ->fetch();
+		}
+	?>
+			
+		<form style="margin-left:22%"action="updateSubjects.php?" method="GET">
+		<div style="height:1000px" class="mainDiv">
+			<div><input type="hidden" name="id" value="<?php echo $id ?>"/></div>
+			<h2>Numbers, Types and Recruitment of Subjects</h2>
 			<div><p>A. Identify the numbers and characteristics of subjects (eg. age ranges, sex, ethnic background, health status, disabilities , etc.) It is recommended to provide the breakdown based on your sampling strategy.</p></div>
-			<div><textarea name="subjectCharacteristics" style="width:97%; height: 8%" required></textarea></div>
+			<div><textarea name="subjectCharacteristics" style="width:97%; height: 8%" required> <?php echo $row['subjectCharacteristics'] ?> </textarea></div>
 			<div><p>B. Special cases. If applicable, explain the rationale for the use of special cases or subjects such as pregnant women, children, prisoners, mentally impaired, institutionalized, or others who are likely to be particulary vulnerable</p></div>
-			<div><textarea name="specialClasses" style="width:97%; height: 8%"></textarea></div>
+			<div><textarea name="specialClasses" style="width:97%; height: 8%"><?php echo $row['specialClasses'] ?></textarea></div>
 			<div><p>C. How are the individual participants to be recruited for this research? Is it clear to the subjects that participation is voluntary and that they may withraw at any time without any negative consequences?</p></div>
-			<div><textarea name="recruitment" style="width:97%; height: 8%" required></textarea></div>
+			<div><textarea name="recruitment" style="width:97%; height: 8%" required><?php echo $row['recruitment'] ?></textarea></div>
 			<div><p>D. To what extent and how are participants to be informed of research procedures before their participation?</p></div>
-			<div><textarea name="partcipnatInfo" style="width:97%; height: 8%" required></textarea></div>
+			<div><textarea name="partcipnatInfo" style="width:97%; height: 8%" required><?php echo $row['partcipnatInfo'] ?></textarea></div>
 			<div><p>E. How will you classify your research method? (experiment, observation, modelling etc.). Specify all methods you anticipate to use.</p></div>
-			<div><textarea name="researchMethod" style="width:97%; height: 8%" required></textarea></div>
+			<div><textarea name="researchMethod" style="width:97%; height: 8%" required><?php echo $row['researchMethod'] ?></textarea></div>
 			<div><p>F. Specify the data sources you will use for your reserach. (eg. questionnaire, audio recording human resource files, experiment data, etc.)</p></div>
-			<div><textarea name="dataSources" style="width:97%; height: 8%" required></textarea></div>
+			<div><textarea name="dataSources" style="width:97%; height: 8%" required><?php echo $row['dataSources'] ?></textarea></div>
 			<br/>
-			<div>Progress:</b> &nbsp;<progress value="40" max="100"></progress> <input style="float:right;" type="submit" value="Next" >  &nbsp; &nbsp; &nbsp; <a style="float:right; margin-right: 40px" href="exemptionRequest.php">Back</a> &nbsp; </div> 
-		</form>
+			<div style="margin-top: 20px"> Progress:</b> &nbsp;<progress value="40" max="100"></progress> <input style="float:right;" type="submit" value="Next" >  &nbsp; &nbsp; &nbsp; <a style="float:right; margin-right: 40px" href="exemptionRequest2.php?sid=<?php echo $id ?>">Back</a> &nbsp; </div> 
 		</div>
-	</body>
+		</form><br><br>
+		</div>
+	<footer><p>Ashesi University College. | All rights reserved. | University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana | Phone: +233.302.610.330</p>
+	</footer>
+</body>
 </html>

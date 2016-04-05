@@ -32,10 +32,11 @@ class submission extends adb{
 	*@param string participantConpensation compensation of participants
 	*@param string participantBenefits benefits available to participants
 	*/
-	function makeSubmission($title, $exemption="null", $subjectCharacteristics, $specialClasses, $recruitment,
+	function makeSubmission($id, $title, $exemption="null", $subjectCharacteristics, $specialClasses, $recruitment,
 							$partcipnatInfo, $researchMethod, $dataSources, $procedureRisks, $procedureDetails, $confidentialityExtent, $dataStorage, $resultDissemination, $subjectInfo, 
 							$confidentialityProtection, $participantConpensation, $participantBenefits){
 	$strQuery="insert into submission set
+						UsserID = $id,
 						title ='$title',
 						exemption ='$exemption',
 						submissionDate = CURRENT_TIMESTAMP,
@@ -85,6 +86,75 @@ class submission extends adb{
 						LASTNAME,
 						CO_RESEARCHER from submission, irb_user where submissionID = $id && UsserID = USER_ID";
 		return $this->query($strQuery);
+	}
+
+	function getSubmissionId(){
+		$strQuery="Select submissionID from submission order by submissionID desc limit 1";
+
+		return $this->query($strQuery);
+	}
+
+	function updateSubjects($id,$subjectCharacteristics, $specialClasses, $recruitment,
+							$partcipnatInfo, $researchMethod, $dataSources){
+	$strQuery="update submission set
+						subjectCharacteristics ='$subjectCharacteristics',
+						specialClasses ='$specialClasses',
+						recruitment = '$recruitment',
+						partcipnatInfo ='$partcipnatInfo',
+						researchMethod = '$researchMethod',
+						dataSources ='$dataSources'
+						where submissionID = $id ";
+
+	return $this->query($strQuery);
+	}
+
+	function updateRisk($id,$procedureRisks){
+	$strQuery="update submission set
+						procedureRisks ='$procedureRisks'
+						where submissionID = $id ";
+
+	return $this->query($strQuery);
+	}
+
+	function updateConfidentiality($id,$dataStorage, $confidentialityExtent, $resultDissemination,
+							$subjectInfo, $confidentialityProtection){
+	$strQuery="update submission set
+						dataStorage ='$dataStorage',
+						confidentialityExtent ='$confidentialityExtent',
+						resultDissemination ='$resultDissemination',
+						subjectInfo ='$subjectInfo',
+						confidentialityProtection ='$confidentialityProtection'
+						where submissionID = $id ";
+
+	return $this->query($strQuery);
+	}
+
+	function updateBenefits($id,$participantBenefits, $participantConpensation){
+	$strQuery="update submission set
+						participantBenefits ='$participantBenefits',
+						participantConpensation ='$participantConpensation'
+						where submissionID = $id ";
+
+	return $this->query($strQuery);
+	}
+
+	function updateExemption($sid, $title, $exemption){
+	$strQuery="update submission set
+						exemption ='$exemption',
+						title ='$title'
+						where submissionID = $sid ";
+
+	return $this->query($strQuery);
+	}
+
+	function submit($id,$participantBenefits, $participantConpensation){
+	$strQuery="update submission set
+						participantBenefits ='$participantBenefits',
+						participantConpensation ='$participantConpensation',
+						submitted = 1
+						where submissionID = $id ";
+
+	return $this->query($strQuery);
 	}
 }
 
