@@ -15,7 +15,7 @@
 	<div class="mainmenu">
 		<span>View Submissions</span>
 	</div>
-	<div class="content">
+	<div style="margin-left:27%" class="content">
 	
 			<div class="display">
 				<table class ="revtab">

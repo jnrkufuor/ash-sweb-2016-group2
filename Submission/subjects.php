@@ -4,20 +4,20 @@
 </head>
 <body>
 	<div class="main">
-	<header><a href="irbinterface.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
+	<header><a href="../UI template/index.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
 	<div class="side1">
 		<a href="../UI template/index.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
-		<a href="deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
-		<a href="review.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
+		<a href="../UI template/deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
+		<a href="../UI template/review2.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
 	</div>
 	<!-- <div class="side2" >Side bar</div>-->
 	<div class="menu">
-		<span>Application Form (Demo for incomplete/failed input)</span>
+		<span>Application Form</span>
 	</div>
 	<br><br>
 			
-		<form style="margin-left:22%"action="risk.php" method="GET">
-		<div style="height:1000px" class="mainDiv">
+		<form style="margin-left:28%"action="risk.php" method="GET">
+		<div style="height:1100px" class="mainDiv">
 			<div><input type="hidden" name="id" value=""/></div>
 			<h2>Numbers, Types and Recruitment of Subjects</h2>
 			<div><p>A. Identify the numbers and characteristics of subjects (eg. age ranges, sex, ethnic background, health status, disabilities , etc.) It is recommended to provide the breakdown based on your sampling strategy.</p></div>
