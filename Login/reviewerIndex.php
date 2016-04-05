@@ -5,11 +5,11 @@
 </head>
 <body>
 	<div class="main">
-	<header><a href="irbinterface.html"><img src="images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
+	<header><a href="reviewerIndex.php"><img src="images/ashesi.png"></a><h1 > Ashesi IRB Portal</h1></header>
 	<div class="side1">
-		<a href="irbinterface.html" style ="text-decoration:none"><div id="appcen"><h3>Applications</h3></div></a>
-		<a href="deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
-		<a href="review.html" style ="text-decoration:none"><div id="rev"><h3>Reviews</h3></div></a>
+    <a href="../Login/reviewerIndex.php" style ="text-decoration:none"><div id="filesysrev"><h3>Dashboard</h3></div></a>
+		<a href="../Submission/viewSubmissions.php" style ="text-decoration:none"><div id="appcenrev"><h3>Submissions</h3></div></a>
+		
 	</div>
 	<!-- <div class="side2" >Side bar</div>-->
 	<div class="mainmenu">
@@ -85,12 +85,12 @@ echo "</table>";
 }
 else
 {
-	echo "<h1>Welcome to the Admin Page</h1>";
+	echo "<h1>Welcome to the Reviewer Page</h1>";
 }
 ?> 
 			</div>
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-			<a href="form.html"><button>Create New IRB Application</button></a>
+			
 	</div>
 	<br>
 	<footer><p>Ashesi University College. | All rights reserved. | University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana | Phone: +233.302.610.330</p>

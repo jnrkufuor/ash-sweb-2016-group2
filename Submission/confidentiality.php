@@ -6,7 +6,7 @@
 	<div class="main">
 	<header><a href="irbinterface.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
 	<div class="side1">
-		<a href="irbinterface.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
+		<a href="../UI template/index.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
 		<a href="deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
 		<a href="review.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
 	</div>
@@ -23,7 +23,7 @@
 		}
 		?>
 
-		<form style="margin-left:22%"action="updateConfidentiality.php?" method="GET">
+		<form style="margin-left:22%"action="benefits.php?" method="GET">
 		<div style="height:700px" class="mainDiv">
 			<div><input type="hidden" name="id" value="<?php echo $id ?>"/></div>
 			<h2 id="headings">Confidentiality</h2>

@@ -23,7 +23,7 @@
 
 		?>
 
-			<form style="margin-left:22%" action="addSubmission.php" method="GET">
+			<form style="margin-left:22%" action="subjects.php" method="GET">
 			<div class="mainDiv">
 				<div><input type="hidden" name="id" value="<?php echo $id ?>"/></div>
 				<div><h2>Title of Project:</h2> <textarea style="width:97%; height:4%" name="title" required></textarea></div>

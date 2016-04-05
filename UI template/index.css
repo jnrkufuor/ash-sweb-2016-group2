@@ -111,6 +111,12 @@ body table{
 	border: 1px solid lightgrey; 
 	/*background-color: darkgrey;*/
 }
+#appcenrev{
+	height:204px;
+	width: 218px;
+	border: 1px solid lightgrey; 
+	/*background-color: darkgrey;*/
+}
 #appcen h3{
 	text-align: center;
 	padding-top:40px;
@@ -118,6 +124,11 @@ body table{
 }
 #filesys{
 	height:136px;
+	width: 218px;
+	border: 1px solid lightgrey; 
+}
+#filesysrev{
+	height:204px;
 	width: 218px;
 	border: 1px solid lightgrey; 
 }
