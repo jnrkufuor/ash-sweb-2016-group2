@@ -37,6 +37,11 @@ class users extends adb {
 	function getLec() {
         return $this->query("select RID, TYPE  from reviewer");
     }
+	
+	function getOneUser($id)
+	{
+		return $this->query("select FIRSTNAME from irb_user where USER_ID='$id' ");
+	}
 
     /**
      * Validates User 

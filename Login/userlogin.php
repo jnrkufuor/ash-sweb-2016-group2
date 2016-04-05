@@ -34,13 +34,13 @@ if (isset($_REQUEST['id'])) {
         $type=$tbl['type'];
         }
 	if ($type=="Applicant") {
-            header("Location:userhome.php?id=$id");
+            header("Location:userIndex.php?id=$id");
         }
 	if ($type=="Reviewer") {
-            header("Location:reviewerhome.php?id=$id");
+            header("Location:reviewerIndex.php?id=$id");
         }
 	if ($type=="Administrator") {
-            header("Location:adminhome.php?id=$id");
+            header("Location:adminIndex.php?id=$id");
         }
     
 }
