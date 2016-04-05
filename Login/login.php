@@ -2,6 +2,7 @@
     <head>
         <title>Login Page</title>
         <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/main.css">
         <link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'>
 
@@ -9,8 +10,6 @@
         body{
             background-image: url("bg.jpg");
         }
-
-
         h1 {
             font: 400 30px/0.5 'Courgette', Helvetica, sans-serif;
             color:#395870;  
@@ -18,6 +17,7 @@
         </style
     </head>
     <body>
+	     
          <?php
 		 if(isset($_REQUEST['error']))
 		 {

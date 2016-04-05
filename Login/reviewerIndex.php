@@ -1,62 +1,24 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-<title> IRB Web </title>
-<link rel="stylesheet" href="css/main.css"/>
-
-<style>
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: #666;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #ddd;
-}
-
-li a.active {
-    color: white;
-    background-color: #4CAF50;
-	
-}
-</style>
+	<link href="css/index.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
-
-<header class="header">
-	<h1 style="position:relative"> Institutional Review Board</h1> 
-</header>
-
-<div>
-<ul>
-  <li><a class="active" href="adminhome.php">Home</a></li>
-  <li><a href="adminhome.php?purpose=user">View Users</a></li>
-  <li><a href="Submission/viewAllSubmissions.php">View Submissions</a></li>
-  <li><a href="adminhome.php?purpose=lec">View Lecturers</a></li>
-</ul>
-</div>
-
-<div style="margin: 0 auto; width=10px;" >
-<?php
+	<div class="main">
+	<header><a href="irbinterface.html"><img src="images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
+	<div class="side1">
+		<a href="irbinterface.html" style ="text-decoration:none"><div id="appcen"><h3>Applications</h3></div></a>
+		<a href="deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
+		<a href="review.html" style ="text-decoration:none"><div id="rev"><h3>Reviews</h3></div></a>
+	</div>
+	<!-- <div class="side2" >Side bar</div>-->
+	<div class="mainmenu">
+		<span>Dashboard</span>
+	</div>
+	<div class="content">
+		<span>Welcome David, here is your status in all IRB applications<span><br><br><!-- <br><br> -->
+			<div class="display">
+				<?php
 if(isset($_REQUEST['success']))
 {
   if ($_REQUEST['success']=='false')
@@ -109,7 +71,6 @@ if(!$lec->getLec())
 echo" <table border='1' style='align=center;'>
     <tr>
     <th>Lecturer ID </th>
-	<th>Type </th>
   
     </tr>";
 while($tbl=$lec->fetch())
@@ -127,18 +88,13 @@ else
 	echo "<h1>Welcome to the Admin Page</h1>";
 }
 ?> 
-
-<br> <br> <br> <br> <br> <br>
-<br> <br> <br> <br> <br> <br>
-<br> <br> <br>
-<br> <br> <br>
-<br> <br> <br>
-</div>
-
-<footer class="footer">
-	<p style="text-align:center"> <Strong> Ashesi University College. All rights reserved.
-	 <br>1 University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana | Phone: +233.302.610.330  </strong> <p>
-</footer>
+			</div>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<a href="form.html"><button>Create New IRB Application</button></a>
+	</div>
+	<br>
+	<footer><p>Ashesi University College. | All rights reserved. | University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana | Phone: +233.302.610.330</p>
+	</footer>
+	</div>
 </body>
-
 </html>
