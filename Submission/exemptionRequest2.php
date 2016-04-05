@@ -16,22 +16,34 @@
 	</div>
 	<br><br>
 	<?php
-		$id ="";
-		if(isset($_REQUEST['id'])){
-			$id = $_REQUEST['id'];
+	
+		if(isset($_REQUEST['sid'])){
+			$sid = $_REQUEST['sid'];
+			include_once("submission.php");
+			$obj = new submission();
+
+			$r = $obj -> getSubmissionByCode($sid);
+								
+			if(!$r){
+				echo "Error getting the user to edit";
+				exit();
+			}
+			else{
+			$row = $obj ->fetch();
+			}
 		}
 
 		?>
 
-			<form style="margin-left:22%" action="addSubmission.php" method="GET">
+			<form style="margin-left:22%" action="updateExemption.php" method="GET">
 			<div class="mainDiv">
-				<div><input type="hidden" name="id" value="<?php echo $id ?>"/></div>
-				<div><h2>Title of Project:</h2> <textarea style="width:97%; height:4%" name="title" required></textarea></div>
+				<div><input type="hidden" name="sid" value="<?php echo $sid ?>"/></div>
+				<div><h2>Title of Project:</h2> <textarea style="width:97%; height:4%" name="title" required><?php echo $row['title']?></textarea></div>
 				</br>
 				<h2>Exemption Request</h2>
 				<div><p>If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption. 
 						Click <a href=''>here</a> to see the list of exempt project types. Skip if you are not requesting exemption.</p></div>
-				<div><textarea name="exemption" style="width:97%; height:40%"></textarea></div>
+				<div><textarea name="exemption" style="width:97%; height:40%"><?php $row['exemption']?></textarea></div>
 				
 				<div style="margin-top: 40px"><b>Progress:</b> &nbsp;<progress value="20" max="100" ></progress> &nbsp; &nbsp; &nbsp; &nbsp; <input style="float:right; margin-right: 50px" type="submit" value="Next" ></div>
 				</div>

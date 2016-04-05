@@ -16,36 +16,15 @@
 	</div>
 	<br><br>
 		<?php
-		$exemption ="";
-		$title ="";
-		$subjectCharacteristics ="";
-		$specialClasses ="";
-		$recruitment ="";
-		$partcipnatInfo ="";
-		$researchMethod ="";
-		$dataSources ="";
+		$id ="";
 
-		if(isset($_REQUEST['exemption'])){
-			$exemption = $_REQUEST['exemption'];
-			$title = $_REQUEST['title'];
-			$subjectCharacteristics = $_REQUEST['subjectCharacteristics'];
-			$specialClasses = $_REQUEST['specialClasses'];
-			$recruitment = $_REQUEST['recruitment'];
-			$partcipnatInfo = $_REQUEST['partcipnatInfo'];
-			$researchMethod = $_REQUEST['researchMethod'];
-			$dataSources = $_REQUEST['dataSources'];
+		if(isset($_REQUEST['id'])){
+			$id = $_REQUEST['id'];
 		}
 		?>
-		<form style="margin-left:22%"action="confidentiality.php?" method="GET">
+		<form style="margin-left:22%"action="updateRisk.php?" method="GET">
 		<div style="height:460px" class="mainDiv">
-			<div><input type="hidden" name="exemption" value="<?php echo $exemption ?>"/></div>
-			<div><input type="hidden" name="title" value="<?php echo $title ?>"/></div>
-			<div><input type="hidden" name="subjectCharacteristics" value="<?php echo $subjectCharacteristics ?>"/></div>
-			<div><input type="hidden" name="specialClasses" value="<?php echo $specialClasses ?>"/></div>
-			<div><input type="hidden" name="recruitment" value="<?php echo $recruitment ?>"/></div>
-			<div><input type="hidden" name="partcipnatInfo" value="<?php echo $partcipnatInfo ?>"/></div>
-			<div><input type="hidden" name="researchMethod" value="<?php echo $researchMethod ?>"/></div>
-			<div><input type="hidden" name="dataSources" value="<?php echo $dataSources ?>"/></div>
+			<div><input type="hidden" name="id" value="<?php echo $id?>"/></div>
 			<h2 id="headings">Risks Involved In The Research</h2>
 			<div><p>Identify potential risks for subjects to be involved in this project/research. What procedures will be in place to minimize any risks to the subjects?</p></div>
 			<div><b>Does the research involve any of the following procedures?</b></div>
