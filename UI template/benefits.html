@@ -14,15 +14,22 @@
 		<span>Application Form </span>
 	</div>
 		<form style="margin-left:23%"action="../UI template/index.html" method="GET">
-		<div style="height:300px" class="mainDiv">
+		<div style="height:500px" class="mainDiv">
 			<h2 id="headings">Describe Any Anticipated Benefits To Subjects From Participation In This Research</h2>
 			<div><p>A. Will participants / subjects / respondents be compensated or rewarded in any way?</p></div>
 			<div><textarea name="participantConpensation" style="width:97%; height: 8%" required></textarea></div>
 			<div><p>B. What intrinsic benefit will participants / subjects / respondents receive? </p></div>
 			<div><textarea name="participantBenefits" style="width:97%; height: 8%" required></textarea></div>
 			<br/>
-			<br/>
-			<div>Progress:<progress value="100" max="100"></progress> &nbsp; &nbsp; <input style="float:right; margin-left: 20px" type="submit" name="submit" value="Submit" onclick="myFunction()"><input style="float:right;" type="submit" name="save" value="Save As Draft" onclick="myFunction()"> <a style="float:right; margin-right: 40px"href="confidentiality.html">Back</a> &nbsp;  </div> 
+			<div><h2>Upload Consent Form </h2>
+			<p style="color: #1e5eb6"> File extensions allowed are .txt, .docx, .pdf and .xlsx </p>
+            <form action="fileUpload.php" method="POST" enctype="multipart/form-data"> 
+           
+               <input type="file" name="doc" > 
+                <input type="submit" name="button"> 
+           </div>
+           <br><br>
+           <div>Progress:<progress value="100" max="100"></progress> &nbsp; &nbsp; <input style="float:right; margin-left: 20px" type="submit" name="submit" value="Submit" onclick="myFunction()"><input style="float:right;" type="submit" name="save" value="Save As Draft" onclick="myFunction()"> <a style="float:right; margin-right: 40px"href="confidentiality.html">Back</a> &nbsp;  </div> 
 		</div><br><br>
 		</form>
 	<footer><p>Ashesi University College. | All rights reserved. | University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana | Phone: +233.302.610.330</p>
