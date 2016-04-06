@@ -117,7 +117,7 @@ body table{
 	border: 1px solid lightgrey; 
 	/*background-color: darkgrey;*/
 }
-#dashboard{
+.dashboard{
 	height:204px;
 	width: 218px;
 	border: 1px solid lightgrey; 
@@ -128,7 +128,7 @@ body table{
 	padding-top:40px;
 	color: white;
 }
-#dashboard h3{
+.dashboard h3{
 	text-align: center;
 	padding-top:40px;
 	color: white;
@@ -138,19 +138,22 @@ body table{
 	width: 218px;
 	border: 1px solid lightgrey; 
 }
-#submissions{
+.submissions{
 	height:204px;
 	width: 218px;
 	/*background-color: green;*/
 	/*color: white-space: ;*/
 	border: 1px solid lightgrey; 
 }
-#submissions h3{
+.submissions h3{
 	text-align: center;
 	padding-top:40px;
 	color: white;
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 06c2462830eb5123432f3c91afe0e3768baf4e6e
 #filesys h3{
 	text-align: center;
 	padding-top:40px;
@@ -202,9 +205,13 @@ background-color:white;
 margin: 0 auto;
 color: white;
 margin-left: 350px;
+
 }
 .content span{
 	color:black;
+}
+.contentv{
+
 }
 .display #pending{
 	width: 100px;
