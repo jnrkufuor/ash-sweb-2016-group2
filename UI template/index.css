@@ -103,10 +103,16 @@ body table{
 }
 #action {
 	width: 100px;
-	background-color: white;
+	margin: 0 auto;
 }
 #appcen{
 	height:136px;
+	width: 218px;
+	border: 1px solid lightgrey; 
+	/*background-color: darkgrey;*/
+}
+#dashboard{
+	height:204px;
 	width: 218px;
 	border: 1px solid lightgrey; 
 	/*background-color: darkgrey;*/
@@ -116,11 +122,29 @@ body table{
 	padding-top:40px;
 	color: white;
 }
+#dashboard h3{
+	text-align: center;
+	padding-top:40px;
+	color: white;
+}
 #filesys{
 	height:136px;
 	width: 218px;
 	border: 1px solid lightgrey; 
 }
+#submissions{
+	height:204px;
+	width: 218px;
+	/*background-color: green;*/
+	/*color: white-space: ;*/
+	border: 1px solid lightgrey; 
+}
+#submissions h3{
+	text-align: center;
+	padding-top:40px;
+	color: white;
+}
+
 #filesys h3{
 	text-align: center;
 	padding-top:40px;
