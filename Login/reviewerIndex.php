@@ -7,8 +7,8 @@
 	<div class="main">
 	<header><a href="reviewerIndex.php"><img src="images/ashesi.png"></a><h1 > Ashesi IRB Portal</h1></header>
 	<div class="side1">
-    <a href="../Login/reviewerIndex.php" style ="text-decoration:none"><div id="dashboard"><h3>Dashboard</h3></div></a>
-		<a href="../Submission/viewSubmissions.php" style ="text-decoration:none"><div id="submissions"><h3>Submissions</h3></div></a>
+    <a href="../Login/reviewerIndex.php" style ="text-decoration:none"><div class="dashboard"><h3>Dashboard</h3></div></a>
+		<a href="../UI template/viewSubmissions.html" style ="text-decoration:none"><div class="submissions"><h3>Submissions</h3></div></a>
 		
 	</div>
 	<!-- <div class="side2" >Side bar</div>-->
