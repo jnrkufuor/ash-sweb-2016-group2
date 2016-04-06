@@ -269,3 +269,214 @@ padding-top: 5px;
     margin-right: 600px;
     padding: 30px 30px 0px 50px;
  }
+
+*,
+*:before,
+*:after {
+   box-sizing: border-box;
+}
+{
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+}
+
+#form {
+ margin-bottom: 22px;
+  border: 1px solid #c6c7cc;
+  border-rzadius: 5px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 20%;
+  position: absolute;
+  top: 30%;
+  left: 40%; 
+}
+
+.form {
+  margin-bottom: 22px;
+  border: 1px solid #c6c7cc;
+  border-rzadius: 5px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#fff;
+  background: linear-gradient(#49708f, #293f50);
+  overflow: hidden;
+  font-size: 15px;
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  width : 17%; 
+}
+
+
+#text
+{
+color:white; 
+text-align: left;
+font-weight: bold;
+display: inline;
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+fieldset {
+padding: 20px 20px 0 20px;
+border:0;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.btn-default {
+  background: linear-gradient(#49708f, #293f50);
+  padding: 7px 15px;
+  border:1px solid #CCC;
+  font-size: 14px;
+  color: #fff;
+ font-weight: bold;
+  cursor: pointer;;
+  margin:0 auto;
+  align:middle;
+
+}
+
+.btn-default:hover {
+  background: #006699;
+} 
+
+.div{
+  background-image: url("day.jpg"); 
+  height:100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+input {
+  border-radius: 5px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+.section{
+  padding :20px 20px 0 20px;
+  width: 40%;
+  height:60%;
+  background-color: #C0C0C0;
+  border: 1px solid black;
+  opacity: 0.5;
+  float: center;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+}
+.section2{
+  padding :20px 20px 0 20px;
+  font: 80%/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 40%;
+  height:50%;
+  float: center;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+}
+
+.account-info {
+  padding: 20px 20px 0 20px;
+  background: linear-gradient(#49708f, #293f50);
+  
+}
+
+.account-info label {
+  color: #ffffff;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.account-info input {
+  background: #fff;
+  border: 1px solid #c6c7cc;
+   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+  color: #636466;
+  padding: 6px;
+  margin-top: 6px;
+  width: 100%;
+}
+
+.account-action {
+  background: #F8F8F8 ;
+  border-top: 1px solid #c6c7cc;
+  padding: 20px;
+}
+
+
+.account-action .btn {
+  background: linear-gradient(#49708f, #293f50);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  float: right;
+  padding: 8px 16px;
+}
+
+.account-action label {
+  color: #7c7c80;
+  font-size: 12spx;
+  float: left;
+  margin: 10px 0 0 20px;
+}
+
+.change_link{
+ color: #395870;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.addbtn
+{
+  background: #F8F8F8 ;
+  font-weight: bold;
+  padding: 8% 16%;
+  
+  }
+
+  .addform
+  {
+
+  padding: 8px 16px;
+  border:0;
+  }
+
+  .addform label {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.addform input {
+  background: #fff;
+  border: 1px solid #c6c7cc;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+  color: #636466;
+  width: 200px
+  
+}
+
+.btn-default_2 {
+  background: linear-gradient(#49708f, #293f50);
+  padding: 7px 15px;
+  border:1px solid #CCC;
+  font-size: 14px;
+  color: #fff;
+ font-weight: bold;
+  cursor: pointer;;
+  margin:0 auto;
+  align:middle;
+  float:right;
+
+}
+
+.btn-default_2:hover {
+  background: #006699;
+} 
