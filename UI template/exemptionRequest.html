@@ -15,17 +15,9 @@
 		<span>Application Form</span>
 	</div>
 	<br><br>
-	<?php
-		$id ="";
-		if(isset($_REQUEST['id'])){
-			$id = $_REQUEST['id'];
-		}
 
-		?>
-
-			<form style="margin-left:23%" action="subjects.php" method="GET">
+			<form style="margin-left:23%" action="subjects.html" method="GET">
 			<div class="mainDiv">
-				<div><input type="hidden" name="id" value="<?php echo $id ?>"/></div>
 				<div><h2>Title of Project:</h2> <textarea style="width:97%; height:4%" name="title" required></textarea></div>
 				</br>
 				<h2>Exemption Request</h2>
