@@ -36,7 +36,7 @@
 		</div>
 		</form>
 		</div>
-	<footer><p>Ashesi University College. | All rights reserved. | University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana | Phone: +233.302.610.330</p>
+	<footer style="padding: 5px 0px 5px 0px;"><p>Ashesi University College | All rights reserved | University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana | Phone: +233.302.610.330</p>
 	</footer>
 </body>
 </html>

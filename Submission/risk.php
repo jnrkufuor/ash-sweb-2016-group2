@@ -4,8 +4,8 @@
 </head>
 <body>
 	<div class="main">
-	<header><a href="../UI template/index.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
-	<div class="side1" style="position: absolute; top:30%">
+	<header><a href="../UI template/index.html"><img src="../UI template/images/ashesi.png"></a><h1>Ashesi IRB Portal</h1></header>
+	<div class="side1" style="position: absolute; top:33%">
 		<a href="../UI template/index.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
 		<a href="../UI template/deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
 		<a href="../UI template/review2.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>

@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
 
 header{
 text-align: center;
@@ -8,15 +8,20 @@ width: 100%;
 color: white;
 background-color: #AD1E26;
 margin-bottom: 15px;
+padding:0px 0px 10px 0px;
+font-family: Alegreya;
+font-size: 35px;
+position: relative;
 }
 header img{
 	float: left;
 	height: 100px;
+	position: relative;
 
 }
 header h1{
 	/*float: left;*/
-	padding-top: 20px;
+
 }
 .side1 {
 height: 413px;
@@ -150,10 +155,7 @@ body table{
 	padding-top:40px;
 	color: white;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 06c2462830eb5123432f3c91afe0e3768baf4e6e
 #filesys h3{
 	text-align: center;
 	padding-top:40px;
@@ -263,7 +265,7 @@ width: 100%;
 background-color: #AD1E26;
 color: white;
 margin-top: 10px;
-padding-top: 5px;
+
 }
 /*#appcen a:hover{
 	color: hotpink;
