@@ -11,7 +11,7 @@
 	$exemption=$_REQUEST['exemption'];
 	$title=$_REQUEST['title'];
 
-	$r = $obj -> updateExemption($sid, $title);
+	$r = $obj -> updateExemption($sid, $title, $exemption);
 	if($r == false){
 		echo "error";
 	}
