@@ -11,11 +11,11 @@
 	$exemption=$_REQUEST['exemption'];
 	$title=$_REQUEST['title'];
 
-	$r = $obj -> updateExemption($sid, $title, $exemption);
+	$r = $obj -> updateExemption($sid, $title);
 	if($r == false){
 		echo "error";
 	}
 	else{
-		header("Location: subjects.php?id=$id");
+		header("Location: subjects.php?id=$sid");
 	}
 ?>

@@ -4,10 +4,8 @@
 </head>
 <body>
 	<div class="main">
-
-	<header><a href="../UI template/irbinterface.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Web Application</h1></header>
-
-	<div class="side1" style="position: absolute; top:30%">
+	<header><a href="../UI template/index.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
+	<div class="side1">
 		<a href="../UI template/index.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
 		<a href="../UI template/deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
 		<a href="../UI template/review2.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
@@ -16,6 +14,7 @@
 	<div class="menu">
 		<span>Application Form</span>
 	</div>
+	<br><br>
 	<?php
 		$id ="";
 		if(isset($_REQUEST['id'])){
@@ -24,10 +23,8 @@
 
 		?>
 
-
-			<form style="margin-left:28%" action="subjects.php" method="GET">
-			<div class="mainDiv" style="padding-top: 5px;">
-
+			<form style="margin-left:28%" action="addSubmission.php" method="GET">
+			<div class="mainDiv">
 				<div><input type="hidden" name="id" value="<?php echo $id ?>"/></div>
 				<div><h2>Title of Project:</h2> <textarea style="width:97%; height:4%" name="title" required></textarea></div>
 				</br>
@@ -39,7 +36,7 @@
 				<div style="margin-top: 40px"><b>Progress:</b> &nbsp;<progress value="20" max="100" ></progress> &nbsp; &nbsp; &nbsp; &nbsp; <input style="float:right; margin-right: 50px" type="submit" value="Next" ></div>
 				</div>
 			</form>
-		</div>
+		</div><br><br>
 	<footer><p>Ashesi University College. | All rights reserved. | University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana | Phone: +233.302.610.330</p>
 	</footer>
 	<script>
