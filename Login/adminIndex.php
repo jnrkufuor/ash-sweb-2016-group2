@@ -35,7 +35,7 @@ if(!$obj->getUser())
 {
   echo "Error getting Users";
 }
-echo" <table border='1' >
+echo" <table border='1' style='align=center;' >
     <tr>
     <th>User ID </th>
     <th>Firstname </th>
