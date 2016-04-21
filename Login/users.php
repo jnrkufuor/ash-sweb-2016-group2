@@ -1,6 +1,6 @@
 <?php
 
-include('../adb.php');
+include('adb.php');
 
 class users extends adb {
 

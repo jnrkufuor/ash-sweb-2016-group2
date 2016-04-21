@@ -2,6 +2,67 @@
 <html>
 <head>
 	<link href="css/index.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+	var currentObj;
+	function deleteUserComplete(xhr,status)
+	{
+	console.log(currentObj.rowIndex);
+		if(status!="success")
+		{
+			contentbody.innerHTML="Request could not be processed";
+		}
+		
+		var obj= $.parseJSON(xhr.responseText);
+		if (obj.result==0)
+		{
+			contentbody.innerHTML=obj.message;
+		}
+		else{
+		  document.getElementById("tableUsers").deleteRow(1);
+		  //var removeItem= $("#tableUsers tr:eq(1)").remove();
+		}
+	}
+	
+	function deleteUser(recordId,obj)
+	{
+	currentObj=obj;
+	    var url= "userajax.php?cmd=1&id="+recordId;
+		$.ajax(url,
+		{
+			async:true,complete:deleteUserComplete
+		});
+	}
+	function deleteLecComplete(xhr,status)
+	{
+	console.log(currentObj.rowIndex);
+		if(status!="success")
+		{
+			contentbody.innerHTML="Request could not be processed";
+		}
+		
+		var obj= $.parseJSON(xhr.responseText);
+		if (obj.result==0)
+		{
+			contentbody.innerHTML=obj.message;
+		}
+		else{
+		  document.getElementById("tableLec").deleteRow(1);
+		  //var removeItem= $("#tableUsers tr:eq(1)").remove();
+		}
+	}
+	
+	function deleteLec(recordId,obj)
+	{
+	currentObj=obj;
+	    var url= "userajax.php?cmd=2&id="+recordId;
+		$.ajax(url,
+		{
+			async:true,complete:deleteUserComplete
+		});
+	}
+	
+	</script>
 </head>
 <body>
 	<div class="main">
@@ -10,14 +71,14 @@
 	    <a href="adminIndex.php?" style ="text-decoration:none"><div id="appcen"><h3>Home</h3></div></a>   
 		<a href="adminIndex.php?purpose=user" style ="text-decoration:none"><div id="appcen"><h3>IRB Users</h3></div></a>
 		<a href="adminIndex.php?purpose=lec" style ="text-decoration:none"><div id="filesys"><h3>IRB Reviewers</h3></div></a>
-		<a href="../Submission/review_exemption.php" style ="text-decoration:none"><div id="sub"><h3>IRB Submissions</h3></div></a>
+		<a href="#" style ="text-decoration:none; color:white;"><div></div><div id="sub"><h3>IRB Submissions</h3></div></a>
 	</div>
-	<!-- <div class="side2" >Side bar</div>-->
+	
 	<div class="mainmenu">
 		<span>Dashboard</span>
 	</div>
 	<div class="content">
-		<span>Welcome User, here is your status in all IRB applications<span><br><br><!-- <br><br> -->
+		<span id="contentbody">Welcome User, here is your status in all IRB applications<span><br><br><!-- <br><br> -->
 			<div class="display">
 				<?php
 if(isset($_REQUEST['success']))
@@ -35,8 +96,8 @@ if(!$obj->getUser())
 {
   echo "Error getting Users";
 }
-echo" <table border='1' >
-    <tr>
+echo" <table  id='tableUsers' class ='revtab' >
+    <tr id='hd'>
     <th>User ID </th>
     <th>Firstname </th>
     <th>Lastname </th>
@@ -44,10 +105,11 @@ echo" <table border='1' >
     <th>Email </th>
     <th>Phone </th>
     <th>Fax </th>
+	
     </tr>";
 while($row=$obj->fetch())
 
-  echo" <tr>
+  echo" <tr id='r1'>
   <td>{$row['USER_ID']}</td>
   <td>{$row['FIRSTNAME']}</td>
   <td>{$row['LASTNAME']}</td>
@@ -55,7 +117,7 @@ while($row=$obj->fetch())
   <td>{$row['EMAIL']}</td>
   <td>{$row['PHONE']}</td>
    <td>{$row['FAX']}</td>
-    <td><a href='userdelete.php?id={$row['USER_ID']}'>Delete User</a><td>
+    <td  onclick='deleteUser({$row['USER_ID']},this)' id='tblTd'> Delete </td>
   </tr>"; 
 
 echo "</table>";
@@ -69,18 +131,20 @@ if(!$lec->getLec())
 {
   echo "Error getting Lecturers";
 }
-echo" <table border='1' style='align=center;'>
-    <tr>
+echo" <table  style='align=center;' id='tableLec' class ='revtab'>
+    <tr id='hd'>
     <th>Lecturer ID </th>
   <th>Type</th>
+ 
     </tr>";
 while($tbl=$lec->fetch())
 {
-  echo" <tr>
+  echo" <tr id='r1'>
   <td>{$tbl['RID']}</td>
   <td>{$tbl['TYPE']}</td>
-    <td><a href='userdelete.php?rid={$tbl['RID']}'>Delete Lecturer</a><td>
+    <td  onclick='deleteLec({$tbl['RID']},this)' id='tblTd'> Delete </td>
   </tr>";
+  
 }
 echo "</table>";
 }
