@@ -5,6 +5,8 @@
 				$user = new upload();
         
 
+				$researcherID = 27302019;
+				$submissionID = 7;
            
                 $error = array();
                 $filename = $_FILES['doc']['name']; //filename
@@ -35,7 +37,7 @@
                     }        
 
                 else{
-					 if($user->addFile($fileext, $filesize, $filename, $filetemp,27302018, 9)){
+					 if($user->addFile($fileext, $filesize, $filename, $filetemp,$researcherID, $submissionID)){
                         echo "File succesfully added" ;
                     }
                     else{
