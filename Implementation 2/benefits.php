@@ -12,6 +12,7 @@
 			debugger
 			if($("#participantConpensation").val() == ""){
 				document.getElementById("participantConpensation").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
@@ -20,6 +21,7 @@
 
 			if($("#participantBenefits").val() == ""){
 				document.getElementById("participantBenefits").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
@@ -33,6 +35,7 @@
 		function save(id){
 			if($("#participantConpensation").val() == ""){
 				document.getElementById("participantConpensation").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
@@ -41,6 +44,7 @@
 
 			if($("#participantBenefits").val() == ""){
 				document.getElementById("participantBenefits").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
@@ -105,9 +109,9 @@
 			<div><input type="hidden" name="id" value="<?php echo $id ?>"/></div>
 			<div class="status" id="divStatus"></div>
 			<h2 id="headings">Describe Any Anticipated Benefits To Subjects From Participation In This Research</h2>
-			<div><p>A. Will participants / subjects / respondents be compensated or rewarded in any way? </p></div>
+			<div><p>A. Will participants / subjects / respondents be compensated or rewarded in any way? <i style="color: red">*required</i></p></div>
 			<div><textarea id="participantConpensation" name="participantConpensation" style="width:97%; height: 8%" ><?php echo $row['participantConpensation'] ?></textarea></div>
-			<div><p>B. What intrinsic benefit will participants / subjects / respondents receive? </p></div>
+			<div><p>B. What intrinsic benefit will participants / subjects / respondents receive? <i style="color: red">*required</i></p></div>
 			<div><textarea id="participantBenefits" name="participantBenefits" style="width:97%; height: 8%" ><?php echo $row['participantBenefits'] ?></textarea></div>
 			<br/>
 			<br/>

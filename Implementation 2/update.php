@@ -1,4 +1,8 @@
 <?php
+	/**
+	*@author Anna Addei
+	*This is script implements functions used in updating fields of the database for the IRB application form
+	*/
 
 	if(!isset($_REQUEST['cmd'])){
 		echo "cmd is not provided";
@@ -28,6 +32,9 @@
 
 	}
 
+	/**
+	* This function creates a new submission entry
+	*/
 	function newSubmission(){
 	include_once ("submission.php");
 	$obj = new submission();
@@ -75,7 +82,10 @@
 	}
 }
 
- function subjects(){
+	/**
+	*This function to update fields relating to research subjects in the submission table
+	*/
+	 function subjects(){
  	include_once ("submission.php");
 	$obj = new submission();
 
@@ -100,6 +110,9 @@
 	}
  }
 
+	/**
+	*This function to update fields relating to risks for participants of the research
+	*/
  function risk(){
  	include_once ("submission.php");
 	$obj = new submission();
@@ -123,11 +136,13 @@
 	}
  }
 
- function confidentiality(){
+
+ 	/**
+	*This function to update fields realting to the protection of participant confidentiality
+	*/
+	 function confidentiality(){
  	include_once ("submission.php");
 	$obj = new submission();
-
-	
 
 	if(!isset($_REQUEST['confidentialityExtent'])){
 			exit();
@@ -149,7 +164,11 @@
 	}
  }
 
- function benefits(){
+
+	/**
+	*This function to update fields in submission table relating to benefits research participants gain
+	*/
+ 	function benefits(){
 	include_once ("submission.php");
 	$obj = new submission();
 
@@ -173,6 +192,9 @@
 	}
 }
 
+	/**
+	*This function to updates the title and exemption fields of the submission table
+	*/
 	function title(){
 		include_once ("submission.php");
 	$obj = new submission();
@@ -185,7 +207,7 @@
 	$exemption=$_REQUEST['exemption'];
 	$title=$_REQUEST['title'];
 
-	$r = $obj -> updateExemption($sid, $title);
+	$r = $obj -> updateExemption($sid, $title, $exemption);
 	if($r == false){
 		echo "error";
 	}
