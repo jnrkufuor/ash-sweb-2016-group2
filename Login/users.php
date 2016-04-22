@@ -56,11 +56,18 @@ class users extends adb {
 		return $this->query("select type from reviewer where RID='$id' and PASSWORD='$password'");
 	}
     
+	/**
+     * deletes User 
+     * @param int $id User Id to check against
+     */
     function deleteUser($id)
     {
         return $this->query("delete from irb_user where user_id='$id'");
     }
-
+     /**
+     * Deletes Lec User 
+     * @param int $id User Id to check against
+     */
 	function deleteLec($id)
     {
         return $this->query("delete from reviewer where rid='$id'");

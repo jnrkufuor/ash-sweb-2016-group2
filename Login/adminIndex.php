@@ -2,12 +2,12 @@
 <html>
 <head>
 	<link href="css/index.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="js/jquery-1.12.1.js"> </script>
+	<script type="text/javascript" src="js/jquery-1.12.1.js"></script>
 	<script type="text/javascript">
 	var currentObj;
 	function deleteUserComplete(xhr,status)
 	{
-	console.log(currentObj.rowIndex);
+	
 		if(status!="success")
 		{
 			contentbody.innerHTML="Request could not be processed";
@@ -19,14 +19,13 @@
 			contentbody.innerHTML=obj.message;
 		}
 		else{
-		  	$("tableUsers").click(function(){
-    alert (this.rowIndex);
-});
+		var tb= currentObj.parentNode;
+		tb.parentNode.removeChild(tb);
+		currentObj=null;
+		  
 		}
 	}
 	
-
-
 	function deleteUser(recordId,obj)
 	{
 	currentObj=obj;
@@ -50,15 +49,18 @@
 			contentbody.innerHTML=obj.message;
 		}
 		else{
-		  document.getElementById("tableLec").deleteRow(1);
-		  //var removeItem= $("#tableUsers tr:eq(1)").remove();
+		var tb= currentObj.parentNode;
+		tb.parentNode.removeChild(tb);
 		}
+		currentObj=null;
 	}
+	
+	
 	
 	function deleteLec(recordId,obj)
 	{
 	currentObj=obj;
-	    var url= "userajax.php?cmd=2&id="+recordId;
+	    var url="userajax.php?cmd=2&id="+recordId;
 		$.ajax(url,
 		{
 			async:true,complete:deleteUserComplete
@@ -83,79 +85,69 @@
 	<div class="content">
 		<span id="contentbody">Welcome User, here is your status in all IRB applications<span><br><br><!-- <br><br> -->
 			<div class="display">
-				<?php
-if(isset($_REQUEST['success']))
-{
-  if ($_REQUEST['success']=='false')
-    echo '<script> window.alert("Successful")</script>';
-}
+                                                        <?php
+                            if (isset($_REQUEST['success'])) {
+                                if ($_REQUEST['success'] == 'false') {
+                                    echo '<script> window.alert("Successful")</script>';
+                                }
+                            }
 
-include("users.php");
+                            include("users.php");
 
-if(isset($_REQUEST['purpose']) &&$_REQUEST['purpose']=="user"){
+                            if (isset($_REQUEST['purpose']) && $_REQUEST['purpose'] == "user") {
 
-$obj = new users();
-if(!$obj->getUser())
-{
-  echo "Error getting Users";
-}
-echo" <table  id='tableUsers' class ='revtab' >
-    <tr id='hd'>
-    <th>User ID </th>
-    <th>Firstname </th>
-    <th>Lastname </th>
-    <th>Co-Researcher </th>
-    <th>Email </th>
-    <th>Phone </th>
-    <th>Fax </th>
-    </tr>";
-	
-while($row=$obj->fetch())
-
-  echo" <tr id='r1'>
-  <td>{$row['USER_ID']}</td>
-  <td>{$row['FIRSTNAME']}</td>
-  <td>{$row['LASTNAME']}</td>
-  <td>{$row['CO_RESEARCHER']}</td>
-  <td>{$row['EMAIL']}</td>
-  <td>{$row['PHONE']}</td>
-   <td>{$row['FAX']}</td>
-    <td  onclick='deleteUser({$row['USER_ID']},this)' id='tblTd'> Delete </td>
-  </tr>"; 
-
-echo "</table>";
-}
-
-
-
-else if(isset($_REQUEST['purpose'])&&$_REQUEST['purpose']=="lec"){
-$lec= new users();
-if(!$lec->getLec())
-{
-  echo "Error getting Lecturers";
-}
-echo" <table  style='align=center;' id='tableLec' class ='revtab'>
-    <tr id='hd'>
-    <th>Lecturer ID </th>
-  <th>Type</th>
- 
-    </tr>";
-while($tbl=$lec->fetch())
-{
-  echo" <tr id='r1'>
-  <td>{$tbl['RID']}</td>
-  <td>{$tbl['TYPE']}</td>
-    <td  onclick='deleteLec({$tbl['RID']},this)' id='tblTd'> Delete </td>
-  </tr>";
-  
-}
-echo "</table>";
-}
-else
-{
-	echo "<h1>Welcome to the Admin Page</h1>";
-}
-?> 
+                                $obj = new users();
+                                if (!$obj->getUser()) {
+                                    echo "Error getting Users";
+                                }
+                                echo" <table  id='tableUsers' class ='revtab' >
+                                      <tr id='hd'>
+                                      <th>User ID </th>
+                                      <th>Firstname </th>
+                                      <th>Lastname </th>
+                                      <th>Co-Researcher </th>
+                                      <th>Email </th>
+                                      <th>Phone </th>
+                                      <th>Fax </th>
+                                      </tr>";
+									  
+							    $count =0;
+                                while ($row = $obj->fetch()) {
+                                    echo" <tr id='r1'class=$count>"
+                                    . "<td>{$row['USER_ID']}</td>"
+                                    . "<td>{$row['FIRSTNAME']}</td>"
+                                    . "<td>{$row['LASTNAME']}</td>"
+                                    . " <td>{$row['CO_RESEARCHER']}</td>"
+                                    . "<td>{$row['EMAIL']}</td> "
+                                    . "<td>{$row['PHONE']}</td>"
+                                    . "<td>{$row['FAX']}</td>"
+                                    . "<td  onclick='deleteUser({$row['USER_ID']},this)' id='tblTd'> Delete </td> "
+                                    . "</tr>";
+                                }
+                                echo "</table>";
+								$count=$count+1;
+                            } else if (isset($_REQUEST['purpose']) && $_REQUEST['purpose'] == "lec") {
+                                $lec = new users();
+                                if (!$lec->getLec()) {
+                                    echo "Error getting Lecturers";
+                                }
+                                echo" <table  style='align=center;' id='tableLec' class ='revtab'>
+                                    <tr id='hd'> 
+                                    <th>Lecturer ID </th>
+                                    <th>Type</th>
+                                    </tr>";
+                                while ($tbl = $lec->fetch()) {
+                                    echo" <tr id='r1'>"
+                                    . "<td>{$tbl['RID']}</td>"
+                                    . "<td>{$tbl['TYPE']}</td>"
+                                    . "<td  onclick='deleteLec({$tbl['RID']},this)' id='tblTd'> Delete </td>"
+                                    . "</tr>";
+                                }
+                                echo "</table>";
+                            } else {
+                                echo "<h1>Welcome to the Admin Page</h1>";
+                            }
+                            ?> 
 			</div>
 			
 			
