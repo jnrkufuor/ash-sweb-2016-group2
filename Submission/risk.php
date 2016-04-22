@@ -6,13 +6,13 @@
 	<div class="main">
 	<header><a href="../UI template/index.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
 	<div class="side1">
-		<a href="../UI template/index.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
-		<a href="../UI template/deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
-		<a href="../UI template/review2.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
+		<a href="reviewerIndex.html" style ="text-decoration:none"><div class="dashboard"><h3>Dashboard</h3></div></a>
+		<a href="viewAllSubmissions.php" style ="text-decoration:none"><div class="submissions"><h3>Submissions</h3></div></a>
+
 	</div>
-	<!-- <div class="side2" >Side bar</div>-->
+
 	<div class="menu">
-		<span>Application Form</span>
+		<span>View Submissions</span>
 	</div>
 	<br><br>
 		<?php
@@ -22,8 +22,8 @@
 			$id = $_REQUEST['id'];
 		}
 		?>
-		<form style="margin-left:30%"action="updateRisk.php?" method="GET">
-		<div style="height:509px" class="mainDiv">
+		<form style="margin-left:40%"action="updateRisk.php?" method="GET">
+		<div style="height:709px" class="mainDiv">
 			<div><input type="hidden" name="id" value="<?php echo $id?>"/></div>
 			<h2 id="headings">Risks Involved In The Research</h2>
 			<div><p>Identify potential risks for subjects to be involved in this project/research. What procedures will be in place to minimize any risks to the subjects?</p></div>

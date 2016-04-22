@@ -3,15 +3,15 @@
 </head>
 <body>
 	<div class="main">
-	<header><a href="../UI template/irbinterface.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
+	<header><a href="../UI template/index.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
 	<div class="side1">
-		<a href="../UI template/index.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
-		<a href="deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
-		<a href="../UI template/review.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
+		<a href="../UI template/reviewerIndex.html" style ="text-decoration:none"><div class="dashboard"><h3>Dashboard</h3></div></a>
+		<a href="viewAllSubmissions.php" style ="text-decoration:none"><div class="submissions"><h3>Submissions</h3></div></a>
+
 	</div>
-	<!-- <div class="side2" >Side bar</div>-->
+
 	<div class="menu">
-		<span>Application Form (Demo for incomplete/failed input)</span>
+		<span>View Submissions</span>
 	</div>
 	<br><br>
 	<?php
@@ -34,8 +34,8 @@
 		}
 	?>
 
-		<form style="margin-left:22%" action="risk.php?" method="GET">
-		<div style="height:480px" class="mainDiv">
+		<form style="margin-left:32%" action="risk.php?" method="GET">
+		<div style="height:509px" class="mainDiv">
 			<h2 id="headings">Risks Involved In The Research</h2>
 			<div><p>Identify potential risks for subjects to be involved in this project/research. What procedures will be in place to minimize any risks to the subjects?</p></div>
 			<div><b>Does the research involve any of the following procedures?</b></div>
