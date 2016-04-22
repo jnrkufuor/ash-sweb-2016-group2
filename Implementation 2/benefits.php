@@ -105,7 +105,7 @@
 
 		?>
 		<form style="margin-left:32%">
-		<div style="height:350px" class="mainDiv">
+		<div style="height:400px" class="mainDiv">
 			<div><input type="hidden" name="id" value="<?php echo $id ?>"/></div>
 			<div class="status" id="divStatus"></div>
 			<h2 id="headings">Describe Any Anticipated Benefits To Subjects From Participation In This Research</h2>

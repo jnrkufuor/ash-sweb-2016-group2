@@ -11,6 +11,7 @@
 		function next(id){
 			if($("#subjectCharacteristics").val() == ""){
 				document.getElementById("subjectCharacteristics").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
@@ -18,6 +19,7 @@
 			}
 			if($("#recruitment").val() == ""){
 				document.getElementById("recruitment").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
@@ -25,6 +27,7 @@
 			}
 			if($("#partcipnatInfo").val() == ""){
 				document.getElementById("partcipnatInfo").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
@@ -32,6 +35,7 @@
 			}
 			if($("#researchMethod").val() == ""){
 				document.getElementById("researchMethod").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
@@ -39,6 +43,7 @@
 			}
 			if($("#dataSources").val() == ""){
 				document.getElementById("dataSources").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{

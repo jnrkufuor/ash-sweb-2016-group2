@@ -35,6 +35,7 @@
 					return;
 				}
 				divStatus.innerHTML= "Saved at " + new Date().getHours()+ ":" + new Date().getMinutes() + " GMT" ;
+				alert("Saved at " + new Date().getHours()+ ":" + new Date().getMinutes() + " GMT");
 			}
 
 	</script>
@@ -73,7 +74,7 @@
 		?>
 
 			<form style="margin-left:30%" action="updateExemption.php" method="GET">
-			<div class="mainDiv">
+			<div style="height: 700px" class="mainDiv">
 				<div><input type="hidden" name="sid" value="<?php echo $sid ?>"/></div>
 				<div class="status" id="divStatus"></div>
 				<div><h2>Title of Project:</h2> <textarea style="width:97%; height:4%" id="title" name="title" required><?php echo $row['title']?></textarea></div>
@@ -81,7 +82,7 @@
 				<h2>Exemption Request</h2>
 				<div><p>If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption. 
 						Click <a href=''>here</a> to see the list of exempt project types. Skip if you are not requesting exemption.</p></div>
-				<div><textarea id="exemption" name="exemption" style="width:97%; height:40%"><?php $row['exemption']?></textarea></div>
+				<div><textarea id="exemption" name="exemption" style="width:97%; height:40%"><?php echo $row['exemption']?></textarea></div>
 				
 				<div style="margin-top: 40px"><b>Progress:</b> &nbsp;<progress value="20" max="100" ></progress> &nbsp; &nbsp; &nbsp; &nbsp; <button style="float:right; margin-right: 20px" type="button" onclick="checkSave(<?php echo $sid ?>)" >Next</button> &nbsp; &nbsp;<button type="button" style="float:right; margin-right: 50px" onclick="save(<?php echo $sid ?>)">Save</button> </div>
 				</div>

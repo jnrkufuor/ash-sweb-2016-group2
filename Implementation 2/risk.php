@@ -111,6 +111,7 @@
 		$punishment = "";
 		$unacceptableMaterial = "";
 		$participantDisclosure = "";
+		$privacyInvasion = "";
 		$physicalInvasion = "";
 
 		foreach ($procedureRisks as $value) {

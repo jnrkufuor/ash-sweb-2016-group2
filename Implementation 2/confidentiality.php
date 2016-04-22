@@ -11,6 +11,7 @@
 		function next(id){
 			if($("#confidentialityExtent").val() == ""){
 				document.getElementById("confidentialityExtent").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
@@ -19,6 +20,7 @@
 
 			if($("#dataStorage").val() == ""){
 				document.getElementById("dataStorage").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
@@ -27,6 +29,7 @@
 
 			if($("#resultDissemination").val() == ""){
 				document.getElementById("resultDissemination").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
@@ -35,6 +38,7 @@
 
 			if($("#subjectInfo").val() == ""){
 				document.getElementById("subjectInfo").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
@@ -43,6 +47,7 @@
 
 			if($("#confidentialityProtection").val() == ""){
 				document.getElementById("confidentialityProtection").style.border="1px solid red";
+				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
@@ -149,7 +154,7 @@
 
 
 		<form style="margin-left:28%"action="updateConfidentiality.php?" method="GET">
-		<div style="height:800px" class="mainDiv">
+		<div style="height:850px" class="mainDiv">
 			<div><input type="hidden" name="id" value="<?php echo $id ?>"/></div>
 			<div class="status" id="divStatus"></div>
 			<h2 id="headings">Confidentiality</h2>

@@ -14,6 +14,7 @@
 				document.getElementById("title").style.border="1px solid grey";
 			}
 
+
 			if(!divStatus.innerHTML == ""){
 				window.open("subjects.php","_self");
 			}
@@ -31,7 +32,8 @@
 			else{
 				document.getElementById("title").style.border="1px solid grey";
 			}
-			
+
+
 			if(divStatus.innerHTML != ""){
 				var theUrl="submission_ajax.php?cmd=2&title="+$("#title").val()+"&exemption=" + $("#exemption").val();
 				$.ajax(theUrl,
@@ -53,6 +55,7 @@
 					return;
 				}
 				divStatus.innerHTML= "Saved at " + new Date().getHours()+ ":" + new Date().getMinutes() + " GMT" ;
+				alert("Saved at " + new Date().getHours()+ ":" + new Date().getMinutes() + " GMT");
 			}
 
 	</script>
