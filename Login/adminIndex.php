@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link href="css/index.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="js/jquery-1.12.1.js"></script>
+	<script type="text/javascript" src="js/jquery-1.12.1.js"> </script>
 	<script type="text/javascript">
 	var currentObj;
 	function deleteUserComplete(xhr,status)
@@ -19,11 +19,14 @@
 			contentbody.innerHTML=obj.message;
 		}
 		else{
-		  document.getElementById("tableUsers").deleteRow(1);
-		  //var removeItem= $("#tableUsers tr:eq(1)").remove();
+		  	$("tableUsers").click(function(){
+    alert (this.rowIndex);
+});
 		}
 	}
 	
+
+
 	function deleteUser(recordId,obj)
 	{
 	currentObj=obj;
@@ -105,8 +108,8 @@ echo" <table  id='tableUsers' class ='revtab' >
     <th>Email </th>
     <th>Phone </th>
     <th>Fax </th>
-	
     </tr>";
+	
 while($row=$obj->fetch())
 
   echo" <tr id='r1'>
