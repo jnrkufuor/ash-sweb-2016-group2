@@ -76,10 +76,22 @@ color: white;
 }
 #r1{
 background-color: lightgrey;
+color: black;
 }
+
+#r1:hover{
+background-color: white;
+}
+
 #r2{
 background-color: darkgrey;
+color: black;
 }
+
+#r2:hover{
+background-color: white;
+}
+
 #r3{
 background-color: lightgrey;
 }
