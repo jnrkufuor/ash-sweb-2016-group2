@@ -2,11 +2,11 @@
 
 			
 				include_once('../FileUpload/upload.php');
-				$user = new upload();
+				$user = new upload(); //creates object of upload class
         
 
-				$researcherID = 27302019;
-				$submissionID = 7;
+				$researcherID = 27302019; //default researcherID. Will be gotten from session when code is upgraded
+				$submissionID = 7; //default submissionID. Same as researcherID
            
                 $error = array();
                 $filename = $_FILES['doc']['name']; //filename
@@ -31,25 +31,19 @@
 
                 //Add file and file information on database if there are no errors 
                 if(empty($error)==false){
-                    //move_uploaded_file($filetemp, $folder.$filename);
-					print_r($error);
+					print_r($error); //print error if file exceeds 5 MB or file extension is wrong
                    
-                    }        
+                }        
 
                 else{
 					 if($user->addFile($fileext, $filesize, $filename, $filetemp,$researcherID, $submissionID)){
-                        echo "File succesfully added" ;
+                        echo "File succesfully added" ; //print if file is added to database
                     }
                     else{
-                        echo "File add failed";
+                        echo "File add has failed.";
 					
 				}
 				}
                     
-          
-
-
-
-
 
 ?>

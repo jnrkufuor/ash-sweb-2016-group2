@@ -18,7 +18,7 @@ class upload extends adb {
      * @return type boolean depending on method execution success
      */
     public function addFile($fileType, $fileSize, $fileName, $file, $rID, $sID){
-        $strQuery = "INSERT INTO supporting_documents(FileType, FileSize, FileName, File, Researcher_ID, Submission_ID) VALUES('$fileType', '$fileSize','$fileName', '$file','$rID', '$sID')";    
+        $strQuery = "INSERT INTO supporting_documents SET FileType = '$fileType', FileSize = '$fileSize', FileName = '$fileName', File = '$file', Researcher_ID = '$rID', Submission_ID= '$sID'";    
         return $this->query($strQuery);
     }
     
