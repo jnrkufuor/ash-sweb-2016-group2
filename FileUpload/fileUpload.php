@@ -90,8 +90,7 @@ li a.active {
 </html>
 
  <?php
-        
-		/**
+      
             include_once('upload.php');
             $user = new upload();
         
@@ -108,9 +107,7 @@ li a.active {
                 $sID = $_POST['sID'];
                 $rID = $_POST['rID'];
 
-                echo $sID . "<br>";
-                echo $rID;
-
+             
                 $folder = "consentForms/"; //folder in IRBApp folder where consent forms are stored
                 $extensions = array('docx','txt','xlsx','pdf'); //accepted file extensions
 
@@ -138,7 +135,7 @@ li a.active {
                 else
                     print_r($error);
             }
-			*/
+			
 ?>
 
 
