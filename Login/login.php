@@ -4,8 +4,25 @@
         <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/main.css">
-        <link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'>
-
+		<script type="text/javascript" src="js/jquery-1.12.1.js"></script>
+        <link hre type="text/javascript"f='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'>
+        <script type="text/javascript">
+		function login ()
+		{
+			console.log("hi");
+			validate($('#name').val());
+		}
+		function validate(string)
+	    {
+			console.log("hji");
+	     var re = /[0-9]{8}/;
+	     if (re.test(string)==false)
+		 {
+			 console.log("jj");
+			 alert("Please Use A Valid Ashesi ID(27302017)");
+		 }
+	    }
+	 	</script>
         <style>
         body{
             background-image: url("bg.jpg");
@@ -15,6 +32,7 @@
             color:#395870;  
         }
         </style
+		
     </head>
     <body>
 	     
@@ -37,7 +55,7 @@
                 </label>
             </fieldset>
             <fieldset class="account-action">
-                <input class="btn" type="submit" name="submit" value="Login">
+                <input class="btn" type="submit" onclick= "login()" name="submit" value="Login">
                 <div class="change_link">
                 Not a member yet ?
                 <a href="usersadd.php" >Join Now</a>

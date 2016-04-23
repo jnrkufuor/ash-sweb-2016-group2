@@ -28,16 +28,23 @@
 	
 	function deleteUser(recordId,obj)
 	{
-	currentObj=obj;
-	    var url= "userajax.php?cmd=1&id="+recordId;
-		$.ajax(url,
-		{
-			async:true,complete:deleteUserComplete
-		});
+        var r = confirm("Confirm Delete");
+        if (r == true) {
+		     currentObj=obj;
+	         var url="userajax.php?cmd=1&id="+recordId;
+		     $.ajax(url,
+		     {
+			     async:true,complete:deleteUserComplete
+		     });
+            
+        }else {
+                 return;
+             } 
 	}
+	
 	function deleteLecComplete(xhr,status)
 	{
-	console.log(currentObj.rowIndex);
+	
 		if(status!="success")
 		{
 			contentbody.innerHTML="Request could not be processed";
@@ -58,14 +65,22 @@
 	
 	
 	function deleteLec(recordId,obj)
-	{
-	currentObj=obj;
-	    var url="userajax.php?cmd=2&id="+recordId;
-		$.ajax(url,
-		{
-			async:true,complete:deleteUserComplete
-		});
+	{ 
+	    var r = confirm("Confirm Delete");
+        if (r == true) {
+		     currentObj=obj;
+	         var url="userajax.php?cmd=2&id="+recordId;
+		     $.ajax(url,
+		     {
+			     async:true,complete:deleteLecComplete
+		     });
+            
+             }else {
+                 return;
+             } 
 	}
+	
+	
 	
 	</script>
 </head>
@@ -85,7 +100,7 @@
 	<div class="content">
 		<span id="contentbody">Welcome User, here is your status in all IRB applications<span><br><br><!-- <br><br> -->
 			<div class="display">
-                                                        <?php
+                            <?php
                             if (isset($_REQUEST['success'])) {
                                 if ($_REQUEST['success'] == 'false') {
                                     echo '<script> window.alert("Successful")</script>';
