@@ -8,6 +8,11 @@
 			window.open("confidentiality.php?id="+id,"_self");
 		}
 
+		function validate(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
+		
 		function send(id){
 			if($("#participantConpensation").val() == ""){
 				document.getElementById("participantConpensation").style.border="1px solid red";
