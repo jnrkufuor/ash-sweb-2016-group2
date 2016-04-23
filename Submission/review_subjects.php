@@ -4,17 +4,16 @@
 </head>
 <body>
 	<div class="main">
-	<header><a href="../UI template/irbinterface.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
+	<header><a href="../UI template/index.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
 	<div class="side1">
-		<a href="../UI template/index.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
-		<a href="deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
-		<a href="../UI template/review.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
+		<a href="../UI template/reviewerIndex.html" style ="text-decoration:none"><div class="dashboard"><h3>Dashboard</h3></div></a>
+		<a href="viewAllSubmissions.php" style ="text-decoration:none"><div class="submissions"><h3>Submissions</h3></div></a>
+
 	</div>
-	<!-- <div class="side2" >Side bar</div>-->
+
 	<div class="menu">
-		<span>Application Form (Demo for incomplete/failed input)</span>
+		<span>View Submissions</span>
 	</div>
-	<br><br>
 	<?php
 		include_once("submission.php");
 		$obj = new submission();
@@ -37,8 +36,8 @@
 	
 		
 		
-		<form style="margin-left:22%" action="risk.php?" method="GET">
-		<div style="height:950px" class="mainDiv">
+		<form style="margin-left:32%" action="risk.php?" method="GET">
+		<div style="height:1150px" class="mainDiv">
 			<h2 id="headings">Numbers, Types and Recruitment of Subjects</h2>
 			<div><p>A. Identify the numbers and characteristics of subjects (eg. age ranges, sex, ethnic background, health status, disabilities , etc.) It is recommended to provide the breakdown based on your sampling strategy.</p></div>
 			<div><textarea name="subjectCharacteristics" cols="140" rows="5"  style="width:97%; height: 8%" readonly> <?php echo $row['subjectCharacteristics'] ?></textarea></div>

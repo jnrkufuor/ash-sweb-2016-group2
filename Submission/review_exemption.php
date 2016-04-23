@@ -4,15 +4,15 @@
 </head>
 <body>
 	<div class="main">
-	<header><a href="../UI template/irbinterface.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
+	<header><a href="../UI template/index.html"><img src="../UI template/images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
 	<div class="side1">
-		<a href="../UI template/index.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
-		<a href="deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
-		<a href="../UI template/review.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
+		<a href="../UI template/reviewerIndex.html" style ="text-decoration:none"><div class="dashboard"><h3>Dashboard</h3></div></a>
+		<a href="viewAllSubmissions.php" style ="text-decoration:none"><div class="submissions"><h3>Submissions</h3></div></a>
+
 	</div>
-	<!-- <div class="side2" >Side bar</div>-->
+
 	<div class="menu">
-		<span>Application Form (Demo for incomplete/failed input)</span>
+		<span>View Submissions</span>
 	</div>
 	<br><br>
 	<?php
@@ -37,11 +37,11 @@
 	
 		
 		
-		<form style="margin-left:22%" action="review_subjects.php?id={$row['submissionID']}" method="GET">
-		<div class="mainDiv">
+		<form style="margin-left:30%" action="review_subjects.php?id={$row['submissionID']}" method="GET">
+		<div class="mainDiv" style="height: 710px">
 		<div style="margin-bottom: 30px; margin-top: 25px">
-		<b style="font-size: 25px">Principal Investigator:</b><textarea style="margin-right:120px; width:15%; height:3%" name="investigator"  readonly> <?php echo $row['FIRSTNAME'] ?> </textarea> 
-		<b style="font-size: 25px">Co - Investigator:</b> <textarea name="coinvestigator" style="width:15%; height:3%" readonly> <?php echo $row['CO_RESEARCHER'] ?></textarea></div>
+		<div style="margin-bottom: 3%;"><b style="font-size: 25px">Principal Investigator:</b><textarea style="  width:25%; height:3%" name="investigator"  readonly> <?php echo $row['FIRSTNAME'] ?> </textarea> </div>
+		<div style="margin-bottom: 3%;"><b style="font-size: 25px">Co - Investigator:</b> <textarea name="coinvestigator" style="width:25%; height:3%" readonly> <?php echo $row['CO_RESEARCHER'] ?></textarea></div>
 			<div ><b style="font-size: 25px;">Title of Project:</b> <textarea name="exemption" style="width:97%; height:4%" readonly> <?php echo $row['title'] ?></textarea>  </div>
 			
 			<h2>Exemption Request</h2>
