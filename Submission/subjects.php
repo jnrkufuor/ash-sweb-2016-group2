@@ -8,6 +8,11 @@
 			window.open("exemptionRequest2.php?id="+id,"_self");
 		}
 
+		function validate(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
+
 		function next(id){
 			if($("#subjectCharacteristics").val() == ""){
 				document.getElementById("subjectCharacteristics").style.border="1px solid red";
