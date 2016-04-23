@@ -10,6 +10,9 @@
 				alert("Kindly provide a title for your submission");
 				return;
 			}
+			else{
+				document.getElementById("title").style.border="1px solid grey";
+			}
 			
 			window.open("update.php?cmd=6&title="+$("#title").val()+"&exemption=" + $("#exemption").val()+"&sid="+sid ,"_self");
 		}
@@ -25,6 +28,7 @@
 				alert("Kindly provide a title for your submission");
 				return;
 			}
+			
 			
 			var theUrl="submission_ajax.php?cmd=2&title="+$("#title").val()+"&exemption=" + $("#exemption").val() +"&sid="+sid;
 				$.ajax(theUrl,
