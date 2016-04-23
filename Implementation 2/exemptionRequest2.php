@@ -28,7 +28,9 @@
 				alert("Kindly provide a title for your submission");
 				return;
 			}
-			
+			else{
+				document.getElementById("title").style.border="1px solid grey";
+			}
 			
 			var theUrl="submission_ajax.php?cmd=2&title="+$("#title").val()+"&exemption=" + $("#exemption").val() +"&sid="+sid;
 				$.ajax(theUrl,
