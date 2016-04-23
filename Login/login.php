@@ -47,7 +47,7 @@
             <fieldset class="account-info">
                 <label>
                     ID
-                    <input type="text" name="id" required>
+                    <input type="text" name="id" onchange="login()" required>
                 </label>
                 <label>
                     Password
@@ -55,7 +55,7 @@
                 </label>
             </fieldset>
             <fieldset class="account-action">
-                <input class="btn" type="submit" onclick= "login()" name="submit" value="Login">
+                <input class="btn" type="submit" name="submit" value="Login">
                 <div class="change_link">
                 Not a member yet ?
                 <a href="usersadd.php" >Join Now</a>
