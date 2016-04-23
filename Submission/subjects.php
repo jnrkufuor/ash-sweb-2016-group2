@@ -50,7 +50,7 @@
 				document.getElementById("researchMethod").style.border="1px solid grey";
 			}
 			
-			if($("#dataSources").val() == ""){
+			if(validate($("#dataSources").val()) == false){
 				document.getElementById("dataSources").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
