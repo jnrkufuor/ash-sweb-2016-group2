@@ -12,7 +12,7 @@
 			var re = /([^ ].*[^ ])+/i;
 			return re.test(string);
 		}
-		
+
 		function next(id){
 			if(validate($("#confidentialityExtent").val()) == false){
 				document.getElementById("confidentialityExtent").style.border="1px solid red";
@@ -97,7 +97,8 @@
 			else{
 				document.getElementById("subjectInfo").style.border="1px solid grey";
 			}
-			if($("#confidentialityProtection").val() == ""){
+			
+			if(validate($("#confidentialityProtection").val()) == false){
 				document.getElementById("confidentialityProtection").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
