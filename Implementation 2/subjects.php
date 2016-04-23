@@ -7,6 +7,11 @@
 		function back(id){
 			window.open("exemptionRequest2.php?id="+id,"_self");
 		}
+		
+		function validate(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
 
 		function next(id){
 			if($("#subjectCharacteristics").val() == ""){
