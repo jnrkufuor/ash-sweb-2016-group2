@@ -14,8 +14,8 @@
 		}
 		
 		function send(id){
-			if($("#participantConpensation").val() == ""){
-				document.getElementById("participantConpensation").style.border="1px solid red";
+			if(validate($("#confidentialityExtent").val()) == false){
+				document.getElementById("confidentialityExtent").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
 			}
@@ -23,8 +23,8 @@
 				document.getElementById("participantConpensation").style.border="1px solid grey";
 			}
 
-			if($("#participantBenefits").val() == ""){
-				document.getElementById("participantBenefits").style.border="1px solid red";
+			if(validate($("#confidentialityExtent").val()) == false){
+				document.getElementById("confidentialityExtent").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
 			}
