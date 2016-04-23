@@ -7,16 +7,13 @@
         <script type="text/javascript">
 		function login ()
 		{
-			console.log("hi");
-			validate($('#name').val());
+			validate($('#id').val());
 		}
 		function validate(string)
 	    {
-			console.log("hji");
-	     var re = /[0-9]{8}/;
+	     var re = /([0-9]{8})/;
 	     if (re.test(string)==false)
 		 {
-			 console.log("jj");
 			 alert("Please Use A Valid Ashesi ID(27302017)");
 		 }
 	    }
