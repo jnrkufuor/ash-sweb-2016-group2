@@ -73,7 +73,7 @@
 				document.getElementById("confidentialityExtent").style.border="1px solid grey";
 			}
 
-			if($("#dataStorage").val() == ""){
+			if(validate($("#dataStorage").val()) == false){
 				document.getElementById("dataStorage").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
