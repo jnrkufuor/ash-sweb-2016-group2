@@ -8,8 +8,13 @@
 			window.open("confidentiality.php?id="+id,"_self");
 		}
 
+		function validate(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
+
 		function send(id){
-			if($("#participantConpensation").val() == ""){
+			if(validate($("#participantConpensation").val()) == false){
 				document.getElementById("participantConpensation").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
