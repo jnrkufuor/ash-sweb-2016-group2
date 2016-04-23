@@ -72,8 +72,8 @@
 				document.getElementById("confidentialityExtent").style.border="1px solid grey";
 			}
 
-			if($("#dataStorage").val() == ""){
-				document.getElementById("dataStorage").style.border="1px solid red";
+			if(validate($("#confidentialityExtent").val()) == false){
+				document.getElementById("confidentialityExtent").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
 			}
