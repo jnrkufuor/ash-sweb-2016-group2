@@ -22,8 +22,8 @@
 			else{
 				document.getElementById("subjectCharacteristics").style.border="1px solid grey";
 			}
-			
-			if($("#recruitment").val() == ""){
+
+			if(validate($("#recruitment").val()) == false){
 				document.getElementById("recruitment").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -31,6 +31,7 @@
 			else{
 				document.getElementById("recruitment").style.border="1px solid grey";
 			}
+			
 			if($("#partcipnatInfo").val() == ""){
 				document.getElementById("partcipnatInfo").style.border="1px solid red";
 				alert("Kindly fill all required fields");
