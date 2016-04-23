@@ -49,7 +49,7 @@
 			else{
 				document.getElementById("researchMethod").style.border="1px solid grey";
 			}
-			
+
 			if(validate($("#dataSources").val()) == false){
 				document.getElementById("dataSources").style.border="1px solid red";
 				alert("Kindly fill all required fields");
@@ -71,7 +71,8 @@
 			else{
 				document.getElementById("subjectCharacteristics").style.border="1px solid grey";
 			}
-			if($("#recruitment").val() == ""){
+			
+			if(validate($("#recruitment").val()) == false){
 				document.getElementById("recruitment").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
