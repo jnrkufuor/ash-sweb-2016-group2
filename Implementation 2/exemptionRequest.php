@@ -10,11 +10,6 @@
 				alert("Kindly provide a title for your submission");
 				return;
 			}
-			else if($("#title").val() == ""){
-				document.getElementById("title").style.border="1px solid red";
-				alert("Kindly provide a title for your submission");
-				return;
-			}
 			else{
 				document.getElementById("title").style.border="1px solid grey";
 			}
@@ -36,11 +31,6 @@
 		function save(id){
 			
 			if(validate($("#title").val()) == false){
-				document.getElementById("title").style.border="1px solid red";
-				alert("Kindly provide a title for your submission");
-				return;
-			}
-			else if($("#title").val() == ""){
 				document.getElementById("title").style.border="1px solid red";
 				alert("Kindly provide a title for your submission");
 				return;
