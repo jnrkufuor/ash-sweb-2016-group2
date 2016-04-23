@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="css/index.css" rel="stylesheet" type="text/css">
+	<link href="../UI template/index.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="main">
