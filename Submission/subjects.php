@@ -4,6 +4,11 @@
 	<script type="text/javascript" src="js/jquery-1.12.1.js"></script>
 	<script type="text/javascript">
 
+		function validate(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
+
 		function back(id){
 			window.open("exemptionRequest2.php?id="+id,"_self");
 		}
