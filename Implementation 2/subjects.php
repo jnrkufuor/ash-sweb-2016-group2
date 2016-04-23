@@ -7,14 +7,19 @@
 		function back(id){
 			window.open("exemptionRequest2.php?id="+id,"_self");
 		}
-		
+
 		function validate(string){
 			var re = /([^ ].*[^ ])+/i;
 			return re.test(string);
 		}
 
 		function next(id){
-			if($("#subjectCharacteristics").val() == ""){
+			if(validate($("#subjectCharacteristics").val()) == false){
+				document.getElementById("subjectCharacteristics").style.border="1px solid red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else if($("#subjectCharacteristics").val() == ""){
 				document.getElementById("subjectCharacteristics").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -22,7 +27,13 @@
 			else{
 				document.getElementById("subjectCharacteristics").style.border="1px solid grey";
 			}
-			if($("#recruitment").val() == ""){
+
+			if(validate($("#recruitment").val()) == false){
+				document.getElementById("recruitment").style.border="1px solid red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else if($("#recruitment").val() == ""){
 				document.getElementById("recruitment").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -30,7 +41,13 @@
 			else{
 				document.getElementById("recruitment").style.border="1px solid grey";
 			}
-			if($("#partcipnatInfo").val() == ""){
+
+			if(validate($("#partcipnatInfo").val()) == false){
+				document.getElementById("partcipnatInfo").style.border="1px solid red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else if($("#partcipnatInfo").val() == ""){
 				document.getElementById("partcipnatInfo").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -38,7 +55,13 @@
 			else{
 				document.getElementById("partcipnatInfo").style.border="1px solid grey";
 			}
-			if($("#researchMethod").val() == ""){
+
+			if(validate($("#researchMethod").val()) == false){
+				document.getElementById("researchMethod").style.border="1px solid red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else if($("#researchMethod").val() == ""){
 				document.getElementById("researchMethod").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -46,7 +69,13 @@
 			else{
 				document.getElementById("researchMethod").style.border="1px solid grey";
 			}
-			if($("#dataSources").val() == ""){
+
+			if(validate($("#dataSources").val()) == false){
+				document.getElementById("dataSources").style.border="1px solid red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else if($("#dataSources").val() == ""){
 				document.getElementById("dataSources").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -54,12 +83,18 @@
 			else{
 				document.getElementById("dataSources").style.border="1px solid grey";
 			}
+
 				window.open("update.php?cmd=2&id="+id +"&subjectCharacteristics="+$("#subjectCharacteristics").val()+"&specialClasses=" + $("#specialClasses").val()+"&recruitment="+$("#recruitment").val() +"&partcipnatInfo="+$("#partcipnatInfo").val()+"&researchMethod="+$("#researchMethod").val()+"&dataSources="+$("#dataSources").val() ,"_self");
 			}
 		
 
 		function save(id){
-			if($("#subjectCharacteristics").val() == ""){
+			if(validate($("#subjectCharacteristics").val()) == false){
+				document.getElementById("subjectCharacteristics").style.border="1px solid red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else if($("#subjectCharacteristics").val() == ""){
 				document.getElementById("subjectCharacteristics").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -67,7 +102,13 @@
 			else{
 				document.getElementById("subjectCharacteristics").style.border="1px solid grey";
 			}
-			if($("#recruitment").val() == ""){
+			
+			if(validate($("#title").val()) == false){
+				document.getElementById("title").style.border="1px solid red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else if($("#recruitment").val() == ""){
 				document.getElementById("recruitment").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -75,7 +116,12 @@
 			else{
 				document.getElementById("recruitment").style.border="1px solid grey";
 			}
-			if($("#partcipnatInfo").val() == ""){
+			if(validate($("#title").val()) == false){
+				document.getElementById("title").style.border="1px solid red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else if($("#partcipnatInfo").val() == ""){
 				document.getElementById("partcipnatInfo").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -83,7 +129,12 @@
 			else{
 				document.getElementById("partcipnatInfo").style.border="1px solid grey";
 			}
-			if($("#researchMethod").val() == ""){
+			if(validate($("#title").val()) == false){
+				document.getElementById("title").style.border="1px solid red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else if($("#researchMethod").val() == ""){
 				document.getElementById("researchMethod").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -91,7 +142,12 @@
 			else{
 				document.getElementById("researchMethod").style.border="1px solid grey";
 			}
-			if($("#dataSources").val() == ""){
+			if(validate($("#title").val()) == false){
+				document.getElementById("title").style.border="1px solid red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else if($("#dataSources").val() == ""){
 				document.getElementById("dataSources").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
