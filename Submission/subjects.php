@@ -14,7 +14,7 @@
 		}
 
 		function next(id){
-			if($("#subjectCharacteristics").val() == ""){
+			if(validate($("#subjectCharacteristics").val()) == false){
 				document.getElementById("subjectCharacteristics").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -22,6 +22,7 @@
 			else{
 				document.getElementById("subjectCharacteristics").style.border="1px solid grey";
 			}
+			
 			if($("#recruitment").val() == ""){
 				document.getElementById("recruitment").style.border="1px solid red";
 				alert("Kindly fill all required fields");
