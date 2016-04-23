@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Login Page</title>
-		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="../UI template/index.css">
 		<script type="text/javascript" src="js/jquery-1.12.1.js"></script>
         <link hre type="text/javascript"f='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'>
         <script type="text/javascript">
