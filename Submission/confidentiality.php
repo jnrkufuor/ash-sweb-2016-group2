@@ -58,7 +58,7 @@
 			else{
 				document.getElementById("confidentialityProtection").style.border="1px solid grey";
 			}
-			
+
 				window.open("update.php?cmd=4&id="+id +"&confidentialityExtent="+$("#confidentialityExtent").val()+"&dataStorage=" + $("#dataStorage").val()+"&resultDissemination="+$("#resultDissemination").val() +"&subjectInfo="+$("#subjectInfo").val()+"&confidentialityProtection="+$("#confidentialityProtection").val() ,"_self");
 			}
 		
@@ -82,7 +82,7 @@
 				document.getElementById("dataStorage").style.border="1px solid grey";
 			}
 
-			if($("#resultDissemination").val() == ""){
+			if(validate($("#resultDissemination").val()) == false){
 				document.getElementById("resultDissemination").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -90,6 +90,7 @@
 			else{
 				document.getElementById("resultDissemination").style.border="1px solid grey";
 			}
+			
 			if($("#subjectInfo").val() == ""){
 				document.getElementById("subjectInfo").style.border="1px solid red";
 				alert("Kindly fill all required fields");
