@@ -58,12 +58,13 @@
 			else{
 				document.getElementById("confidentialityProtection").style.border="1px solid grey";
 			}
+			
 				window.open("update.php?cmd=4&id="+id +"&confidentialityExtent="+$("#confidentialityExtent").val()+"&dataStorage=" + $("#dataStorage").val()+"&resultDissemination="+$("#resultDissemination").val() +"&subjectInfo="+$("#subjectInfo").val()+"&confidentialityProtection="+$("#confidentialityProtection").val() ,"_self");
 			}
 		
 
 		function save(id){
-			if($("#confidentialityExtent").val() == ""){
+			if(validate($("#confidentialityExtent").val()) == false){
 				document.getElementById("confidentialityExtent").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
