@@ -21,8 +21,8 @@
 
 		function save(sid){
 			if(validate($("#title").val()) == false){
-				document.getElementById("title").style.border="1px solid red";
-				alert("Kindly provide a title for your submission");
+				document.getElementById("title").style.border="1px solid red"	
+			alert("Kindly provide a title for your submission");
 				return;
 			}
 			
