@@ -63,7 +63,7 @@
 		
 
 		function save(id){
-			if($("#confidentialityExtent").val() == ""){
+			if(validate($("#confidentialityExtent").val()) == false){
 				document.getElementById("confidentialityExtent").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
