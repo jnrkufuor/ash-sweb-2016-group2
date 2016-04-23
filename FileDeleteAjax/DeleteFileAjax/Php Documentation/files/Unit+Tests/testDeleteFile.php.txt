@@ -1,0 +1,14 @@
+<?php
+include_once("../usersajax.php");
+
+class testDeleteFile extends PHPUnit_Framework_TestCase{
+
+function testDeleteFile (){
+	$URL="usersajax.php?cmd=1&usercode=27302017&fileID=23";
+	$this->assertEquals(true,'{"result":1,"message":"File deleted"}',$URL);
+}
+
+}	
+?>
+
+
