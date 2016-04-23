@@ -30,7 +30,7 @@
 			else{
 				document.getElementById("recruitment").style.border="1px solid grey";
 			}
-			if($("#partcipnatInfo").val() == ""){
+			if(validate($("#partcipnatInfo").val()) == false){
 				document.getElementById("partcipnatInfo").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
