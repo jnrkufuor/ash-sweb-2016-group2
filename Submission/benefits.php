@@ -46,7 +46,7 @@
 				document.getElementById("participantConpensation").style.border="1px solid grey";
 			}
 
-			if($("#participantBenefits").val() == ""){
+			if(validate($("#participantBenefits").val()) == false){
 				document.getElementById("participantBenefits").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
