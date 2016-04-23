@@ -23,7 +23,17 @@
 			}
 		}
 
+		function validate(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
+
 		function save(id){
+			
+			if(validate($("#title").val()) == false){
+				alert("empty");
+			}
+
 			if($("#title").val() == ""){
 				document.getElementById("title").style.border="1px solid red";
 				alert("Kindly provide a title for your submission");
