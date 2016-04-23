@@ -37,8 +37,8 @@
 		
 
 		function save(id){
-			if(validate($("#confidentialityExtent").val()) == false){
-				document.getElementById("confidentialityExtent").style.border="1px solid red";
+			if(validate($("#participantConpensation").val()) == false){
+				document.getElementById("participantConpensation").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
 			}
@@ -46,8 +46,8 @@
 				document.getElementById("participantConpensation").style.border="1px solid grey";
 			}
 
-			if(validate($("#confidentialityExtent").val()) == false){
-				document.getElementById("confidentialityExtent").style.border="1px solid red";
+			if(validate($("#participantBenefits").val()) == false){
+				document.getElementById("participantBenefits").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
 			}
