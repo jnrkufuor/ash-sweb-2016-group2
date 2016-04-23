@@ -1,9 +1,7 @@
 <html>
     <head>
         <title>Login Page</title>
-        <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="css/main.css">
 		<script type="text/javascript" src="js/jquery-1.12.1.js"></script>
         <link hre type="text/javascript"f='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'>
         <script type="text/javascript">
@@ -23,16 +21,7 @@
 		 }
 	    }
 	 	</script>
-        <style>
-        body{
-            background-image: url("bg.jpg");
-        }
-        h1 {
-            font: 400 30px/0.5 'Courgette', Helvetica, sans-serif;
-            color:#395870;  
-        }
-        </style
-		
+      
     </head>
     <body>
 	     
@@ -42,7 +31,18 @@
 			  echo "<script type='text/javascript'> alert('Wrong Username or ID'); </script>";
 		 }
 		 ?>
-        <form action='userlogin.php' method='GET'>
+		 
+     <div class="div">
+     <div>
+      <fieldset class="section"> 
+       </fieldset>
+       <fieldset class="section2">
+           <h1 id="text" style="font-size: 270%;"> Welcome to the Ashesi IRB. </h1>
+
+    <br> </br><h2 id="text"> Sign In and Apply to Gain Permission to use Human Subjects In Your Research Work...</h2>
+       </fieldset>
+     </div>
+        <form action='userlogin.php' method='GET' id="form">
 
             <fieldset class="account-info">
                 <label>
@@ -61,8 +61,8 @@
                 <a href="usersadd.php" >Join Now</a>
             </div>
             </fieldset>
-            
         </form>
+		</div>
 
     </body>
 </html>
