@@ -3,6 +3,11 @@
 	<link href="../UI template/index.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="js/jquery-1.12.1.js"></script>
 	<script type="text/javascript">
+	
+		function validate(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
 
 		function checkSave(id){
 			if($("#title").val() == ""){
