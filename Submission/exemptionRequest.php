@@ -10,7 +10,7 @@
 		}
 
 		function checkSave(id){
-			if($("#title").val() == ""){
+			if(validate($("#title").val()) == false){
 				document.getElementById("title").style.border="1px solid red";
 				alert("Kindly provide a title for your submission");
 				return;
@@ -29,7 +29,7 @@
 		}
 
 		function save(id){
-			if($("#title").val() == ""){
+			if(validate($("#title").val()) == false){
 				document.getElementById("title").style.border="1px solid red";
 				alert("Kindly provide a title for your submission");
 				return;
