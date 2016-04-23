@@ -14,6 +14,11 @@
 			window.open("update.php?cmd=6&title="+$("#title").val()+"&exemption=" + $("#exemption").val()+"&sid="+sid ,"_self");
 		}
 
+		 function validate(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
+
 		function save(sid){
 			if($("#title").val() == ""){
 				document.getElementById("title").style.border="1px solid red";
