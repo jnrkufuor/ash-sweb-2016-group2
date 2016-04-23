@@ -4,7 +4,7 @@
 *This script is the submission class that defines the makeSubmission function to make an IRB submission
 */
 
-include_once ("../adb.php");
+include_once ("adb.php");
 
 class submission extends adb{
 	/**
