@@ -90,8 +90,8 @@
 			else{
 				document.getElementById("resultDissemination").style.border="1px solid grey";
 			}
-			
-			if($("#subjectInfo").val() == ""){
+
+			if(validate($("#subjectInfo").val()) == false){
 				document.getElementById("subjectInfo").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -99,6 +99,7 @@
 			else{
 				document.getElementById("subjectInfo").style.border="1px solid grey";
 			}
+			
 			if($("#confidentialityProtection").val() == ""){
 				document.getElementById("confidentialityProtection").style.border="1px solid red";
 				alert("Kindly fill all required fields");
