@@ -5,7 +5,12 @@
 	<script type="text/javascript">
 
 		function checkSave(id){
-			if($("#title").val() == ""){
+			if(validate($("#title").val()) == false){
+				document.getElementById("title").style.border="1px solid red";
+				alert("Kindly provide a title for your submission");
+				return;
+			}
+			else if($("#title").val() == ""){
 				document.getElementById("title").style.border="1px solid red";
 				alert("Kindly provide a title for your submission");
 				return;
@@ -31,10 +36,11 @@
 		function save(id){
 			
 			if(validate($("#title").val()) == false){
-				alert("empty");
+				document.getElementById("title").style.border="1px solid red";
+				alert("Kindly provide a title for your submission");
+				return;
 			}
-
-			if($("#title").val() == ""){
+			else if($("#title").val() == ""){
 				document.getElementById("title").style.border="1px solid red";
 				alert("Kindly provide a title for your submission");
 				return;
