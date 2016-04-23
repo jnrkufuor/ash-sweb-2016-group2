@@ -9,12 +9,15 @@
 		{
 			validate($('#id').val());
 		}
+		
 		function validate(string)
 	    {
 	     var re = /([0-9]{8})/;
+		 
 	     if (re.test(string)==false)
 		 {
 			 alert("Please Use A Valid Ashesi ID(27302017)");
+			 document.getElementById("id").value="";
 		 }
 	    }
 	 	</script>
@@ -44,7 +47,7 @@
             <fieldset class="account-info">
                 <label>
                     ID
-                    <input type="text" name="id" onchange="login()" required>
+                    <input type="text" id="id" name="id" onchange="login()" required>
                 </label>
                 <label>
                     Password

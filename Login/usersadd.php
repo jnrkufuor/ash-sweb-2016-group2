@@ -45,7 +45,7 @@
                         <div class='row'>
                             <div class='small-12 columns'>
                                 <label  for='id'>Ashesi ID</label>
-                                <br><input type="text" name="id" placeholder="27302017"   required/></br>
+                                <br><input type="text" name="id" placeholder="27302017" id="id" onchange="login()" required/></br>
                             </div>
                         </div>
                         <div class='row'>
@@ -104,6 +104,22 @@
         </form>
         </div>
 </div>		
-
+      <script type="text/javascript">
+		function login ()
+		{
+			validate($('#id').val());
+		}
+		
+		function validate(string)
+	    {
+	     var re = /([0-9]{8})/;
+		 
+	     if (re.test(string)==false)
+		 {
+			 alert("Please Use A Valid Ashesi ID(27302017)");
+			 document.getElementById("id").value="";
+		 }
+	    }
+	 	</script>
     </body>
 </html>	
