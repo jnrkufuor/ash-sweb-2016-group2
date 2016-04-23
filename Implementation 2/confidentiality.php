@@ -8,9 +8,14 @@
 			window.open("risk.php?id="+id,"_self");
 		}
 
+		function validate(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
+
 		function next(id){
-			if($("#confidentialityExtent").val() == ""){
-				document.getElementById("confidentialityExtent").style.border="1px solid red";
+			if(validate($("#partcipnatInfo").val()) == false){
+				document.getElementById("partcipnatInfo").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
 			}
