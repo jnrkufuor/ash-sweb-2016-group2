@@ -205,16 +205,16 @@ width: 850px;
 text-align: center;
 background-color:white;
 margin: 0 auto;
-color: white;
+/*color: white;*/
 margin-left: 350px;
 
 }
-.content span{
+/*.content span{
 	color:black;
-}
-.contentv{
+}*/
+/*.contentv{
 
-}
+}*/
 .display #pending{
 	width: 100px;
 	height: 205px;

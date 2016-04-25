@@ -1,5 +1,5 @@
 <?php
-include_once("usersajax.php");
+include_once("../usersajax.php");
 
 class test extends PHPUnit_Framework_TestCase{
 
