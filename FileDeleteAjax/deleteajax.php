@@ -40,16 +40,16 @@
 <body>
 	<header><a href="#" title=""><img src="images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
 	<div class="side1">
-		<a href="index.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
-		<a href="deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
-		<a href="review2.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
+		<a href="../UI template/index.html" style ="text-decoration:none"><div id="appcen"><h3>Application Center</h3></div></a>
+		<a href="../Lab - usersajax_delete/deleteajax.php" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
+		<a href="../UI template/review2.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
 	</div>
 	<div class="menu"><span>Uploaded Files</span></div>
 	<!-- <h3>Uploaded Files</h3> -->
-	<div style="margin-left:25%" class="content">
-		<?php 
-		include_once("UserFiles.php");
-		$obj = new UserFiles();
+	<div style="margin-left:25%" class="content" style="color:black" style="background-color:black">
+		<?php
+		include_once("userFiles.php");
+		$obj = new userFiles();
 		if(!isset($_REQUEST['usercode'])){
 			echo "<span>No usercode provided</span>";
 			exit();
@@ -85,13 +85,13 @@
 				}
 				$row=$obj->fetch();
 				$num++;
-				echo "</table>";
 			}
+			echo "</table>";
 		}
 		else {
 			echo "<span>Sorry. No files to display</span>";
 		}
 		?>
-
-	</body>
-	</html>
+	</div>
+</body>
+</html>

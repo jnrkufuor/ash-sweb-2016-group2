@@ -1,6 +1,6 @@
 <?php
 define("DB_HOST","localhost");
-define("DB_USERNAME","root");
-define("DB_PASSWORD","possibilities7");
-define("DB_NAME","irbdb");
+define("DB_USERNAME","ashesics_idh6312");
+define("DB_PASSWORD","t5finyryvb7d");
+define("DB_NAME","ashesics_david_inusah");
 ?>
