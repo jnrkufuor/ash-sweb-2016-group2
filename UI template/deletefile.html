@@ -2,6 +2,15 @@
 <html>
 <head>
 	<link href="index.css" rel="stylesheet" type="text/css">
+	<style>
+		h1{
+			font-size: 170%;
+		}
+		
+		#hudson{
+			margin-left:-6%;
+		}
+	</style>
 </head>
 <body>
 	<header><a href="#" title=""><img src="images/ashesi.png"></a><h1> Ashesi IRB Portal</h1></header>
@@ -29,17 +38,27 @@
 			<td>IRB Questionnaire 2</td>
 			<td id="action"><button onclick="myFunction()"><img class="bin" src="images/delete.png"></button></td>
 		</tr>
-		<tr id="r3">
-			<td>3</td>
-			<td>IRB Questionnaire 3</td>
-			<td id="action"><button onclick="myFunction()"><img class="bin" src="images/delete.png"></button></td>
-		</tr>
-		<tr id="r4">
-			<td>4</td>
-			<td>IRB Questionnaire 4</td>
-			<td id="action"><button onclick="myFunction()"><img class="bin" src="images/delete.png"></button></td>
-		</tr>
 	</table>
+	
+	
+				<p style="color: #1e5eb6"> <br><span style="color:black"> <b> Upload Consent Form </b> </span> <br> File extensions allowed are .txt, .docx, .pdf and .xlsx </p>
+				<form style="text-align: left;"id="files" action="ajaxValidate.php" method="POST" enctype="multipart/form-data"> 
+				   <div id="hudson"> <input type="file" name="doc" > 
+				   <input type="submit" value="Upload"></input> </div>
+				</form>
+				
+			</div>
+		</div>
+		
+	<script type="text/javascript">
+		$(function(){
+			$('#files').form({
+				success:function(data){
+					$.messager.alert('Info', data, 'info');
+				}
+			});
+		});	
+	</script>
 	
 	<br>
 	<footer><p>Ashesi University College. | All rights reserved. | University Avenue, Berekuso; PMB CT 3, Cantonments, Accra, Ghana | Phone: +233.302.610.330</p>

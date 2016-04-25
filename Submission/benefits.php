@@ -1,15 +1,21 @@
 <html>
 <head>
 	<link href="../UI template/index.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css">
-	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/demo/demo.css">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-	<script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/UI.css">
+	
+	<!-- <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css"> 
+	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/demo/demo.css"> -->
+	
+	<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+	 <script type="text/javascript" src="js/jquery.easyui.min.js"></script> 
 	
 	<style>
 		h1{
 			font-size: 170%;
+		}
+		
+		#hudson{
+			margin-left:-51%;
 		}
 	</style>
 		
@@ -22,11 +28,12 @@
 		<a href="../UI template/deletefile.html" style ="text-decoration:none"><div id="filesys"><h3>File System</h3></div></a>
 		<a href="../UI template/review2.html" style ="text-decoration:none"><div id="rev"><h3>IRB Reviews</h3></div></a>
 	</div>
-	<!-- <div class="side2" >Side bar</div>-->
-	<div class="menu" style="background-color: orange;position:relative; left:28%; width:57%; height:5%; bottom:1%; font-size: 120%;">
-		<span> <h2> <strong> Application Form <strong> </h2></span>
+	<!-- <div class="side2" >Side bar</div> -->
+	<div class="menu" style="background-color: chocolate; position:relative; left:28%; width:57%; height:10%; bottom:1%; font-size: 120%;">
+		 <h2 style="position:relative; bottom:20%;"> <strong> Application Form <strong> </h2>
 	</div>
-	<br>
+	
+	<br> 
 			
 		<form style="margin-left:28%"action="" method="GET">
 		<div style="height:420px; padding-top: 0.00002px; position: relative; bottom:20px;" class="mainDiv">
@@ -41,14 +48,14 @@
 		</form>
 			<br>
 			<hr>
-			<br>
+			
 			<div>
 			<div><p><b>Upload Consent Form </b></p> </div>
 				<p style="color: #1e5eb6"> File extensions allowed are .txt, .docx, .pdf and .xlsx </p>
 				<form style="text-align: left;"id="files" action="ajaxValidate.php" method="POST" enctype="multipart/form-data"> 
 			   
-				   <div style="float:left;"> <input type="file" name="doc" > </div>
-				   <input type="submit" value="Upload"></input>
+				   <div id="hudson"> <input type="file" name="doc" > 
+				   <input type="submit" value="Upload"></input> </div>
 			  
 				</form>
 			</div>
