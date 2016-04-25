@@ -8,5 +8,9 @@ l.on("keydown",onKeyDown)}})}}(jQuery),function(e){e.fn.slider=function(t){var n
 }),$("#create-account-and-list").click(function(){createAccountAndList()}),$("#monthly-billing").click(function(){$(".pricing-price-monthly").fadeIn(),$(".pricing-price-yearly").fadeOut()}),$("#annual-billing").click(function(){$(".pricing-price-monthly").fadeOut(),$(".pricing-price-yearly").fadeIn()}),$("#create-list-login-container .create-list-button").click(function(e){return $(e.target).hasClass("disabled")?void e.preventDefault():void ga("send","event","acquisition","start-trial")}),window.setTimeout(function(){switch_group()},delay),setDimensions(),$(window).resize(function(){setDimensions()})});var heroTextOneEl=$("#hero-title-one"),heroTextTwoEl=$("#hero-title-two"),currentHeroTextSizeOne=0,currentHeroTextSizeTwo=0;
 
 function login(){
-	window.open("IRB_dashboard.html");
+	window.open("IRB_dashboard.php");
+}
+
+function next(){
+	window.open("new_subjects.php")
 }

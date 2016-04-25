@@ -158,12 +158,12 @@ class submission extends adb{
 	return $this->query($strQuery);
 	}
 
-	function getDashboardInfo($id)
-	{
-		$strQuery = "select title, submissionDate, submitted from submission where UsserID = id";
+	function getDashboardInfo($id){
+		$strQuery = "select submissionID, title, submissionDate, submitted from submission where UsserID = '$id'";
 
 		return $this->query($strQuery);
 	}
+}
 
 
 ?>
