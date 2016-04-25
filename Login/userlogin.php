@@ -5,18 +5,18 @@ include('users.php');
 
 if (isset($_REQUEST['id'])) {
     $id = $_REQUEST['id'];
-    $password = $_REQUEST['password'];
+    $password = $_REQUEST['pword'];
 	
     $obj = new users();
     $lec = new users();
     if (!$obj->validateUser($id,$password)) {
         window.alert("Error Validating");
-        header("Location:login.php");
+        echo '<script>window.location.href = "../New UI/IRB_home.php";</script>';
 		
     }
 	if (!$lec->validateReviewer($id,$password)){
 		window.alert("Error Validating");
-        header("Location:login.php");
+        echo '<script>window.location.href = "../New UI/IRB_home.php";</script>';
 	}
     echo "flas";
 	
@@ -25,7 +25,7 @@ if (isset($_REQUEST['id'])) {
     $type=$row['type'];
 
     if (!$row||!$tbl){
-        header("Location:login.php?error=$err");
+        echo '<script>window.location.href = "../New UI/IRB_home.php?error=err";</script>';
         }
     if ($row||!$tbl){
          $type=$row['type'];

@@ -16,7 +16,7 @@
             $id = $_REQUEST['id'];
             $firstname = $_REQUEST['firstname'];
             $password = $_REQUEST['pword'];
-            $lastname = $_REQUEST['lastname'];
+            $lastname = $_REQUEST['lastname
             $fax = $_REQUEST['fax'];
             $phone = $_REQUEST['phone'];
             $email = $_REQUEST['email'];
