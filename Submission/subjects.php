@@ -4,12 +4,17 @@
 	<script type="text/javascript" src="js/jquery-1.12.1.js"></script>
 	<script type="text/javascript">
 
+		function validate(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
+
 		function back(id){
 			window.open("exemptionRequest2.php?id="+id,"_self");
 		}
 
 		function next(id){
-			if($("#subjectCharacteristics").val() == ""){
+			if(validate($("#subjectCharacteristics").val()) == false){
 				document.getElementById("subjectCharacteristics").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -17,7 +22,8 @@
 			else{
 				document.getElementById("subjectCharacteristics").style.border="1px solid grey";
 			}
-			if($("#recruitment").val() == ""){
+
+			if(validate($("#recruitment").val()) == false){
 				document.getElementById("recruitment").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -25,7 +31,8 @@
 			else{
 				document.getElementById("recruitment").style.border="1px solid grey";
 			}
-			if($("#partcipnatInfo").val() == ""){
+
+			if(validate($("#partcipnatInfo").val()) == false){
 				document.getElementById("partcipnatInfo").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -33,7 +40,8 @@
 			else{
 				document.getElementById("partcipnatInfo").style.border="1px solid grey";
 			}
-			if($("#researchMethod").val() == ""){
+
+			if(validate($("#researchMethod").val()) == false){
 				document.getElementById("researchMethod").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -41,7 +49,8 @@
 			else{
 				document.getElementById("researchMethod").style.border="1px solid grey";
 			}
-			if($("#dataSources").val() == ""){
+
+			if(validate($("#dataSources").val()) == false){
 				document.getElementById("dataSources").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -54,7 +63,7 @@
 		
 
 		function save(id){
-			if($("#subjectCharacteristics").val() == ""){
+			if(validate($("#subjectCharacteristics").val()) == false){
 				document.getElementById("subjectCharacteristics").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -62,7 +71,8 @@
 			else{
 				document.getElementById("subjectCharacteristics").style.border="1px solid grey";
 			}
-			if($("#recruitment").val() == ""){
+
+			if(validate($("#recruitment").val()) == false){
 				document.getElementById("recruitment").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -70,7 +80,8 @@
 			else{
 				document.getElementById("recruitment").style.border="1px solid grey";
 			}
-			if($("#partcipnatInfo").val() == ""){
+
+			if(validate($("#partcipnatInfo").val()) == false){
 				document.getElementById("partcipnatInfo").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -78,7 +89,8 @@
 			else{
 				document.getElementById("partcipnatInfo").style.border="1px solid grey";
 			}
-			if($("#researchMethod").val() == ""){
+			
+			if(validate($("#researchMethod").val()) == false){
 				document.getElementById("researchMethod").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -86,7 +98,7 @@
 			else{
 				document.getElementById("researchMethod").style.border="1px solid grey";
 			}
-			if($("#dataSources").val() == ""){
+			if(validate($("#dataSources").val()) == false){
 				document.getElementById("dataSources").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;

@@ -8,9 +8,13 @@
 			window.open("confidentiality.php?id="+id,"_self");
 		}
 
+		function validate(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
+
 		function send(id){
-			debugger
-			if($("#participantConpensation").val() == ""){
+			if(validate($("#participantConpensation").val()) == false){
 				document.getElementById("participantConpensation").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -19,7 +23,7 @@
 				document.getElementById("participantConpensation").style.border="1px solid grey";
 			}
 
-			if($("#participantBenefits").val() == ""){
+			if(validate($("#participantBenefits").val()) == false){
 				document.getElementById("participantBenefits").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -33,7 +37,7 @@
 		
 
 		function save(id){
-			if($("#participantConpensation").val() == ""){
+			if(validate($("#participantConpensation").val()) == false){
 				document.getElementById("participantConpensation").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;
@@ -42,7 +46,7 @@
 				document.getElementById("participantConpensation").style.border="1px solid grey";
 			}
 
-			if($("#participantBenefits").val() == ""){
+			if(validate($("#participantBenefits").val()) == false){
 				document.getElementById("participantBenefits").style.border="1px solid red";
 				alert("Kindly fill all required fields");
 				return;

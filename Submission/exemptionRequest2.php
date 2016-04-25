@@ -4,8 +4,13 @@
 	<script type="text/javascript" src="js/jquery-1.12.1.js"></script>
 	<script type="text/javascript">
 
+		function validate(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
+
 		function checkSave(sid){
-			if($("#title").val() == ""){
+			if(validate($("#title").val()) == false){
 				document.getElementById("title").style.border="1px solid red";
 				alert("Kindly provide a title for your submission");
 				return;
@@ -15,9 +20,9 @@
 		}
 
 		function save(sid){
-			if($("#title").val() == ""){
-				document.getElementById("title").style.border="1px solid red";
-				alert("Kindly provide a title for your submission");
+			if(validate($("#title").val()) == false){
+				document.getElementById("title").style.border="1px solid red"	
+			alert("Kindly provide a title for your submission");
 				return;
 			}
 			
