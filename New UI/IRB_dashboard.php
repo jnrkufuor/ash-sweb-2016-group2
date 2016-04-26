@@ -74,7 +74,7 @@
                 <li><a href="/blog">File System</a></li>
                 <li><a href="/blog">IRB Reviews</a></li>
                
-                <li><a href="IRB_home.html">Logout</a></li>
+                <li><a href="IRB_home.php">Logout</a></li>
                 
             </ul>
         </div>

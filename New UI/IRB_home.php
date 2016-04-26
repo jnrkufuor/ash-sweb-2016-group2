@@ -146,7 +146,7 @@
                             <div class="row">
                                 <div class="col s12 input-field">
                                     <input id="co_researcher" name="co_researcher" type="text" >
-                                    <label for="co_researcher">Co-Researcher</label>
+                                    <label for="co_researcher">Principal Investigator</label>
                                 </div>
                             </div>
                             <div class="row">

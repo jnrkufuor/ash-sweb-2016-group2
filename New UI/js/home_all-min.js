@@ -31,12 +31,12 @@ function login ()
 			 document.getElementById("id").value="";
 		 }
 	 }
-	 function login_check ()
+	 function login_check()
 		{
-			validate($('#login_id').val());
+			validate_check($('#login_id').val());
 		}
 		
-		function validate(string)
+		function validate_check(string)
 	    {
 	     var re = /([0-9]{8})/;
 		 

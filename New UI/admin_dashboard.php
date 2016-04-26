@@ -136,7 +136,7 @@
                                 }
                                 echo" <table  style='align=center;' id='tableLec' class ='highlight'>
                                     <tr id='hd'> 
-                                    <th>Lecturer ID </th>
+                                    <th>Reviewer ID </th>
                                     <th>Type</th>
 									 <th>Firstname</th>
 									  <th>Lastname</th>

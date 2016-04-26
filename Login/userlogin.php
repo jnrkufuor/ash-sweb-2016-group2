@@ -18,14 +18,14 @@ if (isset($_REQUEST['id'])) {
 		window.alert("Error Validating");
         echo '<script>window.location.href = "../New UI/IRB_home.php";</script>';
 	}
-    echo "flas";
+
 	
     $row = $obj->fetch();
 	$tbl = $lec->fetch();
     $type=$row['type'];
 
     if (!$row||!$tbl){
-        echo '<script>window.location.href = "../New UI/IRB_home.php?error=err";</script>';
+        //echo '<script>window.location.href = "../New UI/IRB_home.php?error=err";</script>';
         }
     if ($row||!$tbl){
          $type=$row['type'];
