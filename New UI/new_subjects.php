@@ -102,48 +102,48 @@
                             <div class="spacer"></div>
                             <div class="row">
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">A. Identify the numbers and characteristics of subjects (eg. age ranges, sex, ethnic background, health status, disabilities , etc.) It is recommended to provide the breakdown based on your sampling strategy.</label>
+                                    <textarea id="subjectCharacteristics" class="materialize-textarea"></textarea>
+                                    <label id="subjectCharacteristics1" for="new-your-name">A. Identify the numbers and characteristics of subjects (eg. age ranges, sex, ethnic background, health status, disabilities , etc.) It is recommended to provide the breakdown based on your sampling strategy.</label>
                                 </div>
                             </div>
                             <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">B. Special cases. If applicable, explain the rationale for the use of special cases or subjects such as pregnant women, children, prisoners, mentally impaired, institutionalized, or others who are likely to be particulary vulnerable</label>
+                                    <textarea id="specialClasses" class="materialize-textarea"></textarea>
+                                    <label id="specialClasses1" for="new-your-name">B. Special cases. If applicable, explain the rationale for the use of special cases or subjects such as pregnant women, children, prisoners, mentally impaired, institutionalized, or others who are likely to be particulary vulnerable</label>
                                 </div>
                             </div>
                             <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">C. How are the individual participants to be recruited for this research? Is it clear to the subjects that participation is voluntary and that they may withraw at any time without any negative consequences?</label>
+                                    <textarea id="recruitment" class="materialize-textarea"></textarea>
+                                    <label id="recruitment1" for="new-your-name">C. How are the individual participants to be recruited for this research? Is it clear to the subjects that participation is voluntary and that they may withraw at any time without any negative consequences?</label>
                                 </div>
                             </div>
                             <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">D. To what extent and how are participants to be informed of research procedures before their participation? </label>
+                                    <textarea id="partcipnatInfo" class="materialize-textarea"></textarea>
+                                    <label id="partcipnatInfo1" for="new-your-name">D. To what extent and how are participants to be informed of research procedures before their participation? </label>
                                 </div>
                             </div>
                              <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">E. How will you classify your research method? (experiment, observation, modelling etc.). Specify all methods you anticipate to use. </label>
+                                    <textarea id="researchMethod" class="materialize-textarea"></textarea>
+                                    <label id="researchMethod1" for="new-your-name">E. How will you classify your research method? (experiment, observation, modelling etc.). Specify all methods you anticipate to use. </label>
                                 </div>
                             </div>
                             <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">F. Specify the data sources you will use for your reserach. (eg. questionnaire, audio recording human resource files, experiment data, etc.) </label>
+                                    <textarea id="dataSources" class="materialize-textarea"></textarea>
+                                    <label id="dataSources1" for="new-your-name">F. Specify the data sources you will use for your reserach. (eg. questionnaire, audio recording human resource files, experiment data, etc.) </label>
                                 </div>
                             </div>
                             <div class="row center">
