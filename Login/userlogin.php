@@ -34,7 +34,7 @@ if (isset($_REQUEST['id'])) {
         $type=$tbl['type'];
         }
 	if ($type=="Applicant") {
-            header("Location:../UI template/index.html?id=$id");
+             echo '<script>window.location.href = "../New UI/IRB_dashboard.php";</script>';
         }
 	if ($type=="Reviewer") {
             header("Location:reviewerIndex.php?id=$id");
