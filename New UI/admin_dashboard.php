@@ -111,7 +111,9 @@
                                     echo "Error getting Users";
                                 }
                                 echo" <table  id='tableUsers' class ='highlight' >
-                                      <tr id='hd'>
+								      <thead>
+                                      <tr >
+									  
                                       <th>User ID </th>
                                       <th>Firstname </th>
                                       <th>Lastname </th>
@@ -119,7 +121,8 @@
                                       <th>Email </th>
                                       <th>Phone </th>
                                       <th>Fax </th>
-                                      </tr>";
+                                      </tr>
+									  </thead>";
 									  
 							    $count =0;
                                 while ($row = $obj->fetch
@@ -143,12 +146,14 @@
                                     echo "Error getting Lecturers";
                                 }
                                 echo" <table  style='align=center;' id='tableLec' class ='highlight'>
-                                    <tr id='hd'> 
+								<thead>
+                                    <tr> 
                                     <th>Reviewer ID </th>
                                     <th>Type</th>
 									 <th>Firstname</th>
 									  <th>Lastname</th>
-                                    </tr>";
+                                    </tr>
+									<thead>";
                                 while ($tbl = $lec->fetch()) {
                                     echo" <tr id='r1'>"
                                     . "<td>{$tbl['RID']}</td>"
