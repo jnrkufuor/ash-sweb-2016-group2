@@ -81,6 +81,28 @@
 </header>
 <main>
 
+<?php
+        include_once("submission.php");
+        $obj = new submission();
+
+        $id ="";
+
+        if(isset($_REQUEST['id'])){
+            $id = $_REQUEST['id'];
+        }
+
+        $r = $obj -> getSubmissionByCode($id);
+                                    
+        if(!$r){
+            echo "Error getting the user to edit";
+            exit();
+        }
+        else{
+            $row = $obj ->fetch();
+        }
+
+        ?>
+
     <div class="row" id="create-row">
 
             <span id="create" class="scrollspy"></span>
@@ -102,7 +124,7 @@
                             <div class="spacer"></div>
                             <div class="row">
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <textarea id="confidentialityExtent" class="materialize-textarea"><?php echo $row['confidentialityExtent'] ?></textarea>
                                     <label for="new-your-name">A. To what extent is the information confidential and to what extent are provisions made so that subjects are not identified?</label>
                                 </div>
                             </div>
@@ -110,7 +132,7 @@
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <textarea id="dataStorage" class="materialize-textarea"><?php echo $row['dataStorage'] ?></textarea>
                                     <label for="new-your-name">B. What are the procedures for handling and storing data so that confidentiality of the subjects and privacy are protected?</label>
                                 </div>
                             </div>
@@ -118,7 +140,7 @@
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <textarea id="resultDissemination" class="materialize-textarea"><?php echo $row['resultDissemination'] ?></textarea>
                                     <label for="new-your-name">C. How will the results of the research be disseminated?</label>
                                 </div>
                             </div>
@@ -126,7 +148,7 @@
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <textarea id="textarea1" class="materialize-textarea"><?php echo $row['confidentialityExtent'] ?></textarea>
                                     <label for="new-your-name">How will the subjects be informed of the results? </label>
                                 </div>
                             </div>
