@@ -50,7 +50,7 @@ class users extends adb {
      * @return boolean True if successful
      */
     function validateUser($id, $password) {
-        return $this->query("select type from irb_user where USER_ID='$id' and PASSWORD='$password'");
+        return $this->query("select type from irb_user where USER_ID='$id' and PASSWORD=md5('$password')");
     }
 	function validateReviewer($id, $password){
 		return $this->query("select type from reviewer where RID='$id' and PASSWORD='$password'");
