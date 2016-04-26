@@ -57,22 +57,7 @@
             <meta itemprop="url" content="http://gaggle.email/">
             <meta itemprop="name" content="Gaggle Mail">
             <div id="header-mobile-links" class=" row center hide-on-large-only">
-                 <div class="col s4">
-                    <a href="IRB_dashboard.php">Dashboard</a>
-                </div>
-                <div class="col s4">
-                    <a href="/blog">File System</a>
-                </div>
-                <div class="col s4">
-                
-                <a href="/blog">IRB Reviews</a>
-                
-                </div>
-                <div class="col s4">
-                
-                <a href="IRB_home.html">Logout</a
-                
-                </div>
+                 
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
@@ -191,7 +176,7 @@
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <textarea id="procedureDetails" class="materialize-textarea"></textarea>
                                     <label for="new-your-name">If the answer to any of the above is "Yes", please explain this procedure in detail and describe procedures for protecting against or minimizing any potential risk.</label>
                                 </div>
                             </div>

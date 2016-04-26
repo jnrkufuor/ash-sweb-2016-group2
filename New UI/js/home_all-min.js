@@ -530,3 +530,25 @@ function titleNext(id){
 		window.open("exemption.php?id="+id, "_self");
 	}
 
+	function reviewer_exemptionNext(id){
+		window.open("reviewer_subjects.php?id="+id, "_self");
+	}
+
+	function reviewer_subjectsNext(id){
+		window.open("reviewer_risk.php?id="+id, "_self");
+	}
+
+	function reviewer_subjectsBack(id){
+		window.open("reviewer_exemption.php?id="+id, "_self");
+	}
+
+	function reviewer_riskBack(id){
+		window.open("reviewer_subjects.php?id="+id, "_self");
+	}
+
+	function reviewer_riskNext(id){
+		window.open("reviewer_confidentiality.php?id="+id, "_self");
+	}
+
+
+

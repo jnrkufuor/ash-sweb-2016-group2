@@ -122,7 +122,7 @@
                             <div class="center">
                                 <p class="flow-text">Describe Any Anticipated Benefits To Subjects From Participation In This Research</p>
                             </div>
-                            <div id="divStatus"></div>
+                             <div id="divStatus"></div>
                             <div class="spacer"></div>
                             
                             <div class="row">
