@@ -133,7 +133,8 @@ class submission extends adb{
 	function updateBenefits($id,$participantBenefits, $participantConpensation){
 	$strQuery="update submission set
 						participantBenefits ='$participantBenefits',
-						participantConpensation ='$participantConpensation'
+						participantConpensation ='$participantConpensation',
+						submissionDate = CURRENT_TIMESTAMP
 						where submissionID = $id ";
 
 	return $this->query($strQuery);
@@ -152,7 +153,8 @@ class submission extends adb{
 	$strQuery="update submission set
 						participantBenefits ='$participantBenefits',
 						participantConpensation ='$participantConpensation',
-						submitted = 1
+						submitted = 1,
+						submissionDate = CURRENT_TIMESTAMP
 						where submissionID = $id ";
 
 	return $this->query($strQuery);
