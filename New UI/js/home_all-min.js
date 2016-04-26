@@ -408,3 +408,52 @@ function titleNext(id){
 					{async:true,complete:saveComplete}
 					);
 			}
+
+			function benefitsSend(id){
+			if(validateForm($("#participantConpensation").val()) == false){
+				document.getElementById("participantConpensation").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("participantConpensation").style.color="grey";
+			}
+
+			if(validateForm($("#participantBenefits").val()) == false){
+				document.getElementById("participantBenefits").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("participantBenefits").style.color="grey";
+			}
+
+				window.open("update.php?cmd=5&id="+id +"&participantConpensation="+$("#participantConpensation").val()+"&participantBenefits=" + $("#participantBenefits").val() ,"_self");
+			}
+		
+
+		function benefitsSave(id){
+			if(validateForm($("#participantConpensation").val()) == false){
+				document.getElementById("participantConpensation").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("participantConpensation").style.color="grey";
+			}
+
+			if(validateForm($("#participantBenefits").val()) == false){
+				document.getElementById("participantBenefits").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("participantBenefits").style.color="grey";
+			}
+
+			
+			var theUrl="submission_ajax.php?cmd=6 & id="+id +"&participantConpensation="+$("#participantConpensation").val()+"&participantBenefits=" + $("#participantBenefits").val();
+				$.ajax(theUrl,
+					{async:true,complete:saveComplete}
+					);
+			}
