@@ -21,5 +21,10 @@ class upload extends adb {
         $strQuery = "INSERT INTO supporting_documents(FileType, FileSize, FileName, File, Researcher_ID, Submission_ID) VALUES('$fileType', '$fileSize','$fileName', '$file','$sID', '$rID')";    
         return $this->query($strQuery);
     }
+	
+	public function getFiles($RID){
+		$strQuery = "Select * from supporting_documents where Researcher_ID='$RID'";
+		return $this->query($strQuery);
+	}
     
   }

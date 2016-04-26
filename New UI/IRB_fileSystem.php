@@ -1,3 +1,11 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['USER_ID'])){
+		header("Location:IRB_home.php");
+		exit();
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head lang="en">
@@ -87,6 +95,9 @@
                 <div class="col s12 center-align">
                     <div id="hero-title" style="margin-top: 3%">
                         <h1 id="hero-title-one" itemprop="description"><span class="bold" style="font-size:80%;">Supporting Documents</span></h1>
+						<hr>
+						
+						
                         <?php
 
                         include_once ("../FileUpload/upload.php");
@@ -94,7 +105,7 @@
 
                         $id= $_SESSION['USER_ID'];
 
-                        if(!$obj-> getDashboardInfo($id)){
+                        if(!$obj-> getFiles($id)){
                             echo "Error";
                         }
                         else{
@@ -113,49 +124,36 @@
                             ";
 
                             while ($row = $obj ->fetch()){
-
-                                if($row['submitted'] == 0){
-                                    $status = 'Incomplete';
-                                }
-                                else{
-                                    $status = 'Submitted';
-                                }
-                                
                                 echo "
-                                <tr onclick='view({$row['submissionID']})'>
-                                <td>{$row['title']}</td>
-                                <td>{$row['submissionDate']}</td>
-                                <td>$status</td>
+                                <tr onclick='view({$row['FileID']})'>
+                                <td>{$row['FileID']}</td>
+                                <td>{$row['FileName']}</td>
+                                <td><button> Delete </button></td>
                                 </tr>";
                             }
                             echo "</table>";
                         }
 
                         ?>
-                       
-
-        
-    
                     
-
                     </div>
+						<div style="background-color:Silver; padding: 1% 2% 1% 2%; width: 50%; position:relative; left:30%; border-radius:3%;">
+						<h5>  Upload Supporting Documents </h5>
+						<p style="font-size: 90%;"> File extensions allowed include '.txt', '.docx', '.xlsx', '.pdf' </p>
+						<form action="" method="post" enctype="multipart">
+							<input type="file" name="doc">
+						</form>
+						<br>
+						</div>
+					
+					
                 </div>
             </div>
 
-            <div class="row">
-                    <div class="center-align">
-                        <a href="IRB_form.php" class="btn btn-large hero-btn">New Application <svg style="width:24px;height:24px;top: 6px; position: relative; right: 2px;" viewBox="0 0 24 24">
-<path fill="#ffffff" d="M5.59,7.41L7,6L13,12L7,18L5.59,16.59L10.17,12L5.59,7.41M11.59,7.41L13,6L19,12L13,18L11.59,16.59L16.17,12L11.59,7.41Z" />
-</svg>
-
-
-</a>
-                       
-                    </div>
-              
-            </div>
         </div>
     </div>
+	
+						
    
 </main>
 <footer class="page-footer">
@@ -164,34 +162,11 @@
             <a href="/"><img alt="Gaggle Mail footer logo" src="images/logo_circle48x48@2x.png" ></a>
         </div>
     </div>
-    <div class="container row">
-        <div class="col s12 m6">
-            <div>
-                <a href="/about">About</a>
-            </div>
-            <div>
-                <a href="/terms">Terms and conditions</a>
-            </div>
-            <div>
-                <a href="mailto:help@gaggle.email">Contact</a>
-            </div>
-        </div>
-        <div class="col s12 m6">
-            <div>
-                <a href="/blog/frequently-asked-questions/">FAQ</a>
-            </div>
-            <div>
-                <a href="/what-is-group-email">What is group email?</a>
-            </div>
-            <div>
-                <a href="/why-use-group-email">Why use group email?</a>
-            </div>
-        </div>
-    </div>
+
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
-            <span class="right" href="#!">Made in London</span>
+            <span class="right" href="#!">Made in Berekuso</span>
         </div>
     </div>
 </footer>

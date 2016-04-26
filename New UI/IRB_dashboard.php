@@ -95,8 +95,8 @@
                         <h1 id="hero-title-one" itemprop="description"><span class="bold" style="font-size:80%;">Dashboard</span></h1>
                         <?php
 
-                        include_once ("../FileUpload/upload.php");
-                        $obj = new upload();
+                        include_once ("../Submission/submission.php");
+                        $obj = new submission();
 
                         $id=$_SESSION['USER_ID'];
 
