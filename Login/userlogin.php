@@ -44,7 +44,7 @@ if (isset($_REQUEST['id'])) {
 		    $_SESSION['USER_ID']=$tbl['RID'];
 			$_SESSION['FIRSTNAME']=$tbl['FIRSTNAME'];
 			 $_SESSION['LASTNAME']=$tbl['LASTNAME'];
-            header("Location:reviewerIndex.php?id=$id");
+            header("Location: ../New UI/reviewer_dashboard.php");
         }
 	if ($type=="Administrator") {
 		    session_start();

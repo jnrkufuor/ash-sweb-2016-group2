@@ -76,11 +76,11 @@
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
-                <li><a href=""> <?php echo $_SESSION['FIRSTNAME'];?>
+                <li><a href="" style="color:#AD1E26;"> <?php echo $_SESSION['FIRSTNAME'];?> </a></li>
                 <li><a href="admin_dashboard.php?purpose=user">User System</a></li>
                 <li><a href="admin_dashboard.php?purpose=lec">Reviewers</a></li>
 				<li><a href="/blog">Submissions</a></li>
-                <li><a href="IRB_home.php">Logout</a></li>
+                <li><a href="logout.php">Logout</a></li>
                 
             </ul>
         </div>
