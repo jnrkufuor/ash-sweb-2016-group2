@@ -73,7 +73,7 @@
                 <li><a href="admin_dashboard.php?purpose=user">User System</a></li>
                 <li><a href="admin_dashboard.php?purpose=lec">Reviewers</a></li>
 				<li><a href="/blog">Submissions</a></li>
-                <li><a href="IRB_home.html">Logout</a></li>
+                <li><a href="IRB_home.php">Logout</a></li>
                 
             </ul>
         </div>
