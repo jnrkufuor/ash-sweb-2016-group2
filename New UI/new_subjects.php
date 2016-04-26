@@ -78,6 +78,7 @@
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
+                <li><a href="" style="color:#AD1E26;"> <?php echo $_SESSION['FIRSTNAME'];?> </a></li>
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
                  <li><a href="IRB_fileSystem.php">File System</a></li>
                 <li><a href="/blog">IRB Reviews</a></li>

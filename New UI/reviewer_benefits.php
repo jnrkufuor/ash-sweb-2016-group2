@@ -14,7 +14,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <link rel="shortcut icon" href="logo_32x32@2x.png">
+    <link rel="shortcut icon" href="images/ash.jpg">
     
     <link rel="apple-touch-icon" href="images/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
