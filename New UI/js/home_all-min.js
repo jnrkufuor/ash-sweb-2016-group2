@@ -8,6 +8,7 @@ l.on("keydown",onKeyDown)}})}}(jQuery),function(e){e.fn.slider=function(t){var n
 }),$("#create-account-and-list").click(function(){createAccountAndList()}),$("#monthly-billing").click(function(){$(".pricing-price-monthly").fadeIn(),$(".pricing-price-yearly").fadeOut()}),$("#annual-billing").click(function(){$(".pricing-price-monthly").fadeOut(),$(".pricing-price-yearly").fadeIn()}),$("#create-list-login-container .create-list-button").click(function(e){return $(e.target).hasClass("disabled")?void e.preventDefault():void ga("send","event","acquisition","start-trial")}),window.setTimeout(function(){switch_group()},delay),setDimensions(),$(window).resize(function(){setDimensions()})});var heroTextOneEl=$("#hero-title-one"),heroTextTwoEl=$("#hero-title-two"),currentHeroTextSizeOne=0,currentHeroTextSizeTwo=0;
 
 function authenticate(){
+	
 	window.location.href="../Login/userlogin.php?id="+$('#login_id').val()+"&pword="+$('#password').val();
 }
 
@@ -16,19 +17,22 @@ function sign()
 window.location.href="../Login/add.php?id="+$('#id').val()+"&co_researcher="+$('#co_researcher').val()+"&firstname="+$('#firstname').val()+"&lastname="+$('#lastname').val()+"&pword="+$('#pword').val()+"&email="+$('#email').val()+"&phone="+$('#phone').val()+"&fax="+$('#fax').val();
 }
 
-function login ()
+function login_one ()
 		{
 			validate($('#id').val());
 		}
 		
 		function validate(string)
 	    {
-	     var re = /([0-9]{8})/;
+	     var re = /^([0-9]{8})$/;
 		 
 	     if (re.test(string)==false)
 		 {
 			 alert("Please Use A Valid Ashesi ID(27302017)");
 			 document.getElementById("id").value="";
+		 }
+		 else{
+			 return;
 		 }
 	 }
 	 function login_check()
@@ -38,12 +42,15 @@ function login ()
 		
 		function validate_check(string)
 	    {
-	     var re = /([0-9]{8})/;
+	     var re = /^([0-9]{8})$/;
 		 
 	     if (re.test(string)==false)
 		 {
 			 alert("Please Use A Valid Ashesi ID(27302017)");
 			 document.getElementById("login_id").value="";
+		 }
+		 else{
+			 return;
 		 }
 	 }
 

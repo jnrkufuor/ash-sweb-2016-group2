@@ -127,7 +127,7 @@
                             </div>
                             <div class="row">
                                 <div class="col s12 input-field">
-                                    <input id="id" name="id" type="text"  onchange="login()" required>
+                                    <input id="id" name="id" type="text"  onchange="login_one()" required>
                                     <label for="id">Ashesi ID</label>
                                 </div>
                             </div>
@@ -447,18 +447,18 @@
                 <div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="login_id" name="login_id" type="text" onchange="login_check()" required>
-                            <label for="login_id">Ashesi ID</label>
+                            <input id="login_id" name="login_id" type="text" onchange="login_check()" required/>
+                            <label id="login_id1" for="login_id">Ashesi ID</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="password" name="password" type="password" required>
-                            <label for="password">Password</label>
+                            <input id="password" name="password" type="password" required/>
+                            <label id="password1" for="password">Password</label>
                         </div>
                     </div>
                     <div id="login-button-panel" class="center-align">
-                        <button class="btn" id="login-btn" onclick="authenticate()" >Login</button>
+                        <button class="btn" id="login-btn" onclick="authenticate()">Login</button>
                         <div id="login-preloader" class="preloader-wrapper small active" style="display: none;">
                             <div class="spinner-layer spinner-blue">
                                 <div class="circle-clipper right">

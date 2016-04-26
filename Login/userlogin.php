@@ -25,7 +25,7 @@ if (isset($_REQUEST['id'])) {
     $type=$row['type'];
 
     if (!$row||!$tbl){
-        //echo '<script>window.location.href = "../New UI/IRB_home.php?error=err";</script>';
+        echo '<script>window.location.href = "../New UI/IRB_home.php?error=err";</script>';
         }
     if ($row||!$tbl){
          $type=$row['type'];
@@ -34,7 +34,7 @@ if (isset($_REQUEST['id'])) {
         $type=$tbl['type'];
         }
 	if ($type=="Applicant") {
-             echo '<script>window.location.href = "../New UI/IRB_dashboard.php";</script>';
+             header("Location: ../New UI/IRB_dashboard.php");
         }
 	if ($type=="Reviewer") {
             header("Location:reviewerIndex.php?id=$id");
