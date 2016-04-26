@@ -71,8 +71,8 @@
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
-                <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                <li><a href="IRB_home.html">Logout</a></li>
+                <li><a href="reviewer_dashboard.php">Dashboard</a></li>
+                <li><a href="IRB_home.php">Logout</a></li>
                 
             </ul>
         </div>

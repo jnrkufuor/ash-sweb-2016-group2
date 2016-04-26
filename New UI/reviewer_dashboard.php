@@ -70,8 +70,8 @@
             </div>
             <ul class="right hide-on-med-and-down">
 
-                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                <li><a href="IRB_home.html">Logout</a></li>
+                 <li><a href="reviewer_dashboard.php">Dashboard</a></li>
+                <li><a href="IRB_home.php">Logout</a></li>
                 
             </ul>
         </div>
@@ -83,7 +83,7 @@
             <div class="row">
                 <div class="col s12 center-align">
                     <div id="hero-title" style="margin-top: 3%">
-                        <h1 id="hero-title-one" itemprop="description"><span class="bold">Reviewer's Dashboard</span></h1>
+                        <h3 id="hero-title-one" itemprop="description"><span class="bold">Reviewer's Dashboard</span></h3>
                         <?php
 
                         include_once ("../New UI/submission.php");

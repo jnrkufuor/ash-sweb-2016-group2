@@ -226,9 +226,9 @@
 	if(!isset($_REQUEST['id'])){
 			exit();
 	}
-	$sid = $_REQUEST['id'];
+	$id = $_REQUEST['id'];
 	
-	$exemption=$_REQUEST['feedback'];
+	$feedback=$_REQUEST['feedback'];
 
 	$r = $obj -> feedback($id, $feedback);
 	if($r == false){

@@ -59,7 +59,7 @@ class submission extends adb{
 	}
 
 	function getSubmissions(){
-		$strQuery="select submissionID, submissionDate, title, FIRSTNAME, LASTNAME from submission, irb_user where UsserID = USER_ID && submitted ='1'";
+		$strQuery="select submissionID, submissionDate, title, FIRSTNAME, LASTNAME from submission, irb_user where UsserID = USER_ID && submitted ='1' && reviewed = '0'";
 		return $this->query($strQuery);
 	}
 
@@ -167,7 +167,7 @@ class submission extends adb{
 	}
 
 	function feedback($id, $feedback){
-		$strQuery = "update from submission set feedback = '$feedback' where submissionID = '$id'";
+		$strQuery = "update submission set feedback = '$feedback', reviewed = 1 where submissionID = '$id'";
 		return $this->query($strQuery);
 	}
 
