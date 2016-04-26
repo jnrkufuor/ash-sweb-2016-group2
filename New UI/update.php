@@ -132,7 +132,7 @@
 		echo "error";
 	}
 	else{
-		header("Location: confidentiality.php?id=$id");
+		header("Location: new_confidentiality.php?id=$id");
 	}
  }
 

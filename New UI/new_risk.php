@@ -80,6 +80,58 @@
     </nav>
 </header>
 <main>
+<?php
+        include_once("submission.php");
+        $obj = new submission();
+
+        $id ="";
+
+        if(isset($_REQUEST['id'])){
+            $id = $_REQUEST['id'];
+        }
+
+        $r = $obj -> getSubmissionByCode($id);
+                                    
+        if(!$r){
+            echo "Error getting the submission";
+            exit();
+        }
+        else{
+            $row = $obj ->fetch();
+        }
+
+        $procedureRisks = explode(',', $row['procedureRisks']); 
+
+        $deception = "";
+        $punishment = "";
+        $unacceptableMaterial = "";
+        $participantDisclosure = "";
+        $privacyInvasion = "";
+        $physicalInvasion = "";
+
+        foreach ($procedureRisks as $value) {
+            if($value == "deception"){
+                $deception = "checked";
+            }
+            else if($value == "punishment"){
+                $punishment = "checked";
+            }
+            else if($value == "unacceptableMaterial"){
+                $unacceptableMaterial = "checked";
+            }
+            else if($value == "privacyInvasion"){
+                $privacyInvasion = "checked";
+            }
+            else if($value == "participantDisclosure"){
+                $participantDisclosure = "checked";
+            }
+            else if($value == "physicalInvasion"){
+                $physicalInvasion = "checked";
+            }
+
+        }
+
+        ?>
 
     <div class="row" id="create-row">
 
@@ -99,14 +151,17 @@
                             <div class="center">
                                 <p class="flow-text">Numbers, Types and Recruitment of Subjects</p>
                             </div>
+                            <div id="divStatus"></div>
                             <div class="spacer"></div>
-                             <form action="#">
+                            <div class="spacer"></div>
+                            <div class="spacer"></div>
+                             <form >
                                 <p>
-                                  <input type="checkbox" id="deception" />
+                                  <input type="checkbox" id="deception" <?php echo $deception ?> />
                                   <label for="deception">Deception of the participant?</label>
                                 </p>
                                 <p>
-                                  <input type="checkbox" id="punishment" />
+                                  <input type="checkbox" id="punishment" <?php echo $deception ?>/>
                                   <label for="punishment">Punishment of the participant?</label>
                                 </p>
                                 <p>
@@ -137,9 +192,9 @@
                             </div>
                             <div class="row center">
                                 
-                                <button class="btn">Back</button>
-                                <button class="btn">Save</button>
-                                <button class="btn" onclick="riskNext()">Next</button>
+                                <button class="btn" onclick="riskBack(<?php echo $id ?>)">Back</button>
+                                <button class="btn" onclick="riskSave(<?php echo $id ?>)">Save</button>
+                                <button class="btn" onclick="riskNext(<?php echo $id ?>)">Next</button>
 
                                 
                             </div>

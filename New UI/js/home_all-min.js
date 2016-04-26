@@ -247,11 +247,11 @@ function titleNext(id){
 				
 			}
 
-		function back(id){
-			window.open("subjects.php?id="+id,"_self");
+		function riskBack(id){
+			window.open("new_subjects.php?id="+id,"_self");
 		}
 
-		function next(id){
+		function riskNext(id){
 			var procedureRisks = "";
 			if(document.getElementById('deception').checked){
 				procedureRisks = procedureRisks + "deception,";
@@ -275,7 +275,7 @@ function titleNext(id){
 			window.open("update.php?cmd=3&id="+id +"&procedureRisks="+ procedureRisks +"&procedureDetails=" + $("#procedureDetails").val() ,"_self");
 		}
 
-		function save(id){
+		function riskSave(id){
 			var procedureRisks = "";
 
 			if(document.getElementById('deception').checked){
