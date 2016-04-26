@@ -58,14 +58,19 @@
             <meta itemprop="name" content="Gaggle Mail">
             <div id="header-mobile-links" class=" row center hide-on-large-only">
                 <div class="col s4">
-                    <a href="/about">About</a>
+                    <a href="IRB_dashboard.php">Dashboard</a>
                 </div>
                 <div class="col s4">
-                    <a href="/blog">Blog</a>
+                    <a href="/blog">File System</a>
                 </div>
                 <div class="col s4">
                 
-                <a class="modal-trigger" href="#login-modal">Login</a>
+                <a href="/blog">IRB Reviews</a>
+                
+                </div>
+                <div class="col s4">
+                
+                <a href="IRB_home.html">Logout</a
                 
                 </div>
                 <div class="col s12 spacer"></div>
@@ -82,38 +87,23 @@
 </header>
 <main>
 <?php
-        include_once("submission.php");
-        $obj = new submission();
+        if(isset($_REQUEST['id'])){
+            $sid = $_REQUEST['id'];
+            include_once("submission.php");
+            $obj = new submission();
 
-        if(!isset($_REQUEST['id'])){
-            $r = $obj-> getSubmissionId();
+            $r = $obj -> getSubmissionByCode($sid);
+                                
             if(!$r){
-            echo "result is false";
+                echo "Error getting the user to edit";
+                exit();
             }
             else{
-            //fetch
-            $result=$obj ->fetch();
-        
-            $id = $result['submissionID'];
-
+            $row = $obj ->fetch();
             }
         }
-        else{
-            $id = $_REQUEST['id'];
-        }
-
-        $r = $obj -> getSubmissionByCode($id);
-                                    
-        if(!$r){
-            echo "Error getting the user to edit";
-            exit();
-        }
-        else{
-            $row = $obj ->fetch();
-        }
-                               
         
-    ?>
+        ?>
 
     <div class="row" id="create-row">
 
@@ -125,70 +115,31 @@
                     <h3 class="thin">IRB Application Form</h3>
                     
                     <div class="spacer"></div>
- 
-
+                   
                     <div class="create-list-login-panel center" style="max-width: 900px">
                         <div>
                             <input class="new-list-name-hidden" type="hidden" name="new-list-name">
+                             <div id="divStatus"></div> 
+                                <div class="spacer"></div>
+                                <div class="spacer"></div>
+
                             
-                            <div class="center">
-                                <p class="flow-text">Numbers, Types and Recruitment of Subjects</p>
-                            </div>
-                            <div id="divStatus"></div>
-                            <div class="spacer"></div>
-                            <div class="spacer"></div>
                             <div class="row">
-                                <div class="col s12 input-field">
-                                    <textarea id="subjectCharacteristics" class="materialize-textarea"><?php echo $row['subjectCharacteristics'] ?></textarea>
-                                    <label id="subjectCharacteristics1" for="new-your-name">A. Identify the numbers and characteristics of subjects (eg. age ranges, sex, ethnic background, health status, disabilities , etc.) It is recommended to provide the breakdown based on your sampling strategy.</label>
+                                <div class="col s12 input-field" style="font-size: 1.1rem">
+                                    <textarea id="title1" class="materialize-textarea"><?php echo $row['title']?></textarea>
+                                    <label  id="title2" for="new-your-name"><span class="bold" id="project">Title of Project</span></label>
                                 </div>
                             </div>
                             <div class="row">
-                                
-                                <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="specialClasses" class="materialize-textarea"><?php echo $row['specialClasses'] ?></textarea>
-                                    <label id="specialClasses1" for="new-your-name">B. Special cases. If applicable, explain the rationale for the use of special cases or subjects such as pregnant women, children, prisoners, mentally impaired, institutionalized, or others who are likely to be particulary vulnerable</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                
-                                <div class="spacer"></div>
-                                <div class="col s12 input-field">
-                                    <textarea id="recruitment" class="materialize-textarea"><?php echo $row['recruitment'] ?></textarea>
-                                    <label id="recruitment1" for="new-your-name">C. How are the individual participants to be recruited for this research? Is it clear to the subjects that participation is voluntary and that they may withraw at any time without any negative consequences?</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                
-                                <div class="spacer"></div>
-                                <div class="col s12 input-field">
-                                    <textarea id="partcipnatInfo" class="materialize-textarea"><?php echo $row['partcipnatInfo'] ?></textarea>
-                                    <label id="partcipnatInfo1" for="new-your-name">D. To what extent and how are participants to be informed of research procedures before their participation? </label>
-                                </div>
-                            </div>
-                             <div class="row">
-                                
-                                <div class="spacer"></div>
-                                <div class="col s12 input-field">
-                                    <textarea id="researchMethod" class="materialize-textarea"><?php echo $row['researchMethod'] ?></textarea>
-                                    <label id="researchMethod1" for="new-your-name">E. How will you classify your research method? (experiment, observation, modelling etc.). Specify all methods you anticipate to use. </label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                
-                                <div class="spacer"></div>
-                                <div class="col s12 input-field">
-                                    <textarea id="dataSources" class="materialize-textarea"><?php echo $row['dataSources'] ?></textarea>
-                                    <label id="dataSources1" for="new-your-name">F. Specify the data sources you will use for your reserach. (eg. questionnaire, audio recording human resource files, experiment data, etc.) </label>
+                                    <textarea id="exemption" class="materialize-textarea"><?php echo $row['exemption']?></textarea>
+                                    <label  for="new-your-name"><span class="bold">Exemption Request:</span> If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption.</label>
                                 </div>
                             </div>
                             <div class="row center">
                                 
-                                <button class="btn" onclick="subjectsBack(<?php echo $id ?>)">Back</button>
-                                <button class="btn"onclick="subjectsSave(<?php echo $id ?>)">Save</button>
-                                <button class="btn" onclick="subjectsNext(<?php echo $id ?>)">Next</button>
-
+                                <button class="btn" onclick="exemptionSave(<?php echo $sid ?>)">Save</button>
+                                <button class="btn" onclick="exemptionNext(<?php echo $sid ?>)">Next</button>
                                 
                             </div>
                             
@@ -215,25 +166,14 @@
     <div class="container row">
         <div class="col s12 m6">
             <div>
-                <a href="/about">About</a>
-            </div>
-            <div>
-                <a href="/terms">Terms and conditions</a>
-            </div>
-            <div>
-                <a href="mailto:help@gaggle.email">Contact</a>
+                <a href="#about">About</a>
             </div>
         </div>
         <div class="col s12 m6">
             <div>
-                <a href="/blog/frequently-asked-questions/">FAQ</a>
+                <a href="mailto:help@gaggle.email">Contact</a>
             </div>
-            <div>
-                <a href="/what-is-group-email">What is group email?</a>
-            </div>
-            <div>
-                <a href="/why-use-group-email">Why use group email?</a>
-            </div>
+            
         </div>
     </div>
     <div class="footer-copyright">

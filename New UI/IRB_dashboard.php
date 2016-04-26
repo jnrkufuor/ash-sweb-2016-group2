@@ -69,10 +69,11 @@
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
-                
+
+                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
                 <li><a href="/blog">File System</a></li>
                 <li><a href="/blog">IRB Reviews</a></li>
-                
+               
                 <li><a href="IRB_home.html">Logout</a></li>
                 
             </ul>
@@ -119,9 +120,9 @@
                                 else{
                                     $status = 'Submitted';
                                 }
-                                echo "<tr>";
-                                echo "
                                 
+                                echo "
+                                <tr onclick='view({$row['submissionID']})'>
                                 <td>{$row['title']}</td>
                                 <td>{$row['submissionDate']}</td>
                                 <td>$status</td>

@@ -72,7 +72,7 @@
             </div>
             <ul class="right hide-on-med-and-down">
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                 <li><a href="/blog">File System</a></li>
+                <li><a href="/blog">File System</a></li>
                 <li><a href="/blog">IRB Reviews</a></li>
                 <li><a href="IRB_home.html">Logout</a></li>
                 
@@ -81,24 +81,14 @@
     </nav>
 </header>
 <main>
+
 <?php
         include_once("submission.php");
         $obj = new submission();
 
-        if(!isset($_REQUEST['id'])){
-            $r = $obj-> getSubmissionId();
-            if(!$r){
-            echo "result is false";
-            }
-            else{
-            //fetch
-            $result=$obj ->fetch();
-        
-            $id = $result['submissionID'];
+        $id ="";
 
-            }
-        }
-        else{
+        if(isset($_REQUEST['id'])){
             $id = $_REQUEST['id'];
         }
 
@@ -111,9 +101,8 @@
         else{
             $row = $obj ->fetch();
         }
-                               
-        
-    ?>
+
+        ?>
 
     <div class="row" id="create-row">
 
@@ -130,64 +119,34 @@
                     <div class="create-list-login-panel center" style="max-width: 900px">
                         <div>
                             <input class="new-list-name-hidden" type="hidden" name="new-list-name">
-                            
                             <div class="center">
-                                <p class="flow-text">Numbers, Types and Recruitment of Subjects</p>
+                                <p class="flow-text">Describe Any Anticipated Benefits To Subjects From Participation In This Research</p>
                             </div>
                             <div id="divStatus"></div>
                             <div class="spacer"></div>
-                            <div class="spacer"></div>
-                            <div class="row">
-                                <div class="col s12 input-field">
-                                    <textarea id="subjectCharacteristics" class="materialize-textarea"><?php echo $row['subjectCharacteristics'] ?></textarea>
-                                    <label id="subjectCharacteristics1" for="new-your-name">A. Identify the numbers and characteristics of subjects (eg. age ranges, sex, ethnic background, health status, disabilities , etc.) It is recommended to provide the breakdown based on your sampling strategy.</label>
-                                </div>
-                            </div>
+                            
                             <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="specialClasses" class="materialize-textarea"><?php echo $row['specialClasses'] ?></textarea>
-                                    <label id="specialClasses1" for="new-your-name">B. Special cases. If applicable, explain the rationale for the use of special cases or subjects such as pregnant women, children, prisoners, mentally impaired, institutionalized, or others who are likely to be particulary vulnerable</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                
-                                <div class="spacer"></div>
-                                <div class="col s12 input-field">
-                                    <textarea id="recruitment" class="materialize-textarea"><?php echo $row['recruitment'] ?></textarea>
-                                    <label id="recruitment1" for="new-your-name">C. How are the individual participants to be recruited for this research? Is it clear to the subjects that participation is voluntary and that they may withraw at any time without any negative consequences?</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                
-                                <div class="spacer"></div>
-                                <div class="col s12 input-field">
-                                    <textarea id="partcipnatInfo" class="materialize-textarea"><?php echo $row['partcipnatInfo'] ?></textarea>
-                                    <label id="partcipnatInfo1" for="new-your-name">D. To what extent and how are participants to be informed of research procedures before their participation? </label>
+                                    <textarea id="participantConpensation" class="materialize-textarea"><?php echo $row['participantConpensation'] ?></textarea>
+                                    <label id="participantConpensation1" for="new-your-name">A. Will participants / subjects / respondents be compensated or rewarded in any way?</label>
                                 </div>
                             </div>
                              <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="researchMethod" class="materialize-textarea"><?php echo $row['researchMethod'] ?></textarea>
-                                    <label id="researchMethod1" for="new-your-name">E. How will you classify your research method? (experiment, observation, modelling etc.). Specify all methods you anticipate to use. </label>
+                                    <textarea id="participantBenefits" class="materialize-textarea"><?php echo $row['participantBenefits'] ?></textarea>
+                                    <label id="participantBenefits1" for="new-your-name">B. What intrinsic benefit will participants / subjects / respondents receive?</label>
                                 </div>
                             </div>
-                            <div class="row">
-                                
-                                <div class="spacer"></div>
-                                <div class="col s12 input-field">
-                                    <textarea id="dataSources" class="materialize-textarea"><?php echo $row['dataSources'] ?></textarea>
-                                    <label id="dataSources1" for="new-your-name">F. Specify the data sources you will use for your reserach. (eg. questionnaire, audio recording human resource files, experiment data, etc.) </label>
-                                </div>
-                            </div>
+                        
                             <div class="row center">
                                 
-                                <button class="btn" onclick="subjectsBack(<?php echo $id ?>)">Back</button>
-                                <button class="btn"onclick="subjectsSave(<?php echo $id ?>)">Save</button>
-                                <button class="btn" onclick="subjectsNext(<?php echo $id ?>)">Next</button>
+                                <button class="btn" onclick="benefitsBack(<?php echo $id ?>)">Back</button>
+                                <button class="btn" onclick="benefitsSave(<?php echo $id ?>)">Save As Draft</button>
+                                <button class="btn" onclick="benefitsSend(<?php echo $id ?>)">Submit</button>
 
                                 
                             </div>

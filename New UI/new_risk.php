@@ -57,20 +57,26 @@
             <meta itemprop="url" content="http://gaggle.email/">
             <meta itemprop="name" content="Gaggle Mail">
             <div id="header-mobile-links" class=" row center hide-on-large-only">
-                <div class="col s4">
-                    <a href="/about">About</a>
+                 <div class="col s4">
+                    <a href="IRB_dashboard.php">Dashboard</a>
                 </div>
                 <div class="col s4">
-                    <a href="/blog">Blog</a>
+                    <a href="/blog">File System</a>
                 </div>
                 <div class="col s4">
                 
-                <a class="modal-trigger" href="#login-modal">Login</a>
+                <a href="/blog">IRB Reviews</a>
+                
+                </div>
+                <div class="col s4">
+                
+                <a href="IRB_home.html">Logout</a
                 
                 </div>
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
+                <li><a href="IRB_dashboard.php">Dashboard</a></li>
                  <li><a href="/blog">File System</a></li>
                 <li><a href="/blog">IRB Reviews</a></li>
                 <li><a href="IRB_home.html">Logout</a></li>
@@ -80,6 +86,58 @@
     </nav>
 </header>
 <main>
+<?php
+        include_once("submission.php");
+        $obj = new submission();
+
+        $id ="";
+
+        if(isset($_REQUEST['id'])){
+            $id = $_REQUEST['id'];
+        }
+
+        $r = $obj -> getSubmissionByCode($id);
+                                    
+        if(!$r){
+            echo "Error getting the submission";
+            exit();
+        }
+        else{
+            $row = $obj ->fetch();
+        }
+
+        $procedureRisks = explode(',', $row['procedureRisks']); 
+
+        $deception = "";
+        $punishment = "";
+        $unacceptableMaterial = "";
+        $participantDisclosure = "";
+        $privacyInvasion = "";
+        $physicalInvasion = "";
+
+        foreach ($procedureRisks as $value) {
+            if($value == "deception"){
+                $deception = "checked";
+            }
+            else if($value == "punishment"){
+                $punishment = "checked";
+            }
+            else if($value == "unacceptableMaterial"){
+                $unacceptableMaterial = "checked";
+            }
+            else if($value == "privacyInvasion"){
+                $privacyInvasion = "checked";
+            }
+            else if($value == "participantDisclosure"){
+                $participantDisclosure = "checked";
+            }
+            else if($value == "physicalInvasion"){
+                $physicalInvasion = "checked";
+            }
+
+        }
+
+        ?>
 
     <div class="row" id="create-row">
 
@@ -99,58 +157,49 @@
                             <div class="center">
                                 <p class="flow-text">Numbers, Types and Recruitment of Subjects</p>
                             </div>
+                            <div id="divStatus"></div>
                             <div class="spacer"></div>
-                            <div class="row">
-                                <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">A. Identify the numbers and characteristics of subjects (eg. age ranges, sex, ethnic background, health status, disabilities , etc.) It is recommended to provide the breakdown based on your sampling strategy.</label>
-                                </div>
-                            </div>
-                            <div class="row">
+                            
+                             <form >
+                                <p>
+                                  <input type="checkbox" id="deception" <?php echo $deception ?> />
+                                  <label for="deception">Deception of the participant?</label>
+                                </p>
+                                <p>
+                                  <input type="checkbox" id="punishment" <?php echo $punishment ?>/>
+                                  <label for="punishment">Punishment of the participant?</label>
+                                </p>
+                                <p>
+                                  <input type="checkbox" id="unacceptableMaterial" <?php echo $unacceptableMaterial ?>/>
+                                  <label for="unacceptableMaterial">Materials commonly regarded as socially unacceptable such as pornography, inflammatory text, ethnic portrayals?</label>
+                                </p>
+                                <p>
+                                  <input type="checkbox" id="privacyInvasion" <?php echo $privacyInvasion ?>/>
+                                  <label for="privacyInvasion">Any other procedure that might be considered an invasion of privacy?</label>
+                                </p>
+                                <p>
+                                  <input type="checkbox" id="participantDisclosure" <?php echo $participantDisclosure ?> />
+                                  <label for="participantDisclosure">Disclosure of the names of individual participants?</label>
+                                </p>
+                                <p>
+                                  <input type="checkbox" id="physicalInvasion" <?php echo $physicalInvasion ?>/>
+                                  <label for="physicalInvasion">Any other physically invasive procedure?</label>
+                                </p>
                                 
-                                <div class="spacer"></div>
-                                <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">B. Special cases. If applicable, explain the rationale for the use of special cases or subjects such as pregnant women, children, prisoners, mentally impaired, institutionalized, or others who are likely to be particulary vulnerable</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                
-                                <div class="spacer"></div>
-                                <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">C. How are the individual participants to be recruited for this research? Is it clear to the subjects that participation is voluntary and that they may withraw at any time without any negative consequences?</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                
-                                <div class="spacer"></div>
-                                <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">D. To what extent and how are participants to be informed of research procedures before their participation? </label>
-                                </div>
-                            </div>
-                             <div class="row">
-                                
-                                <div class="spacer"></div>
-                                <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">E. How will you classify your research method? (experiment, observation, modelling etc.). Specify all methods you anticipate to use. </label>
-                                </div>
-                            </div>
+                              </form>
                             <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
                                     <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">F. Specify the data sources you will use for your reserach. (eg. questionnaire, audio recording human resource files, experiment data, etc.) </label>
+                                    <label for="new-your-name">If the answer to any of the above is "Yes", please explain this procedure in detail and describe procedures for protecting against or minimizing any potential risk.</label>
                                 </div>
                             </div>
                             <div class="row center">
                                 
-                                <button class="btn">Back</button>
-                                <button class="btn">Save</button>
-                                <button class="btn">Next</button>
+                                <button class="btn" onclick="riskBack(<?php echo $id ?>)">Back</button>
+                                <button class="btn" onclick="riskSave(<?php echo $id ?>)">Save</button>
+                                <button class="btn" onclick="riskNext(<?php echo $id ?>)">Next</button>
 
                                 
                             </div>
@@ -180,29 +229,19 @@
             <div>
                 <a href="/about">About</a>
             </div>
-            <div>
-                <a href="/terms">Terms and conditions</a>
+            
             </div>
-            <div>
-                <a href="mailto:help@gaggle.email">Contact</a>
-            </div>
-        </div>
         <div class="col s12 m6">
             <div>
-                <a href="/blog/frequently-asked-questions/">FAQ</a>
+                <a href="/blog/frequently-asked-questions/">Contact</a>
             </div>
-            <div>
-                <a href="/what-is-group-email">What is group email?</a>
-            </div>
-            <div>
-                <a href="/why-use-group-email">Why use group email?</a>
-            </div>
+            
         </div>
     </div>
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
-            <span class="right" href="#!">Made in London</span>
+            <span class="right" href="#!">Made in Berekuso</span>
         </div>
     </div>
 </footer>

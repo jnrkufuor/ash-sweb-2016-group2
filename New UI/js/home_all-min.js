@@ -48,10 +48,28 @@ function login ()
 	 }
 
 
+function validateForm(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
+function titleNext(id){
+			if(validateForm($("#title").val()) == false){
+				document.getElementById("project").style.color="red";
+				alert("Kindly provide a title for your submission");
+				return;
+			}
+			else{
+				document.getElementById("project").style.color="grey";
+			}
+			if(!divStatus.innerHTML == ""){
+				window.open("new_subjects.php","_self");
+			}
+			else{
+				window.open("update.php?cmd=1&title="+$("#title").val()+"&exemption=" + $("#exemption").val()+"&id="+id ,"_self");
+			}
+		}
 
-function next(){
-	window.open("new_subjects.php")
-}
+
 
 	var currentObj;
 	function deleteUserComplete(xhr,status)
@@ -128,3 +146,387 @@ function next(){
                  return;
              } 
 	}
+
+			
+
+		function titleSave(id){
+			if(validateForm($("#title").val()) == false){
+				document.getElementById("project").style.color="red";
+				alert("Kindly provide a title for your submission");
+				return;
+			}
+			else{
+				document.getElementById("project").style.color="grey";
+			}
+
+
+			if(divStatus.innerHTML != ""){
+				var theUrl="submission_ajax.php?cmd=2&title="+$("#title").val()+"&exemption=" + $("#exemption").val();
+				$.ajax(theUrl,
+					{async:true,complete:saveComplete}
+					)
+				return;
+			}
+			var theUrl="submission_ajax.php?cmd=1&title="+$("#title").val()+"&exemption=" + $("#exemption").val()+"&id="+id;
+				$.ajax(theUrl,
+					{async:true,complete:saveComplete}
+					);
+
+			}
+
+		function saveComplete(xhr,status){
+
+				if(status!="success"){
+					divStatus.innerHTML="error sending request";
+					return;
+				}
+				divStatus.innerHTML= "Saved at " + new Date().getHours()+ ":" + new Date().getMinutes() + " GMT" ;
+				alert("Saved at " + new Date().getHours()+ ":" + new Date().getMinutes() + " GMT");
+			}
+
+		function subjectsBack(id){
+			window.open("exemption.php?id="+id,"_self");
+		}
+
+		function subjectsNext(id){
+			if(validateForm($("#subjectCharacteristics").val()) == false){
+				document.getElementById("subjectCharacteristics1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("subjectCharacteristics1").style.color="grey";
+			}
+
+			if(validateForm($("#recruitment").val()) == false){
+				document.getElementById("recruitment1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("recruitment1").style.color="grey";
+			}
+
+			if(validateForm($("#partcipnatInfo").val()) == false){
+				document.getElementById("partcipnatInfo1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("partcipnatInfo1").style.color="grey";
+			}
+
+			if(validateForm($("#researchMethod").val()) == false){
+				document.getElementById("researchMethod1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("researchMethod1").style.color="grey";
+			}
+
+			if(validateForm($("#dataSources").val()) == false){
+				document.getElementById("dataSources1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("dataSources1").style.color="grey";
+			}
+				window.open("update.php?cmd=2&id="+id +"&subjectCharacteristics="+$("#subjectCharacteristics").val()+"&specialClasses=" + $("#specialClasses").val()+"&recruitment="+$("#recruitment").val() +"&partcipnatInfo="+$("#partcipnatInfo").val()+"&researchMethod="+$("#researchMethod").val()+"&dataSources="+$("#dataSources").val() ,"_self");
+			}
+		
+
+		function subjectsSave(id){
+			if(validateForm($("#subjectCharacteristics").val()) == false){
+				document.getElementById("subjectCharacteristics1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("subjectCharacteristics1").style.color="grey";
+			}
+
+			if(validateForm($("#recruitment").val()) == false){
+				document.getElementById("recruitment1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("recruitment1").style.color="grey";
+			}
+
+			if(validateForm($("#partcipnatInfo").val()) == false){
+				document.getElementById("partcipnatInfo1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("partcipnatInfo1").style.color="grey";
+			}
+			
+			if(validateForm($("#researchMethod").val()) == false){
+				document.getElementById("researchMethod1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("researchMethod1").style.color="grey";
+			}
+			if(validateForm($("#dataSources").val()) == false){
+				document.getElementById("dataSources1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("dataSources1").style.color="grey";
+			}
+			var theUrl="submission_ajax.php?cmd=3 & id="+id +"&subjectCharacteristics="+$("#subjectCharacteristics").val()+"&specialClasses=" + $("#specialClasses").val()+"&recruitment="+$("#recruitment").val() +"&partcipnatInfo="+$("#partcipnatInfo").val()+"&researchMethod="+$("#researchMethod").val()+"&dataSources="+$("#dataSources").val();
+				$.ajax(theUrl,
+					{async:true,complete:saveComplete}
+					);
+			}
+
+			function exemptionNext(sid){
+			if(validateForm($("#title1").val()) == false){
+				document.getElementById("title2").style.color="red";
+				alert("Kindly provide a title for your submission");
+				return;
+			}
+			
+			window.open("update.php?cmd=6&title="+$("#title1").val()+"&exemption=" + $("#exemption").val()+"&sid="+sid ,"_self");
+		}
+
+		function exemptionSave(sid){
+			if(validateForm($("#title1").val()) == false){
+				document.getElementById("title2").style.color="red";	
+			alert("Kindly provide a title for your submission");
+				return;
+			}
+			
+			var theUrl="submission_ajax.php?cmd=2&title="+$("#title1").val()+"&exemption=" + $("#exemption").val() +"&sid="+sid;
+				$.ajax(theUrl,
+					{async:true,complete:saveComplete}
+					);
+				
+			}
+
+		function riskBack(id){
+			window.open("new_subjects.php?id="+id,"_self");
+		}
+
+		function riskNext(id){
+			var procedureRisks = "";
+			if(document.getElementById('deception').checked){
+				procedureRisks = procedureRisks + "deception,";
+			}
+			if(document.getElementById('punishment').checked){
+			procedureRisks = procedureRisks + "punishment,";
+			}
+			if(document.getElementById('unacceptableMaterial').checked){
+			procedureRisks = procedureRisks + "unacceptableMaterial,";
+			}
+			if(document.getElementById('privacyInvasion').checked){
+			procedureRisks = procedureRisks + "privacyInvasion,";
+			}
+			if(document.getElementById('participantDisclosure').checked){
+			procedureRisks = procedureRisks + "participantDisclosure,";
+			}
+			if(document.getElementById('physicalInvasion').checked){
+			procedureRisks = procedureRisks + "physicalInvasion,";
+			}
+		
+			window.open("update.php?cmd=3&id="+id +"&procedureRisks="+ procedureRisks +"&procedureDetails=" + $("#procedureDetails").val() ,"_self");
+		}
+
+		function riskSave(id){
+			var procedureRisks = "";
+
+			if(document.getElementById('deception').checked){
+				procedureRisks = procedureRisks + "deception,";
+			}
+			if(document.getElementById('punishment').checked){
+			procedureRisks = procedureRisks + "punishment,";
+			}
+			if(document.getElementById('unacceptableMaterial').checked){
+			procedureRisks = procedureRisks + "unacceptableMaterial,";
+			}
+			if(document.getElementById('privacyInvasion').checked){
+			procedureRisks = procedureRisks + "privacyInvasion,";
+			}
+			if(document.getElementById('participantDisclosure').checked){
+			procedureRisks = procedureRisks + "participantDisclosure,";
+			}
+			if(document.getElementById('physicalInvasion').checked){
+			procedureRisks = procedureRisks + "physicalInvasion,";
+			}
+
+			var theUrl="submission_ajax.php?cmd=4 & id="+id +"&procedureRisks="+procedureRisks +"&procedureDetails=" + $("#procedureDetails").val();
+				$.ajax(theUrl,
+					{async:true,complete:saveComplete}
+					);
+
+		}
+
+		function confidentialityBack(id){
+			window.open("new_risk.php?id="+id,"_self");
+		}
+
+		function confidentialityNext(id){
+			if(validateForm($("#confidentialityExtent").val()) == false){
+				document.getElementById("confidentialityExtent1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("confidentialityExtent1").style.color="grey";
+			}
+
+			if(validateForm($("#dataStorage").val()) == false){
+				document.getElementById("dataStorage1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("dataStorage1").style.color="grey";
+			}
+
+			if(validateForm($("#resultDissemination").val()) == false){
+				document.getElementById("resultDissemination1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("resultDissemination1").style.color="grey";
+			}
+
+			if(validateForm($("#subjectInfo").val()) == false){
+				document.getElementById("subjectInfo1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("subjectInfo1").style.color="grey";
+			}
+
+			if(validateForm($("#confidentialityProtection").val()) == false){
+				document.getElementById("confidentialityProtection1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("confidentialityProtection1").style.color="grey";
+			}
+
+				window.open("update.php?cmd=4&id="+id +"&confidentialityExtent="+$("#confidentialityExtent").val()+"&dataStorage=" + $("#dataStorage").val()+"&resultDissemination="+$("#resultDissemination").val() +"&subjectInfo="+$("#subjectInfo").val()+"&confidentialityProtection="+$("#confidentialityProtection").val() ,"_self");
+			}
+		
+
+		function confidentialitySave(id){
+			if(validateForm($("#confidentialityExtent").val()) == false){
+				document.getElementById("confidentialityExtent1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("confidentialityExtent1").style.color="grey";
+			}
+
+			if(validateForm($("#dataStorage").val()) == false){
+				document.getElementById("dataStorage1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("dataStorage1").style.color="grey";
+			}
+
+			if(validateForm($("#resultDissemination").val()) == false){
+				document.getElementById("resultDissemination1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("resultDissemination1").style.color="grey";
+			}
+
+			if(validateForm($("#subjectInfo").val()) == false){
+				document.getElementById("subjectInfo1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("subjectInfo1").style.color="grey";
+			}
+			
+			if(validateForm($("#confidentialityProtection").val()) == false){
+				document.getElementById("confidentialityProtection1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("confidentialityProtection1").style.color="grey";
+			}
+			var theUrl="submission_ajax.php?cmd=5 & id="+id +"&confidentialityExtent="+$("#confidentialityExtent").val()+"&dataStorage=" + $("#dataStorage").val()+"&resultDissemination="+$("#resultDissemination").val() +"&subjectInfo="+$("#subjectInfo").val()+"&confidentialityProtection="+$("#confidentialityProtection").val();
+				$.ajax(theUrl,
+					{async:true,complete:saveComplete}
+					);
+			}
+
+			function benefitsSend(id){
+			if(validateForm($("#participantConpensation").val()) == false){
+				document.getElementById("participantConpensation1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("participantConpensation1").style.color="grey";
+			}
+
+			if(validateForm($("#participantBenefits").val()) == false){
+				document.getElementById("participantBenefits1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("participantBenefits1").style.color="grey";
+			}
+
+				window.open("update.php?cmd=5&id="+id +"&participantConpensation="+$("#participantConpensation").val()+"&participantBenefits=" + $("#participantBenefits").val() ,"_self");
+			}
+		
+
+		function benefitsSave(id){
+			if(validateForm($("#participantConpensation").val()) == false){
+				document.getElementById("participantConpensation1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("participantConpensation1").style.color="grey";
+			}
+
+			if(validateForm($("#participantBenefits").val()) == false){
+				document.getElementById("participantBenefits1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("participantBenefits1").style.color="grey";
+			}
+
+			
+			var theUrl="submission_ajax.php?cmd=6 & id="+id +"&participantConpensation="+$("#participantConpensation").val()+"&participantBenefits=" + $("#participantBenefits").val();
+				$.ajax(theUrl,
+					{async:true,complete:saveComplete}
+					);
+			}
+
+			function benefitsBack(id){
+			window.open("confidentiality.php?id="+id,"_self");
+		}
+
+		function view(id){
+		window.open("exemption.php?id="+id, "_self");
+	}
+
