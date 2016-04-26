@@ -457,3 +457,7 @@ function titleNext(id){
 					{async:true,complete:saveComplete}
 					);
 			}
+
+			function benefitsBack(id){
+			window.open("confidentiality.php?id="+id,"_self");
+		}

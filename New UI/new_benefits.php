@@ -121,6 +121,7 @@
                             <div class="center">
                                 <p class="flow-text">Describe Any Anticipated Benefits To Subjects From Participation In This Research</p>
                             </div>
+                            <div id="divStatus"></div>
                             <div class="spacer"></div>
                             
                             <div class="row">
@@ -142,9 +143,9 @@
                         
                             <div class="row center">
                                 
-                                <button class="btn" onclick="benefitsBack()">Back</button>
-                                <button class="btn" onclick="benefitsSave()">Save As Draft</button>
-                                <button class="btn" onclick="benefitsSend()">Submit</button>
+                                <button class="btn" onclick="benefitsBack(<?php echo $id ?>)">Back</button>
+                                <button class="btn" onclick="benefitsSave(<?php echo $id ?>)">Save As Draft</button>
+                                <button class="btn" onclick="benefitsSend(<?php echo $id ?>)">Submit</button>
 
                                 
                             </div>
