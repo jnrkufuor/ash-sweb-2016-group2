@@ -153,31 +153,30 @@
                             </div>
                             <div id="divStatus"></div>
                             <div class="spacer"></div>
-                            <div class="spacer"></div>
-                            <div class="spacer"></div>
+                            
                              <form >
                                 <p>
                                   <input type="checkbox" id="deception" <?php echo $deception ?> />
                                   <label for="deception">Deception of the participant?</label>
                                 </p>
                                 <p>
-                                  <input type="checkbox" id="punishment" <?php echo $deception ?>/>
+                                  <input type="checkbox" id="punishment" <?php echo $punishment ?>/>
                                   <label for="punishment">Punishment of the participant?</label>
                                 </p>
                                 <p>
-                                  <input type="checkbox" id="unacceptableMaterial" />
+                                  <input type="checkbox" id="unacceptableMaterial" <?php echo $unacceptableMaterial ?>/>
                                   <label for="unacceptableMaterial">Materials commonly regarded as socially unacceptable such as pornography, inflammatory text, ethnic portrayals?</label>
                                 </p>
                                 <p>
-                                  <input type="checkbox" id="privacyInvasion" />
+                                  <input type="checkbox" id="privacyInvasion" <?php echo $privacyInvasion ?>/>
                                   <label for="privacyInvasion">Any other procedure that might be considered an invasion of privacy?</label>
                                 </p>
                                 <p>
-                                  <input type="checkbox" id="participantDisclosure" />
+                                  <input type="checkbox" id="participantDisclosure" <?php echo $participantDisclosure ?> />
                                   <label for="participantDisclosure">Disclosure of the names of individual participants?</label>
                                 </p>
                                 <p>
-                                  <input type="checkbox" id="physicalInvasion" />
+                                  <input type="checkbox" id="physicalInvasion" <?php echo $physicalInvasion ?>/>
                                   <label for="physicalInvasion">Any other physically invasive procedure?</label>
                                 </p>
                                 
