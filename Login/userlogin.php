@@ -22,8 +22,7 @@ if (isset($_REQUEST['id'])) {
 	
     $row = $obj->fetch();
 	$tbl = $lec->fetch();
-    $type=$row['type'];
-
+   
     if (!$row||!$tbl){
         echo '<script>window.location.href = "../New UI/IRB_home.php?error=err";</script>';
         }
@@ -42,16 +41,16 @@ if (isset($_REQUEST['id'])) {
         }
 	if ($type=="Reviewer") {
 		    session_start();
-		    $_SESSION['USER_ID']=$row['RID'];
-			$_SESSION['FIRSTNAME']=$row['FIRSTNAME'];
-			 $_SESSION['LASTNAME']=$row['LASTNAME'];
+		    $_SESSION['USER_ID']=$tbl['RID'];
+			$_SESSION['FIRSTNAME']=$tbl['FIRSTNAME'];
+			 $_SESSION['LASTNAME']=$tbl['LASTNAME'];
             header("Location:reviewerIndex.php?id=$id");
         }
 	if ($type=="Administrator") {
 		    session_start();
-		    $_SESSION['USER_ID']=$row['RID'];
-			$_SESSION['FIRSTNAME']=$row['FIRSTNAME'];
-			 $_SESSION['LASTNAME']=$row['LASTNAME'];
+		    $_SESSION['USER_ID']=$tbl['RID'];
+			$_SESSION['FIRSTNAME']=$tbl['FIRSTNAME'];
+			 $_SESSION['LASTNAME']=$tbl['LASTNAME'];
             echo '<script>window.location.href = "../New UI/admin_dashboard.php";</script>';
         }
     

@@ -76,7 +76,7 @@
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
-                
+                <li><a href=""> <?php echo $_SESSION['FIRSTNAME'];?>
                 <li><a href="admin_dashboard.php?purpose=user">User System</a></li>
                 <li><a href="admin_dashboard.php?purpose=lec">Reviewers</a></li>
 				<li><a href="/blog">Submissions</a></li>
