@@ -40,7 +40,7 @@ if (isset($_REQUEST['id'])) {
             header("Location:reviewerIndex.php?id=$id");
         }
 	if ($type=="Administrator") {
-            header("Location:adminIndex.php?id=$id");
+            echo '<script>window.location.href = "../New UI/admin_dashboard.php";</script>';
         }
     
 }
