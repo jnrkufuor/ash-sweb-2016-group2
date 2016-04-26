@@ -550,5 +550,13 @@ function titleNext(id){
 		window.open("reviewer_confidentiality.php?id="+id, "_self");
 	}
 
+	function reviewer_confidentialityBack(id){
+		window.open("reviewer_risk.php?id="+id, "_self");
+	}
+
+	function reviewer_confidentialityNext(id){
+		window.open("reviewer_benefits.php?id="+id, "_self");
+	}
+
 
 

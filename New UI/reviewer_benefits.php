@@ -72,6 +72,8 @@
             </div>
             <ul class="right hide-on-med-and-down">
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
+                <li><a href="/blog">File System</a></li>
+                <li><a href="/blog">IRB Reviews</a></li>
                 <li><a href="IRB_home.html">Logout</a></li>
                 
             </ul>
@@ -118,49 +120,35 @@
                         <div>
                             <input class="new-list-name-hidden" type="hidden" name="new-list-name">
                             <div class="center">
-                                <p class="flow-text">Confidentiality</p>
+                                <p class="flow-text">Describe Any Anticipated Benefits To Subjects From Participation In This Research</p>
                             </div>
-                            <div id="divStatus"></div>
+                             <div id="divStatus"></div>
                             <div class="spacer"></div>
                             
-                            <div class="thin"><span class="bold">A. To what extent is the information confidential and to what extent are provisions made so that subjects are not identified?</span></div>
                             <div class="row">
+                                
+                                <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="confidentialityExtent" class="materialize-textarea" readonly><?php echo $row['confidentialityExtent'] ?></textarea>
+                                    <textarea id="participantConpensation" class="materialize-textarea"><?php echo $row['participantConpensation'] ?></textarea>
+                                    <label id="participantConpensation1" for="new-your-name">A. Will participants / subjects / respondents be compensated or rewarded in any way?</label>
                                 </div>
                             </div>
-
-                            <div class="thin"><span class="bold">B. What are the procedures for handling and storing data so that confidentiality of the subjects and privacy are protected?</span></div>
-                            <div class="row">
-                                <div class="col s12 input-field">
-                                    <textarea id="dataStorage" class="materialize-textarea" readonly><?php echo $row['dataStorage'] ?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="thin"><span class="bold">C. How will the results of the research be disseminated?</span></div>
-                            <div class="row">
-                                <div class="col s12 input-field">
-                                    <textarea id="resultDissemination" class="materialize-textarea" readonly><?php echo $row['resultDissemination'] ?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="thin"><span class="bold">How will the subjects be informed of the results?</span></div>
-                            <div class="row">
-                                <div class="col s12 input-field">
-                                    <textarea id="subjectInfo" class="materialize-textarea" readonly><?php echo $row['subjectInfo'] ?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="thin"><span class="bold">How will confidentiality of subjects or organizations be protected in the dissemination?</span></div>
                              <div class="row">
+                                
+                                <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="confidentialityProtection" class="materialize-textarea" readonly><?php echo $row['confidentialityProtection'] ?></textarea>
+                                    <textarea id="participantBenefits" class="materialize-textarea"><?php echo $row['participantBenefits'] ?></textarea>
+                                    <label id="participantBenefits1" for="new-your-name">B. What intrinsic benefit will participants / subjects / respondents receive?</label>
                                 </div>
                             </div>
                         
                             <div class="row center">
-                                <button class="btn" onclick="reviewer_confidentialityBack(<?php echo $id ?>)">Back</button>
-                                <button class="btn" onclick="reviewer_confidentialityNext(<?php echo $id ?>)">Next</button>
+                                
+                                <button class="btn" onclick="benefitsBack(<?php echo $id ?>)">Back</button>
+                                <button class="btn" onclick="benefitsSave(<?php echo $id ?>)">Save As Draft</button>
+                                <button class="btn" onclick="benefitsSend(<?php echo $id ?>)">Submit</button>
+
+                                
                             </div>
                             
 
@@ -198,7 +186,7 @@
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
-            <span class="right" href="#!">Made in Berekuso</span>
+            <span class="right" href="#!">Made in London</span>
         </div>
     </div>
 </footer>
