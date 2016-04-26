@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['USER_ID'])){
+		header("Location:IRB_home.php");
+		exit();
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head lang="en">
@@ -69,7 +76,7 @@
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
-
+                  <li><a href="" style="color:#AD1E26;"> <?php echo $_SESSION['FIRSTNAME'];?> </a></li>
                  <li><a href="reviewer_dashboard.php">Dashboard</a></li>
                 <li><a href="IRB_home.php">Logout</a></li>
                 
