@@ -432,6 +432,7 @@
 		 if(isset($_REQUEST['error']))
 		 {
 			  echo "<script type='text/javascript'> alert('Wrong Username or ID'); </script>";
+			  header("#login-modal");
 		 }
 		 ?>
 
