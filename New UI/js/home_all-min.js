@@ -411,21 +411,21 @@ function titleNext(id){
 
 			function benefitsSend(id){
 			if(validateForm($("#participantConpensation").val()) == false){
-				document.getElementById("participantConpensation").style.color="red";
+				document.getElementById("participantConpensation1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
-				document.getElementById("participantConpensation").style.color="grey";
+				document.getElementById("participantConpensation1").style.color="grey";
 			}
 
 			if(validateForm($("#participantBenefits").val()) == false){
-				document.getElementById("participantBenefits").style.color="red";
+				document.getElementById("participantBenefits1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
-				document.getElementById("participantBenefits").style.color="grey";
+				document.getElementById("participantBenefits1").style.color="grey";
 			}
 
 				window.open("update.php?cmd=5&id="+id +"&participantConpensation="+$("#participantConpensation").val()+"&participantBenefits=" + $("#participantBenefits").val() ,"_self");
@@ -434,21 +434,21 @@ function titleNext(id){
 
 		function benefitsSave(id){
 			if(validateForm($("#participantConpensation").val()) == false){
-				document.getElementById("participantConpensation").style.color="red";
+				document.getElementById("participantConpensation1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
-				document.getElementById("participantConpensation").style.color="grey";
+				document.getElementById("participantConpensation1").style.color="grey";
 			}
 
 			if(validateForm($("#participantBenefits").val()) == false){
-				document.getElementById("participantBenefits").style.color="red";
+				document.getElementById("participantBenefits1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
-				document.getElementById("participantBenefits").style.color="grey";
+				document.getElementById("participantBenefits1").style.color="grey";
 			}
 
 			
