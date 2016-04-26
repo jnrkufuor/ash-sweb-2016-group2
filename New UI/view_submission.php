@@ -21,7 +21,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <link rel="shortcut icon" href="logo_32x32@2x.png">
+    <link rel="shortcut icon" href="images/ash.jpg">
     
     <link rel="apple-touch-icon" href="images/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
@@ -59,7 +59,7 @@
 <header>
     <nav class="transparent black-text">
         <div class="nav-wrapper container">
-            <a href="admin_dashboard.php" class="brand-logo brand-logo-small"><img id="header-logo" alt="Gaggle Mail Logo" src="images/logo_22x22@2x.png"/>
+            <a href="#" class="brand-logo brand-logo-small"><img id="header-logo" alt="Ashesi Logo" src="images/ash.jpg"/>
                 Ashesi IRB <span>Portal</span></a>
             <meta itemprop="url" content="http://gaggle.email/">
             <meta itemprop="name" content="Gaggle Mail">
@@ -76,10 +76,10 @@
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
-                <li><a href="" style="color:#AD1E26;"> <?php echo $_SESSION['FIRSTNAME'];?> </a></li>
+                <li><a href="" style="color:#AD1E26;"><?php echo $_SESSION['FIRSTNAME'];?> </a></li>
                 <li><a href="admin_dashboard.php?purpose=user">User System</a></li>
                 <li><a href="admin_dashboard.php?purpose=lec">Reviewers</a></li>
-				<li><a href="view_submission.php">Submissions</a></li>
+                <li><a href="view_submission.php">Submissions</a></li>
                 <li><a href="logout.php">Logout</a></li>
                 
             </ul>
@@ -92,94 +92,55 @@
             <div class="row">
                 <div class="col s12 center-align">
                     <div id="hero-title" style="margin-top: 3%">
-                        <h1 id="hero-title-one" itemprop="description"><span class="bold">Admin Page</span></h1>
-                    
-                       
-<?php
-                            if (isset($_REQUEST['success'])) {
-                                if ($_REQUEST['success'] == 'false') {
-                                    echo '<script> window.alert("Successful")</script>';
-                                }
+                        <h3 id="hero-title-one" itemprop="description"><span class="bold">Submissions</span></h3>
+                        <?php
+
+                        include_once ("submission.php");
+                        $obj = new submission();
+
+                        if(!$obj-> getAdminSubmissions()){
+                            echo "Error";
+                        }
+                        else{
+                            echo "
+                            <table class='highlight'>
+                            <thead>
+                              <tr>
+                                  <th data-field='id'>Submission ID</th>
+                                  <th data-field='name'>Submission Date</th>
+                                  <th data-field='price'>Title of Project</th>
+                                  <th data-field='price'>Applicant Name</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            
+                            
+                            ";
+
+                            while ($row = $obj ->fetch()){
+                                $name = "";
+                                $name = $row['FIRSTNAME'] . " " . $row['LASTNAME'];
+
+                                echo "
+                                <tr>
+                                <td>{$row['submissionID']}</td>
+                                <td>{$row['submissionDate']}</td>
+                                <td>{$row['title']}</td>
+                                <td>$name</td>
+                                </tr>";
                             }
+                            echo "</table>";
+                        }
 
-                            include_once("../Login/users.php");
+                        
 
-                            if (isset($_REQUEST['purpose']) && $_REQUEST['purpose'] == "user") {
-
-                                $obj = new users();
-                                if (!$obj->getUser()) {
-                                    echo "Error getting Users";
-                                }
-                                echo" <table  id='tableUsers' class ='highlight' >
-								      <thead>
-                                      <tr >
-									  
-                                      <th>User ID </th>
-                                      <th>Firstname </th>
-                                      <th>Lastname </th>
-                                      <th>Reviewers </th>
-                                      <th>Email </th>
-                                      <th>Phone </th>
-                                      <th>Fax </th>
-                                      </tr>
-									  </thead>";
-									  
-							    $count =0;
-                                while ($row = $obj->fetch
-()) {
-                                    echo" <tr id='r1'class=$count>"
-                                    . "<td>{$row['USER_ID']}</td>"
-                                    . "<td>{$row['FIRSTNAME']}</td>"
-                                    . "<td>{$row['LASTNAME']}</td>"
-                                    . " <td>{$row['CO_RESEARCHER']}</td>"
-                                    . "<td>{$row['EMAIL']}</td> "
-                                    . "<td>{$row['PHONE']}</td>"
-                                    . "<td>{$row['FAX']}</td>"
-                                    . "<td style='color:#AD1E26; cursor: pointer;' onclick='deleteUser({$row['USER_ID']},this)' id='tblTd'> Delete </td> "
-                                    . "</tr>";
-                                }
-                                echo "</table>";
-								$count=$count+1;
-                            } else if (isset($_REQUEST['purpose']) && $_REQUEST['purpose'] == "lec") {
-                                $lec = new users();
-                                if (!$lec->getLec()) {
-                                    echo "Error getting Lecturers";
-                                }
-                                echo" <table  style='align=center;' id='tableLec' class ='highlight'>
-								<thead>
-                                    <tr> 
-                                    <th>Reviewer ID </th>
-                                    <th>Type</th>
-									 <th>Firstname</th>
-									  <th>Lastname</th>
-                                    </tr>
-									<thead>";
-                                while ($tbl = $lec->fetch()) {
-                                    echo" <tr id='r1'>"
-                                    . "<td>{$tbl['RID']}</td>"
-                                    . "<td>{$tbl['TYPE']}</td>"
-									."<td>{$tbl['FIRSTNAME']}</td>"
-									."<td>{$tbl['LASTNAME']}</td>";
-									if($tbl['TYPE']=="Reviewer")
-                                          echo "<td  style='color:#AD1E26; cursor: pointer;'onclick='deleteLec({$tbl['RID']},this)' id='tblTd'> Delete </td>";
-                                    echo "</tr>";
-                                }
-                                echo "</table>";
-                            } else {
-                                echo "<h3> Administrative Access to All Users, Submissions and Reviewers </h3>";
-                            }
-                            ?> 
-        
-    
-                    
+                        ?>
 
                     </div>
                 </div>
             </div>
 
-        
-              
-            </div>
+            
         </div>
     </div>
    
