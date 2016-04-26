@@ -57,13 +57,21 @@
             <meta itemprop="url" content="http://gaggle.email/">
             <meta itemprop="name" content="Gaggle Mail">
             <div id="header-mobile-links" class=" row center hide-on-large-only">
+                <div class="col s4">
+                    <a href="/about">About</a>
+                </div>
+                <div class="col s4">
+                    <a href="/blog">Blog</a>
+                </div>
+                <div class="col s4">
                 
+                <a class="modal-trigger" href="#login-modal">Login</a>
+                
+                </div>
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                 <li><a href="/blog">File System</a></li>
-                <li><a href="/blog">IRB Reviews</a></li>
                 <li><a href="IRB_home.html">Logout</a></li>
                 
             </ul>
@@ -71,23 +79,27 @@
     </nav>
 </header>
 <main>
-<?php
-        if(isset($_REQUEST['id'])){
-            $sid = $_REQUEST['id'];
-            include_once("submission.php");
-            $obj = new submission();
 
-            $r = $obj -> getSubmissionByCode($sid);
-                                
-            if(!$r){
-                echo "Error getting the user to edit";
-                exit();
-            }
-            else{
-            $row = $obj ->fetch();
-            }
+<?php
+        include_once("submission.php");
+        $obj = new submission();
+
+        $id ="";
+
+        if(isset($_REQUEST['id'])){
+            $id = $_REQUEST['id'];
         }
-        
+
+        $r = $obj -> getSubmissionByCode($id);
+                                    
+        if(!$r){
+            echo "Error getting the user to edit";
+            exit();
+        }
+        else{
+            $row = $obj ->fetch();
+        }
+
         ?>
 
     <div class="row" id="create-row">
@@ -97,35 +109,58 @@
             <div class="spacer"></div>
             <div class="row">
                 <div class="section center">
-                    <h3 class="thin">IRB Application Form</h3>
+                    <h3 class="thin">IRB Application Review</h3>
                     
                     <div class="spacer"></div>
-                   
+ 
+
                     <div class="create-list-login-panel center" style="max-width: 900px">
                         <div>
                             <input class="new-list-name-hidden" type="hidden" name="new-list-name">
-                             <div id="divStatus"></div> 
-                                <div class="spacer"></div>
-                                <div class="spacer"></div>
-
-                            
-                            <div class="row">
-                                <div class="col s12 input-field" style="font-size: 1.1rem">
-                                    <textarea id="title1" class="materialize-textarea"><?php echo $row['title']?></textarea>
-                                    <label  id="title2" for="new-your-name"><span class="bold" id="project">Title of Project</span></label>
-                                </div>
+                            <div class="center">
+                                <p class="flow-text">Confidentiality</p>
                             </div>
+                            <div id="divStatus"></div>
+                            <div class="spacer"></div>
+                            
+                            <div class="thin"><span class="bold">A. To what extent is the information confidential and to what extent are provisions made so that subjects are not identified?</span></div>
                             <div class="row">
                                 <div class="col s12 input-field">
-                                    <textarea id="exemption" class="materialize-textarea"><?php echo $row['exemption']?></textarea>
-                                    <label  for="new-your-name"><span class="bold">Exemption Request:</span> If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption.</label>
+                                    <textarea id="confidentialityExtent" class="materialize-textarea" readonly><?php echo $row['confidentialityExtent'] ?></textarea>
                                 </div>
                             </div>
+
+                            <div class="thin"><span class="bold">B. What are the procedures for handling and storing data so that confidentiality of the subjects and privacy are protected?</span></div>
+                            <div class="row">
+                                <div class="col s12 input-field">
+                                    <textarea id="dataStorage" class="materialize-textarea" readonly><?php echo $row['dataStorage'] ?></textarea>
+                                </div>
+                            </div>
+
+                            <div class="thin"><span class="bold">C. How will the results of the research be disseminated?</span></div>
+                            <div class="row">
+                                <div class="col s12 input-field">
+                                    <textarea id="resultDissemination" class="materialize-textarea" readonly><?php echo $row['resultDissemination'] ?></textarea>
+                                </div>
+                            </div>
+
+                            <div class="thin"><span class="bold">How will the subjects be informed of the results?</span></div>
+                            <div class="row">
+                                <div class="col s12 input-field">
+                                    <textarea id="subjectInfo" class="materialize-textarea" readonly><?php echo $row['subjectInfo'] ?></textarea>
+                                </div>
+                            </div>
+
+                            <div class="thin"><span class="bold">How will confidentiality of subjects or organizations be protected in the dissemination?</span></div>
+                             <div class="row">
+                                <div class="col s12 input-field">
+                                    <textarea id="confidentialityProtection" class="materialize-textarea" readonly><?php echo $row['confidentialityProtection'] ?></textarea>
+                                </div>
+                            </div>
+                        
                             <div class="row center">
-                                
-                                <button class="btn" onclick="exemptionSave(<?php echo $sid ?>)">Save</button>
-                                <button class="btn" onclick="exemptionNext(<?php echo $sid ?>)">Next</button>
-                                
+                                <button class="btn" onclick="reviewer_confidentialityBack(<?php echo $id ?>)">Back</button>
+                                <button class="btn" onclick="reviewer_confidentialityNext(<?php echo $id ?>)">Next</button>
                             </div>
                             
 
@@ -151,20 +186,19 @@
     <div class="container row">
         <div class="col s12 m6">
             <div>
-                <a href="#about">About</a>
+                <a href="/about">About</a>
             </div>
         </div>
         <div class="col s12 m6">
             <div>
                 <a href="mailto:help@gaggle.email">Contact</a>
             </div>
-            
         </div>
     </div>
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
-            <span class="right" href="#!">Made in London</span>
+            <span class="right" href="#!">Made in Berekuso</span>
         </div>
     </div>
 </footer>

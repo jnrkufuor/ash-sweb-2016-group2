@@ -122,7 +122,7 @@
                             <div class="center">
                                 <p class="flow-text">Describe Any Anticipated Benefits To Subjects From Participation In This Research</p>
                             </div>
-                            <div id="divStatus"></div>
+                             <div id="divStatus"></div>
                             <div class="spacer"></div>
                             
                             <div class="row">
@@ -176,22 +176,10 @@
             <div>
                 <a href="/about">About</a>
             </div>
-            <div>
-                <a href="/terms">Terms and conditions</a>
-            </div>
-            <div>
-                <a href="mailto:help@gaggle.email">Contact</a>
-            </div>
         </div>
         <div class="col s12 m6">
             <div>
-                <a href="/blog/frequently-asked-questions/">FAQ</a>
-            </div>
-            <div>
-                <a href="/what-is-group-email">What is group email?</a>
-            </div>
-            <div>
-                <a href="/why-use-group-email">Why use group email?</a>
+                <a href="mailto:help@gaggle.email">Contact</a>
             </div>
         </div>
     </div>

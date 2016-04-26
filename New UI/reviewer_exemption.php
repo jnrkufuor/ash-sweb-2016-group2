@@ -62,8 +62,6 @@
             </div>
             <ul class="right hide-on-med-and-down">
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                 <li><a href="/blog">File System</a></li>
-                <li><a href="/blog">IRB Reviews</a></li>
                 <li><a href="IRB_home.html">Logout</a></li>
                 
             </ul>
@@ -72,23 +70,24 @@
 </header>
 <main>
 <?php
+        include_once("submission.php");
+        $obj = new submission();
+                               
         if(isset($_REQUEST['id'])){
-            $sid = $_REQUEST['id'];
-            include_once("submission.php");
-            $obj = new submission();
-
-            $r = $obj -> getSubmissionByCode($sid);
-                                
-            if(!$r){
-                echo "Error getting the user to edit";
-                exit();
-            }
-            else{
-            $row = $obj ->fetch();
-            }
+            $id = $_REQUEST['id'];
         }
-        
-        ?>
+
+        $id =21;
+        $r = $obj -> getSubmissionByCode($id);
+                                
+        if(!$r){
+            echo "Error getting the user to edit";
+            exit();
+        }
+        else{
+        $row = $obj ->fetch();
+        }
+    ?>
 
     <div class="row" id="create-row">
 
@@ -97,7 +96,7 @@
             <div class="spacer"></div>
             <div class="row">
                 <div class="section center">
-                    <h3 class="thin">IRB Application Form</h3>
+                    <h3 class="thin">IRB Application Review</h3>
                     
                     <div class="spacer"></div>
                    
@@ -108,24 +107,24 @@
                                 <div class="spacer"></div>
                                 <div class="spacer"></div>
 
-                            
+                            <div class="thin"><span class="bold">Title of Project</span></div> 
                             <div class="row">
                                 <div class="col s12 input-field" style="font-size: 1.1rem">
-                                    <textarea id="title1" class="materialize-textarea"><?php echo $row['title']?></textarea>
-                                    <label  id="title2" for="new-your-name"><span class="bold" id="project">Title of Project</span></label>
+                                    <textarea id="title1" class="materialize-textarea" readonly><?php echo $row['title']?></textarea>
+                                    
                                 </div>
                             </div>
+
+                            <div class="thin"><span class="bold">Exemption Request:</span> If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption.</div>
                             <div class="row">
                                 <div class="col s12 input-field">
-                                    <textarea id="exemption" class="materialize-textarea"><?php echo $row['exemption']?></textarea>
-                                    <label  for="new-your-name"><span class="bold">Exemption Request:</span> If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption.</label>
+                                    <textarea id="exemption" class="materialize-textarea" readonly><?php echo $row['exemption']?></textarea>
+                                    
                                 </div>
                             </div>
+
                             <div class="row center">
-                                
-                                <button class="btn" onclick="exemptionSave(<?php echo $sid ?>)">Save</button>
-                                <button class="btn" onclick="exemptionNext(<?php echo $sid ?>)">Next</button>
-                                
+                                <button class="btn" onclick="reviewer_exemptionNext(<?php echo $id ?>)">Next</button>
                             </div>
                             
 

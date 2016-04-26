@@ -57,13 +57,11 @@
             <meta itemprop="url" content="http://gaggle.email/">
             <meta itemprop="name" content="Gaggle Mail">
             <div id="header-mobile-links" class=" row center hide-on-large-only">
-                
+                 
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                 <li><a href="/blog">File System</a></li>
-                <li><a href="/blog">IRB Reviews</a></li>
                 <li><a href="IRB_home.html">Logout</a></li>
                 
             </ul>
@@ -72,22 +70,56 @@
 </header>
 <main>
 <?php
-        if(isset($_REQUEST['id'])){
-            $sid = $_REQUEST['id'];
-            include_once("submission.php");
-            $obj = new submission();
+        include_once("submission.php");
+        $obj = new submission();
 
-            $r = $obj -> getSubmissionByCode($sid);
-                                
-            if(!$r){
-                echo "Error getting the user to edit";
-                exit();
-            }
-            else{
-            $row = $obj ->fetch();
-            }
+        $id ="";
+
+        if(isset($_REQUEST['id'])){
+            $id = $_REQUEST['id'];
         }
-        
+
+        $r = $obj -> getSubmissionByCode($id);
+                                    
+        if(!$r){
+            echo "Error getting the submission";
+            exit();
+        }
+        else{
+            $row = $obj ->fetch();
+        }
+
+        $procedureRisks = explode(',', $row['procedureRisks']); 
+
+        $deception = "";
+        $punishment = "";
+        $unacceptableMaterial = "";
+        $participantDisclosure = "";
+        $privacyInvasion = "";
+        $physicalInvasion = "";
+
+        foreach ($procedureRisks as $value) {
+            if($value == "deception"){
+                $deception = "checked";
+            }
+            else if($value == "punishment"){
+                $punishment = "checked";
+            }
+            else if($value == "unacceptableMaterial"){
+                $unacceptableMaterial = "checked";
+            }
+            else if($value == "privacyInvasion"){
+                $privacyInvasion = "checked";
+            }
+            else if($value == "participantDisclosure"){
+                $participantDisclosure = "checked";
+            }
+            else if($value == "physicalInvasion"){
+                $physicalInvasion = "checked";
+            }
+
+        }
+
         ?>
 
     <div class="row" id="create-row">
@@ -97,35 +129,64 @@
             <div class="spacer"></div>
             <div class="row">
                 <div class="section center">
-                    <h3 class="thin">IRB Application Form</h3>
+                    <h3 class="thin">IRB Application Review</h3>
                     
                     <div class="spacer"></div>
-                   
+ 
+
                     <div class="create-list-login-panel center" style="max-width: 900px">
                         <div>
                             <input class="new-list-name-hidden" type="hidden" name="new-list-name">
-                             <div id="divStatus"></div> 
-                                <div class="spacer"></div>
-                                <div class="spacer"></div>
-
-                            
-                            <div class="row">
-                                <div class="col s12 input-field" style="font-size: 1.1rem">
-                                    <textarea id="title1" class="materialize-textarea"><?php echo $row['title']?></textarea>
-                                    <label  id="title2" for="new-your-name"><span class="bold" id="project">Title of Project</span></label>
-                                </div>
+                            <div class="center">
+                                <p class="flow-text">Numbers, Types and Recruitment of Subjects</p>
                             </div>
+                            <div id="divStatus"></div>
+                            <div class="spacer"></div>
+                            
+                             <form >
+                                <p>
+                                  <input type="checkbox" id="deception" <?php echo $deception ?> disabled/>
+                                  <label for="deception">Deception of the participant?</label>
+                                </p>
+
+                                <p>
+                                  <input type="checkbox" id="punishment" <?php echo $punishment ?> disabled/>
+                                  <label for="punishment">Punishment of the participant?</label>
+                                </p>
+
+                                <p>
+                                  <input type="checkbox" id="unacceptableMaterial" <?php echo $unacceptableMaterial ?> disabled/>
+                                  <label for="unacceptableMaterial">Materials commonly regarded as socially unacceptable such as pornography, inflammatory text, ethnic portrayals?</label>
+                                </p>
+
+                                <p>
+                                  <input type="checkbox" id="privacyInvasion" <?php echo $privacyInvasion ?> disabled/>
+                                  <label for="privacyInvasion">Any other procedure that might be considered an invasion of privacy?</label>
+                                </p>
+
+                                <p>
+                                  <input type="checkbox" id="participantDisclosure" <?php echo $participantDisclosure ?> disabled/>
+                                  <label for="participantDisclosure">Disclosure of the names of individual participants?</label>
+                                </p>
+
+                                <p>
+                                  <input type="checkbox" id="physicalInvasion" <?php echo $physicalInvasion ?> disabled/>
+                                  <label for="physicalInvasion">Any other physically invasive procedure?</label>
+                                </p>
+                                
+                              </form>
+
+                            <div class="spacer"></div>
+                            <div class="thin"><span class="bold">If the answer to any of the above is "Yes", please explain this procedure in detail and describe procedures for protecting against or minimizing any potential risk.</span></div>
                             <div class="row">
                                 <div class="col s12 input-field">
-                                    <textarea id="exemption" class="materialize-textarea"><?php echo $row['exemption']?></textarea>
-                                    <label  for="new-your-name"><span class="bold">Exemption Request:</span> If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption.</label>
+                                    <textarea id="procedureDetails" class="materialize-textarea" readonly></textarea>
                                 </div>
                             </div>
+
                             <div class="row center">
-                                
-                                <button class="btn" onclick="exemptionSave(<?php echo $sid ?>)">Save</button>
-                                <button class="btn" onclick="exemptionNext(<?php echo $sid ?>)">Next</button>
-                                
+                                <button class="btn" onclick="reviewer_riskBack(<?php echo $id ?>)">Back</button>
+                                <button class="btn" onclick="reviewer_riskNext(<?php echo $id ?>)">Next</button>
                             </div>
                             
 
@@ -151,12 +212,13 @@
     <div class="container row">
         <div class="col s12 m6">
             <div>
-                <a href="#about">About</a>
+                <a href="/about">About</a>
             </div>
-        </div>
+            
+            </div>
         <div class="col s12 m6">
             <div>
-                <a href="mailto:help@gaggle.email">Contact</a>
+                <a href="/blog/frequently-asked-questions/">Contact</a>
             </div>
             
         </div>
@@ -164,7 +226,7 @@
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
-            <span class="right" href="#!">Made in London</span>
+            <span class="right" href="#!">Made in Berekuso</span>
         </div>
     </div>
 </footer>

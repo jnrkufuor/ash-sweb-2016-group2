@@ -57,12 +57,22 @@
             <meta itemprop="url" content="http://gaggle.email/">
             <meta itemprop="name" content="Gaggle Mail">
             <div id="header-mobile-links" class=" row center hide-on-large-only">
+                <div class="col s4">
+                    <a href="/about">About</a>
+                </div>
+                <div class="col s4">
+                    <a href="/blog">Blog</a>
+                </div>
+                <div class="col s4">
                 
+                <a class="modal-trigger" href="#login-modal">Login</a>
+                
+                </div>
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                 <li><a href="/blog">File System</a></li>
+                <li><a href="/blog">File System</a></li>
                 <li><a href="/blog">IRB Reviews</a></li>
                 <li><a href="IRB_home.html">Logout</a></li>
                 
@@ -71,23 +81,27 @@
     </nav>
 </header>
 <main>
-<?php
-        if(isset($_REQUEST['id'])){
-            $sid = $_REQUEST['id'];
-            include_once("submission.php");
-            $obj = new submission();
 
-            $r = $obj -> getSubmissionByCode($sid);
-                                
-            if(!$r){
-                echo "Error getting the user to edit";
-                exit();
-            }
-            else{
-            $row = $obj ->fetch();
-            }
+<?php
+        include_once("submission.php");
+        $obj = new submission();
+
+        $id ="";
+
+        if(isset($_REQUEST['id'])){
+            $id = $_REQUEST['id'];
         }
-        
+
+        $r = $obj -> getSubmissionByCode($id);
+                                    
+        if(!$r){
+            echo "Error getting the user to edit";
+            exit();
+        }
+        else{
+            $row = $obj ->fetch();
+        }
+
         ?>
 
     <div class="row" id="create-row">
@@ -97,34 +111,43 @@
             <div class="spacer"></div>
             <div class="row">
                 <div class="section center">
-                    <h3 class="thin">IRB Application Form</h3>
+                    <h3 class="thin">IRB Application Review</h3>
                     
                     <div class="spacer"></div>
-                   
+ 
+
                     <div class="create-list-login-panel center" style="max-width: 900px">
                         <div>
                             <input class="new-list-name-hidden" type="hidden" name="new-list-name">
-                             <div id="divStatus"></div> 
-                                <div class="spacer"></div>
-                                <div class="spacer"></div>
-
+                            <div class="center">
+                                <p class="flow-text">Describe Any Anticipated Benefits To Subjects From Participation In This Research</p>
+                            </div>
+                             <div id="divStatus"></div>
+                            <div class="spacer"></div>
                             
                             <div class="row">
-                                <div class="col s12 input-field" style="font-size: 1.1rem">
-                                    <textarea id="title1" class="materialize-textarea"><?php echo $row['title']?></textarea>
-                                    <label  id="title2" for="new-your-name"><span class="bold" id="project">Title of Project</span></label>
-                                </div>
-                            </div>
-                            <div class="row">
+                                
+                                <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="exemption" class="materialize-textarea"><?php echo $row['exemption']?></textarea>
-                                    <label  for="new-your-name"><span class="bold">Exemption Request:</span> If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption.</label>
+                                    <textarea id="participantConpensation" class="materialize-textarea"><?php echo $row['participantConpensation'] ?></textarea>
+                                    <label id="participantConpensation1" for="new-your-name">A. Will participants / subjects / respondents be compensated or rewarded in any way?</label>
                                 </div>
                             </div>
+                             <div class="row">
+                                
+                                <div class="spacer"></div>
+                                <div class="col s12 input-field">
+                                    <textarea id="participantBenefits" class="materialize-textarea"><?php echo $row['participantBenefits'] ?></textarea>
+                                    <label id="participantBenefits1" for="new-your-name">B. What intrinsic benefit will participants / subjects / respondents receive?</label>
+                                </div>
+                            </div>
+                        
                             <div class="row center">
                                 
-                                <button class="btn" onclick="exemptionSave(<?php echo $sid ?>)">Save</button>
-                                <button class="btn" onclick="exemptionNext(<?php echo $sid ?>)">Next</button>
+                                <button class="btn" onclick="benefitsBack(<?php echo $id ?>)">Back</button>
+                                <button class="btn" onclick="benefitsSave(<?php echo $id ?>)">Save As Draft</button>
+                                <button class="btn" onclick="benefitsSend(<?php echo $id ?>)">Submit</button>
+
                                 
                             </div>
                             
@@ -151,14 +174,13 @@
     <div class="container row">
         <div class="col s12 m6">
             <div>
-                <a href="#about">About</a>
+                <a href="/about">About</a>
             </div>
         </div>
         <div class="col s12 m6">
             <div>
                 <a href="mailto:help@gaggle.email">Contact</a>
             </div>
-            
         </div>
     </div>
     <div class="footer-copyright">
