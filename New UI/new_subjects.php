@@ -80,6 +80,39 @@
     </nav>
 </header>
 <main>
+<?php
+        include_once("submission.php");
+        $obj = new submission();
+
+        if(!isset($_REQUEST['id'])){
+            $r = $obj-> getSubmissionId();
+            if(!$r){
+            echo "result is false";
+            }
+            else{
+            //fetch
+            $result=$obj ->fetch();
+        
+            $id = $result['submissionID'];
+
+            }
+        }
+        else{
+            $id = $_REQUEST['id'];
+        }
+
+        $r = $obj -> getSubmissionByCode($id);
+                                    
+        if(!$r){
+            echo "Error getting the user to edit";
+            exit();
+        }
+        else{
+            $row = $obj ->fetch();
+        }
+                               
+        
+    ?>
 
     <div class="row" id="create-row">
 
@@ -96,13 +129,16 @@
                     <div class="create-list-login-panel center" style="max-width: 900px">
                         <div>
                             <input class="new-list-name-hidden" type="hidden" name="new-list-name">
+                            
                             <div class="center">
                                 <p class="flow-text">Numbers, Types and Recruitment of Subjects</p>
                             </div>
+                            <div id="divStatus"></div>
+                            <div class="spacer"></div>
                             <div class="spacer"></div>
                             <div class="row">
                                 <div class="col s12 input-field">
-                                    <textarea id="subjectCharacteristics" class="materialize-textarea"></textarea>
+                                    <textarea id="subjectCharacteristics" class="materialize-textarea"><?php echo $row['subjectCharacteristics'] ?></textarea>
                                     <label id="subjectCharacteristics1" for="new-your-name">A. Identify the numbers and characteristics of subjects (eg. age ranges, sex, ethnic background, health status, disabilities , etc.) It is recommended to provide the breakdown based on your sampling strategy.</label>
                                 </div>
                             </div>
@@ -110,7 +146,7 @@
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="specialClasses" class="materialize-textarea"></textarea>
+                                    <textarea id="specialClasses" class="materialize-textarea"><?php echo $row['specialClasses'] ?></textarea>
                                     <label id="specialClasses1" for="new-your-name">B. Special cases. If applicable, explain the rationale for the use of special cases or subjects such as pregnant women, children, prisoners, mentally impaired, institutionalized, or others who are likely to be particulary vulnerable</label>
                                 </div>
                             </div>
@@ -118,7 +154,7 @@
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="recruitment" class="materialize-textarea"></textarea>
+                                    <textarea id="recruitment" class="materialize-textarea"><?php echo $row['recruitment'] ?></textarea>
                                     <label id="recruitment1" for="new-your-name">C. How are the individual participants to be recruited for this research? Is it clear to the subjects that participation is voluntary and that they may withraw at any time without any negative consequences?</label>
                                 </div>
                             </div>
@@ -126,7 +162,7 @@
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="partcipnatInfo" class="materialize-textarea"></textarea>
+                                    <textarea id="partcipnatInfo" class="materialize-textarea"><?php echo $row['partcipnatInfo'] ?></textarea>
                                     <label id="partcipnatInfo1" for="new-your-name">D. To what extent and how are participants to be informed of research procedures before their participation? </label>
                                 </div>
                             </div>
@@ -134,7 +170,7 @@
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="researchMethod" class="materialize-textarea"></textarea>
+                                    <textarea id="researchMethod" class="materialize-textarea"><?php echo $row['researchMethod'] ?></textarea>
                                     <label id="researchMethod1" for="new-your-name">E. How will you classify your research method? (experiment, observation, modelling etc.). Specify all methods you anticipate to use. </label>
                                 </div>
                             </div>
@@ -142,15 +178,15 @@
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="dataSources" class="materialize-textarea"></textarea>
+                                    <textarea id="dataSources" class="materialize-textarea"><?php echo $row['dataSources'] ?></textarea>
                                     <label id="dataSources1" for="new-your-name">F. Specify the data sources you will use for your reserach. (eg. questionnaire, audio recording human resource files, experiment data, etc.) </label>
                                 </div>
                             </div>
                             <div class="row center">
                                 
-                                <button class="btn" onclick="subjectsBack()">Back</button>
-                                <button class="btn">Save</button>
-                                <button class="btn" onclick="subjectsNext()">Next</button>
+                                <button class="btn" onclick="subjectsBack(<?php echo $id ?>)">Back</button>
+                                <button class="btn"onclick="subjectsSave(<?php echo $id ?>)">Save</button>
+                                <button class="btn" onclick="subjectsNext(<?php echo $id ?>)">Next</button>
 
                                 
                             </div>

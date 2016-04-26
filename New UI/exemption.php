@@ -121,8 +121,8 @@
                             </div>
                             <div class="row center">
                                 
-                                <button class="btn" onclick="titleSave(<?php echo $id ?>)" >Save</button>
-                                <button class="btn" onclick="titleNext(<?php echo $id ?>)">Next</button>
+                                <button class="btn" onclick="exemptionSave(<?php echo $id ?>)" >Save</button>
+                                <button class="btn" onclick="exemptionNext(<?php echo $id ?>)">Next</button>
                                 
                             </div>
                             

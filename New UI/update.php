@@ -106,7 +106,7 @@
 		echo "error";
 	}
 	else{
-		header("Location: risk.php?id=$id");
+		header("Location: new_risk.php?id=$id");
 	}
  }
 
