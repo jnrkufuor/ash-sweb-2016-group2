@@ -160,7 +160,7 @@
 		echo "error";
 	}
 	else{
-		header("Location: benefits.php?id=$id");
+		header("Location: new_benefits.php?id=$id");
 	}
  }
 
@@ -188,7 +188,7 @@
 		echo "error";
 	}
 	else{
-		header("Location: ../UI template/index.html");
+		header("Location: IRB_Dashboard.php");
 	}
 }
 
