@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['USER_ID'])){
+        header("Location:IRB_home.php");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head lang="en">
