@@ -53,3 +53,78 @@ function next(){
 	window.open("new_subjects.php")
 }
 
+	var currentObj;
+	function deleteUserComplete(xhr,status)
+	{
+	
+		if(status!="success")
+		{
+			contentbody.innerHTML="Request could not be processed";
+		}
+		
+		var obj= $.parseJSON(xhr.responseText);
+		if (obj.result==0)
+		{
+			contentbody.innerHTML=obj.message;
+		}
+		else{
+		var tb= currentObj.parentNode;
+		tb.parentNode.removeChild(tb);
+		currentObj=null;
+		  
+		}
+	}
+	
+	function deleteUser(recordId,obj)
+	{
+        var r = confirm("Confirm Delete");
+        if (r == true) {
+		     currentObj=obj;
+	         var url="../Login/userajax.php?cmd=1&id="+recordId;
+		     $.ajax(url,
+		     {
+			     async:true,complete:deleteUserComplete
+		     });
+            
+        }else {
+                 return;
+             } 
+	}
+	
+	function deleteLecComplete(xhr,status)
+	{
+	
+		if(status!="success")
+		{
+			contentbody.innerHTML="Request could not be processed";
+		}
+		
+		var obj= $.parseJSON(xhr.responseText);
+		if (obj.result==0)
+		{
+			contentbody.innerHTML=obj.message;
+		}
+		else{
+		var tb= currentObj.parentNode;
+		tb.parentNode.removeChild(tb);
+		}
+		currentObj=null;
+	}
+	
+	
+	
+	function deleteLec(recordId,obj)
+	{ 
+	    var r = confirm("Confirm Delete");
+        if (r == true) {
+		     currentObj=obj;
+	         var url="../Login/userajax.php?cmd=2&id="+recordId;
+		     $.ajax(url,
+		     {
+			     async:true,complete:deleteLecComplete
+		     });
+            
+             }else {
+                 return;
+             } 
+	}

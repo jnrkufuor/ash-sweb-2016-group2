@@ -108,7 +108,7 @@
                                       <th>User ID </th>
                                       <th>Firstname </th>
                                       <th>Lastname </th>
-                                      <th>Co-Researcher </th>
+                                      <th>Reviewers </th>
                                       <th>Email </th>
                                       <th>Phone </th>
                                       <th>Fax </th>
@@ -124,7 +124,7 @@
                                     . "<td>{$row['EMAIL']}</td> "
                                     . "<td>{$row['PHONE']}</td>"
                                     . "<td>{$row['FAX']}</td>"
-                                    . "<td style='color:#AD1E26;' onclick='deleteUser({$row['USER_ID']},this)' id='tblTd'> Delete </td> "
+                                    . "<td style='color:#AD1E26; cursor: pointer;' onclick='deleteUser({$row['USER_ID']},this)' id='tblTd'> Delete </td> "
                                     . "</tr>";
                                 }
                                 echo "</table>";
@@ -138,17 +138,22 @@
                                     <tr id='hd'> 
                                     <th>Lecturer ID </th>
                                     <th>Type</th>
+									 <th>Firstname</th>
+									  <th>Lastname</th>
                                     </tr>";
                                 while ($tbl = $lec->fetch()) {
                                     echo" <tr id='r1'>"
                                     . "<td>{$tbl['RID']}</td>"
                                     . "<td>{$tbl['TYPE']}</td>"
-                                    . "<td  style='color:#AD1E26;'onclick='deleteLec({$tbl['RID']},this)' id='tblTd'> Delete </td>"
-                                    . "</tr>";
+									."<td>{$tbl['FIRSTNAME']}</td>"
+									."<td>{$tbl['LASTNAME']}</td>";
+									if($tbl['TYPE']=="Reviewer")
+                                          echo "<td  style='color:#AD1E26; cursor: pointer;'onclick='deleteLec({$tbl['RID']},this)' id='tblTd'> Delete </td>";
+                                    echo "</tr>";
                                 }
                                 echo "</table>";
                             } else {
-                                echo "<h1>Welcome to the Admin Page</h1>";
+                                echo "<h3> Administrative Access to All Users,Submissions and Reviewers </h3>";
                             }
                             ?> 
         
@@ -160,10 +165,7 @@
             </div>
 
             <div class="row">
-                    <div class="center-align">
-                        <a href="IRB_form.php" class="btn btn-large hero-btn">New Application <svg style="width:24px;height:24px;top: 6px; position: relative; right: 2px;" viewBox="0 0 24 24">
-<path fill="#ffffff" d="M5.59,7.41L7,6L13,12L7,18L5.59,16.59L10.17,12L5.59,7.41M11.59,7.41L13,6L19,12L13,18L11.59,16.59L16.17,12L11.59,7.41Z" />
-</svg>
+       
 
 
 </a>
