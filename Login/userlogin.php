@@ -34,12 +34,24 @@ if (isset($_REQUEST['id'])) {
         $type=$tbl['type'];
         }
 	if ($type=="Applicant") {
+		     session_start();
+		     $_SESSION['USER_ID']=$row['USER_ID'];
+			 $_SESSION['FIRSTNAME']=$row['FIRSTNAME'];
+			 $_SESSION['LASTNAME']=$row['LASTNAME'];
              header("Location: ../New UI/IRB_dashboard.php");
         }
 	if ($type=="Reviewer") {
+		    session_start();
+		    $_SESSION['USER_ID']=$row['RID'];
+			$_SESSION['FIRSTNAME']=$row['FIRSTNAME'];
+			 $_SESSION['LASTNAME']=$row['LASTNAME'];
             header("Location:reviewerIndex.php?id=$id");
         }
 	if ($type=="Administrator") {
+		    session_start();
+		    $_SESSION['USER_ID']=$row['RID'];
+			$_SESSION['FIRSTNAME']=$row['FIRSTNAME'];
+			 $_SESSION['LASTNAME']=$row['LASTNAME'];
             echo '<script>window.location.href = "../New UI/admin_dashboard.php";</script>';
         }
     

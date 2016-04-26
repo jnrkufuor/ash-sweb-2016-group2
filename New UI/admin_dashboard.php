@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['USER_ID'])){
+		header("Location:IRB_home.php");
+		exit();
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head lang="en">
@@ -115,7 +122,8 @@
                                       </tr>";
 									  
 							    $count =0;
-                                while ($row = $obj->fetch()) {
+                                while ($row = $obj->fetch
+()) {
                                     echo" <tr id='r1'class=$count>"
                                     . "<td>{$row['USER_ID']}</td>"
                                     . "<td>{$row['FIRSTNAME']}</td>"
