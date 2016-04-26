@@ -71,6 +71,7 @@
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
+                <li><a href="IRB_dashboard.php">Dashboard</a></li>
                  <li><a href="/blog">File System</a></li>
                 <li><a href="/blog">IRB Reviews</a></li>
                 <li><a href="IRB_home.html">Logout</a></li>
@@ -85,7 +86,7 @@
         if(isset($_REQUEST['id'])){
             $id = $_REQUEST['id'];
         }
-        
+
         ?>
 
     <div class="row" id="create-row">
@@ -113,7 +114,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                
+
                                 <div class="col s12 input-field">
                                     <textarea id="exemption" class="materialize-textarea"></textarea>
                                     <label for="new-your-name"><span class="bold">Exemption Request:</span> If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption.</label>

@@ -58,19 +58,25 @@
             <meta itemprop="name" content="Gaggle Mail">
             <div id="header-mobile-links" class=" row center hide-on-large-only">
                 <div class="col s4">
-                    <a href="/about">About</a>
+                    <a href="IRB_dashboard.php">Dashboard</a>
                 </div>
                 <div class="col s4">
-                    <a href="/blog">Blog</a>
+                    <a href="/blog">File System</a>
                 </div>
                 <div class="col s4">
                 
-                <a class="modal-trigger" href="#login-modal">Login</a>
+                <a href="/blog">IRB Reviews</a>
+                
+                </div>
+                <div class="col s4">
+                
+                <a href="IRB_home.html">Logout</a
                 
                 </div>
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
+                <li><a href="IRB_dashboard.php">Dashboard</a></li>
                  <li><a href="/blog">File System</a></li>
                 <li><a href="/blog">IRB Reviews</a></li>
                 <li><a href="IRB_home.html">Logout</a></li>
@@ -160,25 +166,14 @@
     <div class="container row">
         <div class="col s12 m6">
             <div>
-                <a href="/about">About</a>
-            </div>
-            <div>
-                <a href="/terms">Terms and conditions</a>
-            </div>
-            <div>
-                <a href="mailto:help@gaggle.email">Contact</a>
+                <a href="#about">About</a>
             </div>
         </div>
         <div class="col s12 m6">
             <div>
-                <a href="/blog/frequently-asked-questions/">FAQ</a>
+                <a href="mailto:help@gaggle.email">Contact</a>
             </div>
-            <div>
-                <a href="/what-is-group-email">What is group email?</a>
-            </div>
-            <div>
-                <a href="/why-use-group-email">Why use group email?</a>
-            </div>
+            
         </div>
     </div>
     <div class="footer-copyright">
