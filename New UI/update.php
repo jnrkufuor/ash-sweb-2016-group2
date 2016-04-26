@@ -212,7 +212,7 @@
 		echo "error";
 	}
 	else{
-		header("Location: subjects.php?id=$sid");
+		header("Location: new_subjects.php?id=$sid");
 	}
 	}
 ?>

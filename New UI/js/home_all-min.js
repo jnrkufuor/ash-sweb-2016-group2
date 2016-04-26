@@ -224,25 +224,82 @@ function titleNext(id){
 			}
 
 			function exemptionNext(sid){
-			if(validate($("#title").val()) == false){
-				document.getElementById("title1").stylecolor="red";
+			if(validateForm($("#title1").val()) == false){
+				document.getElementById("title2").style.color="red";
 				alert("Kindly provide a title for your submission");
 				return;
 			}
 			
-			window.open("update.php?cmd=6&title="+$("#title").val()+"&exemption=" + $("#exemption").val()+"&sid="+sid ,"_self");
+			window.open("update.php?cmd=6&title="+$("#title1").val()+"&exemption=" + $("#exemption").val()+"&sid="+sid ,"_self");
 		}
 
 		function exemptionSave(sid){
-			if(validate($("#title").val()) == false){
-				document.getElementById("title1").stylecolor="red"	
+			if(validateForm($("#title1").val()) == false){
+				document.getElementById("title2").style.color="red";	
 			alert("Kindly provide a title for your submission");
 				return;
 			}
 			
-			var theUrl="submission_ajax.php?cmd=2&title="+$("#title").val()+"&exemption=" + $("#exemption").val() +"&sid="+sid;
+			var theUrl="submission_ajax.php?cmd=2&title="+$("#title1").val()+"&exemption=" + $("#exemption").val() +"&sid="+sid;
 				$.ajax(theUrl,
 					{async:true,complete:saveComplete}
 					);
 				
 			}
+
+		function back(id){
+			window.open("subjects.php?id="+id,"_self");
+		}
+
+		function next(id){
+			var procedureRisks = "";
+			if(document.getElementById('deception').checked){
+				procedureRisks = procedureRisks + "deception,";
+			}
+			if(document.getElementById('punishment').checked){
+			procedureRisks = procedureRisks + "punishment,";
+			}
+			if(document.getElementById('unacceptableMaterial').checked){
+			procedureRisks = procedureRisks + "unacceptableMaterial,";
+			}
+			if(document.getElementById('privacyInvasion').checked){
+			procedureRisks = procedureRisks + "privacyInvasion,";
+			}
+			if(document.getElementById('participantDisclosure').checked){
+			procedureRisks = procedureRisks + "participantDisclosure,";
+			}
+			if(document.getElementById('physicalInvasion').checked){
+			procedureRisks = procedureRisks + "physicalInvasion,";
+			}
+		
+			window.open("update.php?cmd=3&id="+id +"&procedureRisks="+ procedureRisks +"&procedureDetails=" + $("#procedureDetails").val() ,"_self");
+		}
+
+		function save(id){
+			var procedureRisks = "";
+
+			if(document.getElementById('deception').checked){
+				procedureRisks = procedureRisks + "deception,";
+			}
+			if(document.getElementById('punishment').checked){
+			procedureRisks = procedureRisks + "punishment,";
+			}
+			if(document.getElementById('unacceptableMaterial').checked){
+			procedureRisks = procedureRisks + "unacceptableMaterial,";
+			}
+			if(document.getElementById('privacyInvasion').checked){
+			procedureRisks = procedureRisks + "privacyInvasion,";
+			}
+			if(document.getElementById('participantDisclosure').checked){
+			procedureRisks = procedureRisks + "participantDisclosure,";
+			}
+			if(document.getElementById('physicalInvasion').checked){
+			procedureRisks = procedureRisks + "physicalInvasion,";
+			}
+
+			var theUrl="submission_ajax.php?cmd=4 & id="+id +"&procedureRisks="+procedureRisks +"&procedureDetails=" + $("#procedureDetails").val();
+				$.ajax(theUrl,
+					{async:true,complete:saveComplete}
+					);
+
+		}

@@ -81,9 +81,20 @@
 </header>
 <main>
 <?php
-        $id = 27302017;
         if(isset($_REQUEST['id'])){
-            $id = $_REQUEST['id'];
+            $sid = $_REQUEST['id'];
+            include_once("submission.php");
+            $obj = new submission();
+
+            $r = $obj -> getSubmissionByCode($sid);
+                                
+            if(!$r){
+                echo "Error getting the user to edit";
+                exit();
+            }
+            else{
+            $row = $obj ->fetch();
+            }
         }
         
         ?>
@@ -98,31 +109,31 @@
                     <h3 class="thin">IRB Application Form</h3>
                     
                     <div class="spacer"></div>
- 
-
+                   
                     <div class="create-list-login-panel center" style="max-width: 900px">
                         <div>
                             <input class="new-list-name-hidden" type="hidden" name="new-list-name">
+                             <div id="divStatus"></div> 
+                                <div class="spacer"></div>
+                                <div class="spacer"></div>
+
                             
                             <div class="row">
-                                <div class="col s12 input-field">
-                                    <textarea id="title" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name"><span class="bold" id="project">Title of Project</span></label>
+                                <div class="col s12 input-field" style="font-size: 1.1rem">
+                                    <textarea id="title1" class="materialize-textarea"><?php echo $row['title']?></textarea>
+                                    <label  id="title2" for="new-your-name"><span class="bold" id="project">Title of Project</span></label>
                                 </div>
                             </div>
                             <div class="row">
-                                <div id="divStatus"></div> 
-                                <div class="spacer"></div>
-                                <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="exemption" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name"><span class="bold">Exemption Request:</span> If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption.</label>
+                                    <textarea id="exemption" class="materialize-textarea"><?php echo $row['exemption']?></textarea>
+                                    <label  for="new-your-name"><span class="bold">Exemption Request:</span> If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption.</label>
                                 </div>
                             </div>
                             <div class="row center">
                                 
-                                <button class="btn" onclick="exemptionSave(<?php echo $id ?>)" >Save</button>
-                                <button class="btn" onclick="exemptionNext(<?php echo $id ?>)">Next</button>
+                                <button class="btn" onclick="exemptionSave(<?php echo $sid ?>)">Save</button>
+                                <button class="btn" onclick="exemptionNext(<?php echo $sid ?>)">Next</button>
                                 
                             </div>
                             

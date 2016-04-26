@@ -1,4 +1,4 @@
-.materialize-red.lighten-5 {
+i.materialize-red.lighten-5 {
   background-color: #fdeaeb !important; }
 
 .materialize-red-text.text-lighten-5 {
@@ -6137,7 +6137,7 @@ textarea.materialize-textarea {
     position: absolute;
     top: 0.8rem;
     left: 0.75rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: text;
     -webkit-transition: 0.2s ease-out;
     -moz-transition: 0.2s ease-out;

@@ -99,7 +99,9 @@
                     
                     <div class="spacer"></div>
  
-
+                    <div id="divStatus"></div> 
+                                <div class="spacer"></div>
+                                <div class="spacer"></div>
                     <div class="create-list-login-panel center" style="max-width: 900px">
                         <div>
                             <input class="new-list-name-hidden" type="hidden" name="new-list-name">
@@ -111,9 +113,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div id="divStatus"></div> 
-                                <div class="spacer"></div>
-                                <div class="spacer"></div>
+                                
                                 <div class="col s12 input-field">
                                     <textarea id="exemption" class="materialize-textarea"></textarea>
                                     <label for="new-your-name"><span class="bold">Exemption Request:</span> If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption.</label>
