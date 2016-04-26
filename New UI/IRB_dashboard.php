@@ -95,7 +95,11 @@
                         <h1 id="hero-title-one" itemprop="description"><span class="bold">Dashboard</span></h1>
                         <?php
 
+
                         include_once ("submission.php");
+
+                        include_once ("submission.php");
+
                         $obj = new submission();
 
                         $id=$_SESSION['USER_ID'];
