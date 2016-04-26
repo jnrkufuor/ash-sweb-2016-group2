@@ -530,6 +530,10 @@ function titleNext(id){
 		window.open("exemption.php?id="+id, "_self");
 	}
 
+	function reviewer_view(id){
+		window.open("reviewer_exemption.php?id="+id, "_self");
+	}
+
 	function reviewer_exemptionNext(id){
 		window.open("reviewer_subjects.php?id="+id, "_self");
 	}
@@ -558,5 +562,19 @@ function titleNext(id){
 		window.open("reviewer_benefits.php?id="+id, "_self");
 	}
 
+	function reviewer_benefitsBack(id){
+		window.open("reviewer_confidentiality.php?id="+id, "_self");
+	}
 
+	function reviewer_submit(id){
+			if(validateForm($("#feedback").val()) == false){
+				document.getElementById("feedback1").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("feedback1").style.color="grey";
+			}
 
+				window.open("update.php?cmd=7&id="+id +"&feedback="+$("#feedback").val(),"_self");
+			}

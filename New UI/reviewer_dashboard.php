@@ -52,14 +52,12 @@
 <header>
     <nav class="transparent black-text">
         <div class="nav-wrapper container">
-            <a href="/" class="brand-logo brand-logo-small"><img id="header-logo" alt="Gaggle Mail Logo" src="images/logo_22x22@2x.png"/>
+            <a href="" class="brand-logo brand-logo-small"><img id="header-logo" alt="Gaggle Mail Logo" src="images/logo_22x22@2x.png"/>
                 Ashesi IRB <span>Portal</span></a>
             <meta itemprop="url" content="http://gaggle.email/">
             <meta itemprop="name" content="Gaggle Mail">
             <div id="header-mobile-links" class=" row center hide-on-large-only">
-                <div class="col s4">
-                    <a href="/about">About</a>
-                </div>
+                
                 <div class="col s4">
                     <a href="/blog">Blog</a>
                 </div>
@@ -71,9 +69,8 @@
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
-                <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                <li><a href="/blog">File System</a></li>
-                <li><a href="/blog">IRB Reviews</a></li>
+
+                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
                 <li><a href="IRB_home.html">Logout</a></li>
                 
             </ul>
@@ -81,108 +78,71 @@
     </nav>
 </header>
 <main>
-
-<?php
-        include_once("submission.php");
-        $obj = new submission();
-
-        $id ="";
-
-        if(isset($_REQUEST['id'])){
-            $id = $_REQUEST['id'];
-        }
-
-        $r = $obj -> getSubmissionByCode($id);
-                                    
-        if(!$r){
-            echo "Error getting the user to edit";
-            exit();
-        }
-        else{
-            $row = $obj ->fetch();
-        }
-
-        ?>
-
-    <div class="row" id="create-row">
-
-            <span id="create" class="scrollspy"></span>
-           
-            <div class="spacer"></div>
+    <div id="hero">
+        <div class="container" id="hero-text-container">
             <div class="row">
-                <div class="section center">
-                    <h3 class="thin">IRB Application Form</h3>
-                    
-                    <div class="spacer"></div>
- 
+                <div class="col s12 center-align">
+                    <div id="hero-title" style="margin-top: 3%">
+                        <h1 id="hero-title-one" itemprop="description"><span class="bold">Reviewer's Dashboard</span></h1>
+                        <?php
 
-                    <div class="create-list-login-panel center" style="max-width: 900px">
-                        <div>
-                            <input class="new-list-name-hidden" type="hidden" name="new-list-name">
-                            <div class="center">
-                                <p class="flow-text">Describe Any Anticipated Benefits To Subjects From Participation In This Research</p>
-                            </div>
-                             <div id="divStatus"></div>
-                            <div class="spacer"></div>
+                        include_once ("../New UI/submission.php");
+                        $obj = new submission();
+
+                        if(!$obj-> getSubmissions()){
+                            echo "Error";
+                        }
+                        else{
+                            echo "
+                            <table class='highlight'>
+                            <thead>
+                              <tr>
+                                  <th data-field='id'>Submission ID</th>
+                                  <th data-field='name'>Submission Date</th>
+                                  <th data-field='price'>Title of Project</th>
+                                  <th data-field='price'>Applicant Name</th>
+                              </tr>
+                            </thead>
+                            <tbody>
                             
-                            <div class="row">
-                                
-                                <div class="spacer"></div>
-                                <div class="col s12 input-field">
-                                    <textarea id="participantConpensation" class="materialize-textarea"><?php echo $row['participantConpensation'] ?></textarea>
-                                    <label id="participantConpensation1" for="new-your-name">A. Will participants / subjects / respondents be compensated or rewarded in any way?</label>
-                                </div>
-                            </div>
-                             <div class="row">
-                                
-                                <div class="spacer"></div>
-                                <div class="col s12 input-field">
-                                    <textarea id="participantBenefits" class="materialize-textarea"><?php echo $row['participantBenefits'] ?></textarea>
-                                    <label id="participantBenefits1" for="new-your-name">B. What intrinsic benefit will participants / subjects / respondents receive?</label>
-                                </div>
-                            </div>
+                            
+                            ";
+
+                            while ($row = $obj ->fetch()){
+                                $name = "";
+                                $name = $row['FIRSTNAME'] . " " . $row['LASTNAME'];
+
+                                echo "
+                                <tr onclick='reviewer_view({$row['submissionID']})'>
+                                <td>{$row['submissionID']}</td>
+                                <td>{$row['submissionDate']}</td>
+                                <td>{$row['title']}</td>
+                                <td>$name</td>
+                                </tr>";
+                            }
+                            echo "</table>";
+                        }
+
                         
-                            <div class="row center">
-                                
-                                <button class="btn" onclick="benefitsBack(<?php echo $id ?>)">Back</button>
-                                <button class="btn" onclick="benefitsSave(<?php echo $id ?>)">Save As Draft</button>
-                                <button class="btn" onclick="benefitsSend(<?php echo $id ?>)">Submit</button>
 
-                                
-                            </div>
-                            
+                        ?>
 
-                        </div>
                     </div>
-               
                 </div>
             </div>
-            
+
             
         </div>
-
-    
-    
-
+    </div>
+   
 </main>
-<footer class="page-footer">
+<footer class="page-footer" style="margin-top: 0px">
     <div class="page-footer-icon">
         <div>
             <a href="/"><img alt="Gaggle Mail footer logo" src="images/logo_circle48x48@2x.png" ></a>
         </div>
     </div>
-    <div class="container row">
-        <div class="col s12 m6">
-            <div>
-                <a href="/about">About</a>
-            </div>
-        </div>
-        <div class="col s12 m6">
-            <div>
-                <a href="mailto:help@gaggle.email">Contact</a>
-            </div>
-        </div>
-    </div>
+    
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
@@ -192,9 +152,8 @@
 </footer>
 
 
+    
     </div>
-
-
 
 
     

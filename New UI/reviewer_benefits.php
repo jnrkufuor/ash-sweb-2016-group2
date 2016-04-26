@@ -72,8 +72,6 @@
             </div>
             <ul class="right hide-on-med-and-down">
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                <li><a href="/blog">File System</a></li>
-                <li><a href="/blog">IRB Reviews</a></li>
                 <li><a href="IRB_home.html">Logout</a></li>
                 
             </ul>
@@ -125,31 +123,33 @@
                              <div id="divStatus"></div>
                             <div class="spacer"></div>
                             
+                            <div class="thin"><span class="bold">A. Will participants / subjects / respondents be compensated or rewarded in any way?</span></div>
                             <div class="row">
-                                
-                                <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="participantConpensation" class="materialize-textarea"><?php echo $row['participantConpensation'] ?></textarea>
-                                    <label id="participantConpensation1" for="new-your-name">A. Will participants / subjects / respondents be compensated or rewarded in any way?</label>
+                                    <textarea id="participantConpensation" class="materialize-textarea" readonly><?php echo $row['participantConpensation'] ?></textarea>
                                 </div>
                             </div>
+
+                            <div class="thin"><span class="bold">B. What intrinsic benefit will participants / subjects / respondents receive?</span></div>
                              <div class="row">
-                                
-                                <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="participantBenefits" class="materialize-textarea"><?php echo $row['participantBenefits'] ?></textarea>
-                                    <label id="participantBenefits1" for="new-your-name">B. What intrinsic benefit will participants / subjects / respondents receive?</label>
+                                    <textarea id="participantBenefits" class="materialize-textarea" readonly><?php echo $row['participantBenefits'] ?></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col s12 input-field">
+                                    <textarea id="feedback" class="materialize-textarea"></textarea>
+                                    <label id="feedback1" for="new-your-name">FEEDBACK</label>
                                 </div>
                             </div>
                         
                             <div class="row center">
-                                
-                                <button class="btn" onclick="benefitsBack(<?php echo $id ?>)">Back</button>
-                                <button class="btn" onclick="benefitsSave(<?php echo $id ?>)">Save As Draft</button>
-                                <button class="btn" onclick="benefitsSend(<?php echo $id ?>)">Submit</button>
-
-                                
+                                <button class="btn" onclick="reviewer_benefitsBack(<?php echo $id ?>)">Back</button>
+                                <button class="btn" onclick="reviewer_submit(<?php echo $id ?>)">Submit</button>
                             </div>
+
+                            
                             
 
                         </div>
@@ -186,7 +186,7 @@
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
-            <span class="right" href="#!">Made in London</span>
+            <span class="right" href="#!">Made in Berekuso</span>
         </div>
     </div>
 </footer>

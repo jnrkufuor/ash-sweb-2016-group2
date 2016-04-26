@@ -29,6 +29,9 @@
 		case 6:
 			title();
 			break;
+		case 7:
+			review();
+			break;
 
 	}
 
@@ -213,6 +216,26 @@
 	}
 	else{
 		header("Location: new_subjects.php?id=$sid");
+	}
+	}
+
+	function review(){
+		include_once ("submission.php");
+	$obj = new submission();
+
+	if(!isset($_REQUEST['id'])){
+			exit();
+	}
+	$sid = $_REQUEST['id'];
+	
+	$exemption=$_REQUEST['feedback'];
+
+	$r = $obj -> feedback($id, $feedback);
+	if($r == false){
+		echo "error";
+	}
+	else{
+		header("Location: reviewer_dashboard.php");
 	}
 	}
 ?>
