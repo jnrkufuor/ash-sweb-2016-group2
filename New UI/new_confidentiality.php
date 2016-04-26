@@ -97,49 +97,53 @@
                         <div>
                             <input class="new-list-name-hidden" type="hidden" name="new-list-name">
                             <div class="center">
-                                <p class="flow-text">Numbers, Types and Recruitment of Subjects</p>
+                                <p class="flow-text">Confidentiality</p>
                             </div>
                             <div class="spacer"></div>
-                             <form action="#">
-                                <p>
-                                  <input type="checkbox" id="deception" />
-                                  <label for="deception">Deception of the participant?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="punishment" />
-                                  <label for="punishment">Punishment of the participant?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="unacceptableMaterial" />
-                                  <label for="unacceptableMaterial">Materials commonly regarded as socially unacceptable such as pornography, inflammatory text, ethnic portrayals?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="privacyInvasion" />
-                                  <label for="privacyInvasion">Any other procedure that might be considered an invasion of privacy?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="participantDisclosure" />
-                                  <label for="participantDisclosure">Disclosure of the names of individual participants?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="physicalInvasion" />
-                                  <label for="physicalInvasion">Any other physically invasive procedure?</label>
-                                </p>
-                                
-                              </form>
+                            <div class="row">
+                                <div class="col s12 input-field">
+                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <label for="new-your-name">A. To what extent is the information confidential and to what extent are provisions made so that subjects are not identified?</label>
+                                </div>
+                            </div>
                             <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
                                     <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">If the answer to any of the above is "Yes", please explain this procedure in detail and describe procedures for protecting against or minimizing any potential risk.</label>
+                                    <label for="new-your-name">B. What are the procedures for handling and storing data so that confidentiality of the subjects and privacy are protected?</label>
                                 </div>
                             </div>
+                            <div class="row">
+                                
+                                <div class="spacer"></div>
+                                <div class="col s12 input-field">
+                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <label for="new-your-name">C. How will the results of the research be disseminated?</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                
+                                <div class="spacer"></div>
+                                <div class="col s12 input-field">
+                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <label for="new-your-name">How will the subjects be informed of the results? </label>
+                                </div>
+                            </div>
+                             <div class="row">
+                                
+                                <div class="spacer"></div>
+                                <div class="col s12 input-field">
+                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <label for="new-your-name">How will confidentiality of subjects or organizations be protected in the dissemination? </label>
+                                </div>
+                            </div>
+                        
                             <div class="row center">
                                 
                                 <button class="btn">Back</button>
                                 <button class="btn">Save</button>
-                                <button class="btn" onclick="riskNext()">Next</button>
+                                <button class="btn" onclick="confidentialityNext()">Next</button>
 
                                 
                             </div>

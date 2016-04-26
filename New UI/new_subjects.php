@@ -148,9 +148,9 @@
                             </div>
                             <div class="row center">
                                 
-                                <button class="btn">Back</button>
+                                <button class="btn" onclick="subjectsBack()">Back</button>
                                 <button class="btn">Save</button>
-                                <button class="btn">Next</button>
+                                <button class="btn" onclick="subjectsNext()">Next</button>
 
                                 
                             </div>

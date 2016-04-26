@@ -80,6 +80,13 @@
     </nav>
 </header>
 <main>
+<?php
+        $id = 27302017;
+        if(isset($_REQUEST['id'])){
+            $id = $_REQUEST['id'];
+        }
+
+        ?>
 
     <div class="row" id="create-row">
 
@@ -96,25 +103,25 @@
                     <div class="create-list-login-panel center" style="max-width: 900px">
                         <div>
                             <input class="new-list-name-hidden" type="hidden" name="new-list-name">
-                            
+                            <div id="divStatus"></div> 
                             <div class="row">
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name"><span class="bold">Title of Project</span></label>
+                                    <textarea id="title" class="materialize-textarea"></textarea>
+                                    <label for="new-your-name"><span class="bold" id="project">Title of Project</span></label>
                                 </div>
                             </div>
                             <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <textarea id="exemption" class="materialize-textarea"></textarea>
                                     <label for="new-your-name"><span class="bold">Exemption Request:</span> If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption.</label>
                                 </div>
                             </div>
                             <div class="row center">
                                 
-                                <button class="btn">Save</button>
-                                <button class="btn" onclick="next()">Next</button>
+                                <button class="btn" onclick="titleSave(<?php echo $id ?>)" >Save</button>
+                                <button class="btn" onclick="titleNext(<?php echo $id ?>)">Next</button>
                                 
                             </div>
                             

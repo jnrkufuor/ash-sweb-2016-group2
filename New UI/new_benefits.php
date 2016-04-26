@@ -97,49 +97,32 @@
                         <div>
                             <input class="new-list-name-hidden" type="hidden" name="new-list-name">
                             <div class="center">
-                                <p class="flow-text">Numbers, Types and Recruitment of Subjects</p>
+                                <p class="flow-text">Describe Any Anticipated Benefits To Subjects From Participation In This Research</p>
                             </div>
                             <div class="spacer"></div>
-                             <form action="#">
-                                <p>
-                                  <input type="checkbox" id="deception" />
-                                  <label for="deception">Deception of the participant?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="punishment" />
-                                  <label for="punishment">Punishment of the participant?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="unacceptableMaterial" />
-                                  <label for="unacceptableMaterial">Materials commonly regarded as socially unacceptable such as pornography, inflammatory text, ethnic portrayals?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="privacyInvasion" />
-                                  <label for="privacyInvasion">Any other procedure that might be considered an invasion of privacy?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="participantDisclosure" />
-                                  <label for="participantDisclosure">Disclosure of the names of individual participants?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="physicalInvasion" />
-                                  <label for="physicalInvasion">Any other physically invasive procedure?</label>
-                                </p>
-                                
-                              </form>
+                            
                             <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
                                     <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">If the answer to any of the above is "Yes", please explain this procedure in detail and describe procedures for protecting against or minimizing any potential risk.</label>
+                                    <label for="new-your-name">A. Will participants / subjects / respondents be compensated or rewarded in any way?</label>
                                 </div>
                             </div>
+                             <div class="row">
+                                
+                                <div class="spacer"></div>
+                                <div class="col s12 input-field">
+                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <label for="new-your-name">B. What intrinsic benefit will participants / subjects / respondents receive?</label>
+                                </div>
+                            </div>
+                        
                             <div class="row center">
                                 
                                 <button class="btn">Back</button>
-                                <button class="btn">Save</button>
-                                <button class="btn" onclick="riskNext()">Next</button>
+                                <button class="btn">Save As Draft</button>
+                                <button class="btn" onclick="subjectsNext()">Submit</button>
 
                                 
                             </div>

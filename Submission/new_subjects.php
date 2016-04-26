@@ -100,46 +100,57 @@
                                 <p class="flow-text">Numbers, Types and Recruitment of Subjects</p>
                             </div>
                             <div class="spacer"></div>
-                             <form action="#">
-                                <p>
-                                  <input type="checkbox" id="deception" />
-                                  <label for="deception">Deception of the participant?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="punishment" />
-                                  <label for="punishment">Punishment of the participant?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="unacceptableMaterial" />
-                                  <label for="unacceptableMaterial">Materials commonly regarded as socially unacceptable such as pornography, inflammatory text, ethnic portrayals?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="privacyInvasion" />
-                                  <label for="privacyInvasion">Any other procedure that might be considered an invasion of privacy?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="participantDisclosure" />
-                                  <label for="participantDisclosure">Disclosure of the names of individual participants?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="physicalInvasion" />
-                                  <label for="physicalInvasion">Any other physically invasive procedure?</label>
-                                </p>
-                                
-                              </form>
+                            <div class="row">
+                                <div class="col s12 input-field">
+                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <label for="new-your-name">A. Identify the numbers and characteristics of subjects (eg. age ranges, sex, ethnic background, health status, disabilities , etc.) It is recommended to provide the breakdown based on your sampling strategy.</label>
+                                </div>
+                            </div>
                             <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
                                     <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">If the answer to any of the above is "Yes", please explain this procedure in detail and describe procedures for protecting against or minimizing any potential risk.</label>
+                                    <label for="new-your-name">B. Special cases. If applicable, explain the rationale for the use of special cases or subjects such as pregnant women, children, prisoners, mentally impaired, institutionalized, or others who are likely to be particulary vulnerable</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                
+                                <div class="spacer"></div>
+                                <div class="col s12 input-field">
+                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <label for="new-your-name">C. How are the individual participants to be recruited for this research? Is it clear to the subjects that participation is voluntary and that they may withraw at any time without any negative consequences?</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                
+                                <div class="spacer"></div>
+                                <div class="col s12 input-field">
+                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <label for="new-your-name">D. To what extent and how are participants to be informed of research procedures before their participation? </label>
+                                </div>
+                            </div>
+                             <div class="row">
+                                
+                                <div class="spacer"></div>
+                                <div class="col s12 input-field">
+                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <label for="new-your-name">E. How will you classify your research method? (experiment, observation, modelling etc.). Specify all methods you anticipate to use. </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                
+                                <div class="spacer"></div>
+                                <div class="col s12 input-field">
+                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <label for="new-your-name">F. Specify the data sources you will use for your reserach. (eg. questionnaire, audio recording human resource files, experiment data, etc.) </label>
                                 </div>
                             </div>
                             <div class="row center">
                                 
                                 <button class="btn">Back</button>
                                 <button class="btn">Save</button>
-                                <button class="btn" onclick="riskNext()">Next</button>
+                                <button class="btn" onclick="subjectsNext()">Next</button>
 
                                 
                             </div>

@@ -49,7 +49,176 @@ function login ()
 
 
 
-function next(){
-	window.open("new_subjects.php")
+
+function subjectsNext(){
+	window.open("new_risk.php")
 }
 
+function riskNext(){
+	window.open("new_confidentiality.php")
+}
+
+function confidentialityNext(){
+	window.open("new_benefits.php")
+}
+
+function validateForm(string){
+			var re = /([^ ].*[^ ])+/i;
+			return re.test(string);
+		}
+function titleNext(id){
+			if(validateForm($("#title").val()) == false){
+				document.getElementById("project").style.color="red";
+				alert("Kindly provide a title for your submission");
+				return;
+			}
+			else{
+				document.getElementById("project").style.color="grey";
+			}
+
+
+			if(!divStatus.innerHTML == ""){
+				window.open("new_subjects.php","_self");
+			}
+			else{
+				window.open("update.php?cmd=1&title="+$("#title").val()+"&exemption=" + $("#exemption").val()+"&id="+id ,"_self");
+			}
+		}
+
+		function titleSave(id){
+			if(validateForm($("#title").val()) == false){
+				document.getElementById("project").style.color="red";
+				alert("Kindly provide a title for your submission");
+				return;
+			}
+			else{
+				document.getElementById("project").style.color="grey";
+			}
+
+
+			if(divStatus.innerHTML != ""){
+				var theUrl="submission_ajax.php?cmd=2&title="+$("#title").val()+"&exemption=" + $("#exemption").val();
+				$.ajax(theUrl,
+					{async:true,complete:saveComplete}
+					)
+				return;
+			}
+			var theUrl="submission_ajax.php?cmd=1&title="+$("#title").val()+"&exemption=" + $("#exemption").val()+"&id="+id;
+				$.ajax(theUrl,
+					{async:true,complete:saveComplete}
+					);
+
+			}
+
+		function saveComplete(xhr,status){
+
+				if(status!="success"){
+					divStatus.innerHTML="error sending request";
+					return;
+				}
+				divStatus.innerHTML= "Saved at " + new Date().getHours()+ ":" + new Date().getMinutes() + " GMT" ;
+				alert("Saved at " + new Date().getHours()+ ":" + new Date().getMinutes() + " GMT");
+			}
+
+		function subjectsBack(id){
+			window.open("exemptionRequest2.php?id="+id,"_self");
+		}
+
+		function subjectsNext(id){
+			if(validateForm($("#subjectCharacteristics").val()) == false){
+				document.getElementById("subjectCharacteristics").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("subjectCharacteristics").style.color="grey";
+			}
+
+			if(validateForm($("#recruitment").val()) == false){
+				document.getElementById("recruitment").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("recruitment").style.color="grey";
+			}
+
+			if(validateForm($("#partcipnatInfo").val()) == false){
+				document.getElementById("partcipnatInfo").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("partcipnatInfo").style.color="grey";
+			}
+
+			if(validateForm($("#researchMethod").val()) == false){
+				document.getElementById("researchMethod").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("researchMethod").style.color="grey";
+			}
+
+			if(validateForm($("#dataSources").val()) == false){
+				document.getElementById("dataSources").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("dataSources").style.color="grey";
+			}
+				window.open("update.php?cmd=2&id="+id +"&subjectCharacteristics="+$("#subjectCharacteristics").val()+"&specialClasses=" + $("#specialClasses").val()+"&recruitment="+$("#recruitment").val() +"&partcipnatInfo="+$("#partcipnatInfo").val()+"&researchMethod="+$("#researchMethod").val()+"&dataSources="+$("#dataSources").val() ,"_self");
+			}
+		
+
+		function save(id){
+			if(validate($("#subjectCharacteristics").val()) == false){
+				document.getElementById("subjectCharacteristics").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("subjectCharacteristics").style.color="grey";
+			}
+
+			if(validateForm($("#recruitment").val()) == false){
+				document.getElementById("recruitment").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("recruitment").style.color="grey";
+			}
+
+			if(validateForm($("#partcipnatInfo").val()) == false){
+				document.getElementById("partcipnatInfo").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("partcipnatInfo").style.color="grey";
+			}
+			
+			if(validateForm($("#researchMethod").val()) == false){
+				document.getElementById("researchMethod").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("researchMethod").style.color="grey";
+			}
+			if(validateForm($("#dataSources").val()) == false){
+				document.getElementById("dataSources").style.color="red";
+				alert("Kindly fill all required fields");
+				return;
+			}
+			else{
+				document.getElementById("dataSources").style.color="grey";
+			}
+			var theUrl="submission_ajax.php?cmd=3 & id="+id +"&subjectCharacteristics="+$("#subjectCharacteristics").val()+"&specialClasses=" + $("#specialClasses").val()+"&recruitment="+$("#recruitment").val() +"&partcipnatInfo="+$("#partcipnatInfo").val()+"&researchMethod="+$("#researchMethod").val()+"&dataSources="+$("#dataSources").val();
+				$.ajax(theUrl,
+					{async:true,complete:saveComplete}
+					);
+			}

@@ -96,51 +96,25 @@
                     <div class="create-list-login-panel center" style="max-width: 900px">
                         <div>
                             <input class="new-list-name-hidden" type="hidden" name="new-list-name">
-                            <div class="center">
-                                <p class="flow-text">Numbers, Types and Recruitment of Subjects</p>
+                            <div id="divStatus"></div> 
+                            <div class="row">
+                                <div class="col s12 input-field">
+                                    <textarea id="title" class="materialize-textarea"></textarea>
+                                    <label for="new-your-name"><span class="bold">Title of Project</span></label>
+                                </div>
                             </div>
-                            <div class="spacer"></div>
-                             <form action="#">
-                                <p>
-                                  <input type="checkbox" id="deception" />
-                                  <label for="deception">Deception of the participant?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="punishment" />
-                                  <label for="punishment">Punishment of the participant?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="unacceptableMaterial" />
-                                  <label for="unacceptableMaterial">Materials commonly regarded as socially unacceptable such as pornography, inflammatory text, ethnic portrayals?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="privacyInvasion" />
-                                  <label for="privacyInvasion">Any other procedure that might be considered an invasion of privacy?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="participantDisclosure" />
-                                  <label for="participantDisclosure">Disclosure of the names of individual participants?</label>
-                                </p>
-                                <p>
-                                  <input type="checkbox" id="physicalInvasion" />
-                                  <label for="physicalInvasion">Any other physically invasive procedure?</label>
-                                </p>
-                                
-                              </form>
                             <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">If the answer to any of the above is "Yes", please explain this procedure in detail and describe procedures for protecting against or minimizing any potential risk.</label>
+                                    <textarea id="exemption" class="materialize-textarea"></textarea>
+                                    <label for="new-your-name"><span class="bold">Exemption Request:</span> If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption.</label>
                                 </div>
                             </div>
                             <div class="row center">
                                 
-                                <button class="btn">Back</button>
-                                <button class="btn">Save</button>
-                                <button class="btn" onclick="riskNext()">Next</button>
-
+                                <button class="btn" onclick="titleSave()" >Save</button>
+                                <button class="btn" onclick="titleNext()">Next</button>
                                 
                             </div>
                             
