@@ -22,8 +22,8 @@ if (isset($_REQUEST['id'])) {
 	
     $row = $obj->fetch();
 	$tbl = $lec->fetch();
-   
-    if (!$row||!$tbl){
+    
+    if (!$row&&!$tbl){
         echo '<script>window.location.href = "../New UI/IRB_home.php?error=err";</script>';
         }
     if ($row||!$tbl){
