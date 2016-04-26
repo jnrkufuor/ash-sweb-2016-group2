@@ -14,7 +14,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <link rel="shortcut icon" href="logo_32x32@2x.png">
+    <link rel="shortcut icon" href="images/ash.jpg">
     
     <link rel="apple-touch-icon" href="images/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
@@ -52,7 +52,7 @@
 <header>
     <nav class="transparent black-text">
         <div class="nav-wrapper container">
-            <a href="/" class="brand-logo brand-logo-small"><img id="header-logo" alt="Gaggle Mail Logo" src="images/logo_22x22@2x.png"/>
+            <a href="/" class="brand-logo brand-logo-small"><img id="header-logo" alt="Ashesi Logo" src="images/ash.jpg"/>
                 Ashesi IRB <span>Portal</span></a>
             <meta itemprop="url" content="http://gaggle.email/">
             <meta itemprop="name" content="Gaggle Mail">
@@ -72,7 +72,7 @@
             </div>
             <ul class="right hide-on-med-and-down">
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                 <li><a href="IRB_fileSystem.php">File System</a></li>
+                 <li><a href="/blog">File System</a></li>
                 <li><a href="/blog">IRB Reviews</a></li>
                 <li><a href="IRB_home.html">Logout</a></li>
                 
@@ -81,65 +81,82 @@
     </nav>
 </header>
 <main>
-<?php
-        $id = 27302017;
-        if(isset($_REQUEST['id'])){
-            $id = $_REQUEST['id'];
-        }
-
-        ?>
-
-    <div class="row" id="create-row">
-
-            <span id="create" class="scrollspy"></span>
-           
-            <div class="spacer"></div>
+    <div id="hero">
+        <div class="container" id="hero-text-container">
             <div class="row">
-                <div class="section center">
-                    <h3 class="thin">IRB Application Form</h3>
+                <div class="col s12 center-align">
+                    <div id="hero-title" style="margin-top: 3%">
+                        <h1 id="hero-title-one" itemprop="description"><span class="bold" style="font-size:80%;">Supporting Documents</span></h1>
+                        <?php
+
+                        include_once ("../FileUpload/upload.php");
+                        $obj = new upload();
+
+                        $id= $_SESSION['USER_ID'];
+
+                        if(!$obj-> getDashboardInfo($id)){
+                            echo "Error";
+                        }
+                        else{
+                            echo "
+                            <table class='highlight'>
+                            <thead>
+                              <tr>
+                                  <th data-field='id'>Submission ID</th>
+                                  <th data-field='name'>Document</th>
+                                  <th data-field='price'>Modify</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            
+                            
+                            ";
+
+                            while ($row = $obj ->fetch()){
+
+                                if($row['submitted'] == 0){
+                                    $status = 'Incomplete';
+                                }
+                                else{
+                                    $status = 'Submitted';
+                                }
+                                
+                                echo "
+                                <tr onclick='view({$row['submissionID']})'>
+                                <td>{$row['title']}</td>
+                                <td>{$row['submissionDate']}</td>
+                                <td>$status</td>
+                                </tr>";
+                            }
+                            echo "</table>";
+                        }
+
+                        ?>
+                       
+
+        
+    
                     
-                    <div class="spacer"></div>
- 
-                    <div id="divStatus"></div> 
-                                <div class="spacer"></div>
-                                <div class="spacer"></div>
-                    <div class="create-list-login-panel center" style="max-width: 900px">
-                        <div>
-                            <input class="new-list-name-hidden" type="hidden" name="new-list-name">
-                            
-                            <div class="row">
-                                <div class="col s12 input-field">
-                                    <textarea id="title" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name"><span class="bold" id="project">Title of Project</span></label>
-                                </div>
-                            </div>
-                            <div class="row">
 
-                                <div class="col s12 input-field">
-                                    <textarea id="exemption" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name"><span class="bold">Exemption Request:</span> If you are requesting an exemption from Human Subject Review Commitee (HSRC) review, explain the basis for the requested exemption.</label>
-                                </div>
-                            </div>
-                            <div class="row center">
-                                
-                                <button class="btn" onclick="titleSave(<?php echo $id ?>)" >Save</button>
-                                <button class="btn" onclick="titleNext(<?php echo $id ?>)">Next</button>
-                                
-                            </div>
-                            
-
-                        </div>
                     </div>
-               
                 </div>
             </div>
-            
-            
+
+            <div class="row">
+                    <div class="center-align">
+                        <a href="IRB_form.php" class="btn btn-large hero-btn">New Application <svg style="width:24px;height:24px;top: 6px; position: relative; right: 2px;" viewBox="0 0 24 24">
+<path fill="#ffffff" d="M5.59,7.41L7,6L13,12L7,18L5.59,16.59L10.17,12L5.59,7.41M11.59,7.41L13,6L19,12L13,18L11.59,16.59L16.17,12L11.59,7.41Z" />
+</svg>
+
+
+</a>
+                       
+                    </div>
+              
+            </div>
         </div>
-
-    
-    
-
+    </div>
+   
 </main>
 <footer class="page-footer">
     <div class="page-footer-icon">

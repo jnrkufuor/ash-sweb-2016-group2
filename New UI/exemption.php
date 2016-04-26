@@ -143,23 +143,6 @@
 
 </main>
 <footer class="page-footer">
-    <div class="page-footer-icon">
-        <div>
-            <a href="/"><img alt="Gaggle Mail footer logo" src="images/logo_circle48x48@2x.png" ></a>
-        </div>
-    </div>
-    <div class="container row">
-        <div class="col s12 m6">
-            <div>
-                <a href="#about">About</a>
-            </div>
-        </div>
-        <div class="col s12 m6">
-            <div>
-                <a href="mailto:help@gaggle.email">Contact</a>
-            </div>
-            
-        </div>
     </div>
     <div class="footer-copyright">
         <div class="container grey-text">
@@ -168,10 +151,6 @@
         </div>
     </div>
 </footer>
-
-
-    </div>
-
 
 
 

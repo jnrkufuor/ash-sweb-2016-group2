@@ -14,7 +14,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <link rel="shortcut icon" href="logo_32x32@2x.png">
+    <link rel="shortcut icon" href="images/ash.jpg">
     
     <link rel="apple-touch-icon" href="images/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
@@ -52,7 +52,7 @@
 <header>
     <nav class="transparent black-text">
         <div class="nav-wrapper container">
-            <a href="/" class="brand-logo brand-logo-small"><img id="header-logo" alt="Gaggle Mail Logo" src="images/logo_22x22@2x.png"/>
+            <a href="/" class="brand-logo brand-logo-small"><img id="header-logo" alt="Gaggle Mail Logo" src="images/ash.jpg"/>
                 Ashesi IRB <span>Portal</span></a>
             <meta itemprop="url" content="http://gaggle.email/">
             <meta itemprop="name" content="Gaggle Mail">
@@ -62,7 +62,7 @@
             </div>
             <ul class="right hide-on-med-and-down">
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                 <li><a href="/blog">File System</a></li>
+                 <li><a href="IRB_fileSystem.php">File System</a></li>
                 <li><a href="/blog">IRB Reviews</a></li>
                 <li><a href="IRB_home.html">Logout</a></li>
                 
