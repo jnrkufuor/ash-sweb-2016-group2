@@ -48,20 +48,6 @@ function login ()
 	 }
 
 
-
-
-function subjectsNext(){
-	window.open("new_risk.php")
-}
-
-function riskNext(){
-	window.open("new_confidentiality.php")
-}
-
-function confidentialityNext(){
-	window.open("new_benefits.php")
-}
-
 function validateForm(string){
 			var re = /([^ ].*[^ ])+/i;
 			return re.test(string);
@@ -461,3 +447,7 @@ function titleNext(id){
 			function benefitsBack(id){
 			window.open("confidentiality.php?id="+id,"_self");
 		}
+
+		function view(id){
+		window.open("exemption.php?id="+id, "_self");
+	}

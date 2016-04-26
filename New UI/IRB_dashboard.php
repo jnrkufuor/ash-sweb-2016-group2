@@ -119,9 +119,9 @@
                                 else{
                                     $status = 'Submitted';
                                 }
-                                echo "<tr>";
-                                echo "
                                 
+                                echo "
+                                <tr onclick='view({$row['submissionID']})'>
                                 <td>{$row['title']}</td>
                                 <td>{$row['submissionDate']}</td>
                                 <td>$status</td>
