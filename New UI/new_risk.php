@@ -59,7 +59,7 @@
 <header>
     <nav class="transparent black-text">
         <div class="nav-wrapper container">
-            <a href="/" class="brand-logo brand-logo-small"><img id="header-logo" alt="Gaggle Mail Logo" src="images/ash.jpg"/>
+            <a href="#" class="brand-logo brand-logo-small"><img id="header-logo" alt="Ashesi Logo" src="images/ash.jpg"/>
                 Ashesi IRB <span>Portal</span></a>
             <meta itemprop="url" content="http://gaggle.email/">
             <meta itemprop="name" content="Gaggle Mail">
@@ -214,19 +214,19 @@
 <footer class="page-footer">
     <div class="page-footer-icon">
         <div>
-            <a href="/"><img alt="Gaggle Mail footer logo" src="images/logo_circle48x48@2x.png" ></a>
+            <a href="IRB_home.php"><img alt="IRB footer logo" src="images/irb.jpg" ></a>
         </div>
     </div>
     <div class="container row">
         <div class="col s12 m6">
             <div>
-                <a href="/about">About</a>
+                <a href="#about">About</a>
             </div>
             
-            </div>
+        </div>
         <div class="col s12 m6">
-            <div>
-                <a href="/blog/frequently-asked-questions/">Contact</a>
+        <div>
+                <a href="mailto:irb@ashesi.edu.gh">Contact</a>
             </div>
             
         </div>
@@ -234,7 +234,7 @@
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
-            <span class="right" href="#!">Made in Berekuso</span>
+            <span class="right" href="#!">Made in London</span>
         </div>
     </div>
 </footer>

@@ -79,6 +79,7 @@
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
+                <li><a href="" style="color:#AD1E26;"> <?php echo $_SESSION['FIRSTNAME'];?> </a></li>
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
                  <li><a href="/blog">File System</a></li>
                 <li><a href="/blog">IRB Reviews</a></li>
@@ -159,14 +160,27 @@
 <footer class="page-footer">
     <div class="page-footer-icon">
         <div>
-            <a href="/"><img alt="Gaggle Mail footer logo" src="images/logo_circle48x48@2x.png" ></a>
+            <a href="IRB_home.php"><img alt="IRB footer logo" src="images/irb.jpg" ></a>
         </div>
     </div>
-
+    <div class="container row">
+        <div class="col s12 m6">
+            <div>
+                <a href="#about">About</a>
+            </div>
+            
+        </div>
+        <div class="col s12 m6">
+        <div>
+                <a href="mailto:irb@ashesi.edu.gh">Contact</a>
+            </div>
+            
+        </div>
+    </div>
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
-            <span class="right" href="#!">Made in Berekuso</span>
+            <span class="right" href="#!">Made in London</span>
         </div>
     </div>
 </footer>
