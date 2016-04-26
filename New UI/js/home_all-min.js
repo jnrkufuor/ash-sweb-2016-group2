@@ -46,3 +46,10 @@ function login ()
 			 document.getElementById("login_id").value="";
 		 }
 	 }
+
+
+
+function next(){
+	window.open("new_subjects.php")
+}
+
