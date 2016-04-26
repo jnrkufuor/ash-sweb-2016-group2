@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['USER_ID'])){
+		header("Location:IRB_home.php");
+		exit();
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head lang="en">
@@ -69,11 +76,11 @@
                 <div class="col s12 spacer"></div>
             </div>
             <ul class="right hide-on-med-and-down">
-                
+                <li><a href="" style="color:#AD1E26;"> <?php echo $_SESSION['FIRSTNAME'];?> </a></li>
                 <li><a href="admin_dashboard.php?purpose=user">User System</a></li>
                 <li><a href="admin_dashboard.php?purpose=lec">Reviewers</a></li>
 				<li><a href="/blog">Submissions</a></li>
-                <li><a href="IRB_home.php">Logout</a></li>
+                <li><a href="logout.php">Logout</a></li>
                 
             </ul>
         </div>
@@ -104,7 +111,9 @@
                                     echo "Error getting Users";
                                 }
                                 echo" <table  id='tableUsers' class ='highlight' >
-                                      <tr id='hd'>
+								      <thead>
+                                      <tr >
+									  
                                       <th>User ID </th>
                                       <th>Firstname </th>
                                       <th>Lastname </th>
@@ -112,10 +121,12 @@
                                       <th>Email </th>
                                       <th>Phone </th>
                                       <th>Fax </th>
-                                      </tr>";
+                                      </tr>
+									  </thead>";
 									  
 							    $count =0;
-                                while ($row = $obj->fetch()) {
+                                while ($row = $obj->fetch
+()) {
                                     echo" <tr id='r1'class=$count>"
                                     . "<td>{$row['USER_ID']}</td>"
                                     . "<td>{$row['FIRSTNAME']}</td>"
@@ -135,12 +146,14 @@
                                     echo "Error getting Lecturers";
                                 }
                                 echo" <table  style='align=center;' id='tableLec' class ='highlight'>
-                                    <tr id='hd'> 
-                                    <th>Lecturer ID </th>
+								<thead>
+                                    <tr> 
+                                    <th>Reviewer ID </th>
                                     <th>Type</th>
 									 <th>Firstname</th>
 									  <th>Lastname</th>
-                                    </tr>";
+                                    </tr>
+									<thead>";
                                 while ($tbl = $lec->fetch()) {
                                     echo" <tr id='r1'>"
                                     . "<td>{$tbl['RID']}</td>"

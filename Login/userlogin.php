@@ -18,13 +18,12 @@ if (isset($_REQUEST['id'])) {
 		window.alert("Error Validating");
         echo '<script>window.location.href = "../New UI/IRB_home.php";</script>';
 	}
-    echo "flas";
+
 	
     $row = $obj->fetch();
 	$tbl = $lec->fetch();
-    $type=$row['type'];
-
-    if (!$row||!$tbl){
+    
+    if (!$row&&!$tbl){
         echo '<script>window.location.href = "../New UI/IRB_home.php?error=err";</script>';
         }
     if ($row||!$tbl){
@@ -34,12 +33,24 @@ if (isset($_REQUEST['id'])) {
         $type=$tbl['type'];
         }
 	if ($type=="Applicant") {
-             echo '<script>window.location.href = "../New UI/IRB_dashboard.php";</script>';
+		     session_start();
+		     $_SESSION['USER_ID']=$row['USER_ID'];
+			 $_SESSION['FIRSTNAME']=$row['FIRSTNAME'];
+			 $_SESSION['LASTNAME']=$row['LASTNAME'];
+             header("Location: ../New UI/IRB_dashboard.php");
         }
 	if ($type=="Reviewer") {
-            header("Location:reviewerIndex.php?id=$id");
+		    session_start();
+		    $_SESSION['USER_ID']=$tbl['RID'];
+			$_SESSION['FIRSTNAME']=$tbl['FIRSTNAME'];
+			 $_SESSION['LASTNAME']=$tbl['LASTNAME'];
+            header("Location: ../New UI/reviewer_dashboard.php");
         }
 	if ($type=="Administrator") {
+		    session_start();
+		    $_SESSION['USER_ID']=$tbl['RID'];
+			$_SESSION['FIRSTNAME']=$tbl['FIRSTNAME'];
+			 $_SESSION['LASTNAME']=$tbl['LASTNAME'];
             echo '<script>window.location.href = "../New UI/admin_dashboard.php";</script>';
         }
     
