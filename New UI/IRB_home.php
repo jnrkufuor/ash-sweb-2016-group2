@@ -148,6 +148,7 @@
                                     <input id="co_researcher" name="co_researcher" type="text" >
                                     <label for="co_researcher">Principal Investigator</label>
                                 </div>
+								
                             </div>
                             <div class="row">
                                 <div class="col s12 input-field">
@@ -432,7 +433,7 @@
 		 if(isset($_REQUEST['error']))
 		 {
 			  echo "<script type='text/javascript'> alert('Wrong Username or ID'); </script>";
-			  header("#login-modal");
+			  echo "<script type='text/javascript'> document.getElementById('login-modal').showModal(); </script>";
 		 }
 		 ?>
 

@@ -37,6 +37,9 @@ class users extends adb {
 	function getLec() {
         return $this->query("select RID, TYPE, FIRSTNAME,LASTNAME from reviewer");
     }
+	function getLecs() {
+        return $this->query("select RID, LASTNAME from reviewer");
+    }
 	
 	function getOneUser($id)
 	{
