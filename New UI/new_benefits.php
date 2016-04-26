@@ -81,6 +81,28 @@
 </header>
 <main>
 
+<?php
+        include_once("submission.php");
+        $obj = new submission();
+
+        $id ="";
+
+        if(isset($_REQUEST['id'])){
+            $id = $_REQUEST['id'];
+        }
+
+        $r = $obj -> getSubmissionByCode($id);
+                                    
+        if(!$r){
+            echo "Error getting the user to edit";
+            exit();
+        }
+        else{
+            $row = $obj ->fetch();
+        }
+
+        ?>
+
     <div class="row" id="create-row">
 
             <span id="create" class="scrollspy"></span>
@@ -105,24 +127,24 @@
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">A. Will participants / subjects / respondents be compensated or rewarded in any way?</label>
+                                    <textarea id="participantConpensation" class="materialize-textarea"><?php echo $row['participantConpensation'] ?></textarea>
+                                    <label id="participantConpensation1" for="new-your-name">A. Will participants / subjects / respondents be compensated or rewarded in any way?</label>
                                 </div>
                             </div>
                              <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">B. What intrinsic benefit will participants / subjects / respondents receive?</label>
+                                    <textarea id="participantBenefits" class="materialize-textarea"><?php echo $row['participantBenefits'] ?></textarea>
+                                    <label id="participantBenefits1" for="new-your-name">B. What intrinsic benefit will participants / subjects / respondents receive?</label>
                                 </div>
                             </div>
                         
                             <div class="row center">
                                 
-                                <button class="btn">Back</button>
-                                <button class="btn">Save As Draft</button>
-                                <button class="btn" onclick="subjectsNext()">Submit</button>
+                                <button class="btn" onclick="benefitsBack()">Back</button>
+                                <button class="btn" onclick="benefitsSave()">Save As Draft</button>
+                                <button class="btn" onclick="benefitsSend()">Submit</button>
 
                                 
                             </div>
