@@ -309,7 +309,7 @@ function titleNext(id){
 		}
 
 		function confidentialityNext(id){
-			if(validate($("#confidentialityExtent").val()) == false){
+			if(validateForm($("#confidentialityExtent").val()) == false){
 				document.getElementById("confidentialityExtent1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
@@ -318,90 +318,90 @@ function titleNext(id){
 				document.getElementById("confidentialityExtent1").style.color="grey";
 			}
 
-			if(validate($("#dataStorage").val()) == false){
-				document.getElementById("dataStorage").style.color="red";
+			if(validateForm($("#dataStorage").val()) == false){
+				document.getElementById("dataStorage1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
-				document.getElementById("dataStorage").style.color="grey";
+				document.getElementById("dataStorage1").style.color="grey";
 			}
 
-			if(validate($("#resultDissemination").val()) == false){
-				document.getElementById("resultDissemination").style.color="red";
+			if(validateForm($("#resultDissemination").val()) == false){
+				document.getElementById("resultDissemination1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
-				document.getElementById("resultDissemination").style.color="grey";
+				document.getElementById("resultDissemination1").style.color="grey";
 			}
 
-			if(validate($("#subjectInfo").val()) == false){
-				document.getElementById("subjectInfo").style.color="red";
+			if(validateForm($("#subjectInfo").val()) == false){
+				document.getElementById("subjectInfo1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
-				document.getElementById("subjectInfo").style.color="grey";
+				document.getElementById("subjectInfo1").style.color="grey";
 			}
 
-			if(validate($("#confidentialityProtection").val()) == false){
-				document.getElementById("confidentialityProtection").style.color="red";
+			if(validateForm($("#confidentialityProtection").val()) == false){
+				document.getElementById("confidentialityProtection1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
-				document.getElementById("confidentialityProtection").style.color="grey";
+				document.getElementById("confidentialityProtection1").style.color="grey";
 			}
 
 				window.open("update.php?cmd=4&id="+id +"&confidentialityExtent="+$("#confidentialityExtent").val()+"&dataStorage=" + $("#dataStorage").val()+"&resultDissemination="+$("#resultDissemination").val() +"&subjectInfo="+$("#subjectInfo").val()+"&confidentialityProtection="+$("#confidentialityProtection").val() ,"_self");
 			}
 		
 
-		function save(id){
-			if(validate($("#confidentialityExtent").val()) == false){
-				document.getElementById("confidentialityExtent").style.color="red";
+		function confidentialitySave(id){
+			if(validateForm($("#confidentialityExtent").val()) == false){
+				document.getElementById("confidentialityExtent1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
-				document.getElementById("confidentialityExtent").style.color="grey";
+				document.getElementById("confidentialityExtent1").style.color="grey";
 			}
 
-			if(validate($("#dataStorage").val()) == false){
-				document.getElementById("dataStorage").style.color="red";
+			if(validateForm($("#dataStorage").val()) == false){
+				document.getElementById("dataStorage1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
-				document.getElementById("dataStorage").style.color="grey";
+				document.getElementById("dataStorage1").style.color="grey";
 			}
 
-			if(validate($("#resultDissemination").val()) == false){
-				document.getElementById("resultDissemination").style.color="red";
+			if(validateForm($("#resultDissemination").val()) == false){
+				document.getElementById("resultDissemination1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
-				document.getElementById("resultDissemination").style.color="grey";
+				document.getElementById("resultDissemination1").style.color="grey";
 			}
 
-			if(validate($("#subjectInfo").val()) == false){
-				document.getElementById("subjectInfo").style.color="red";
+			if(validateForm($("#subjectInfo").val()) == false){
+				document.getElementById("subjectInfo1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
-				document.getElementById("subjectInfo").style.color="grey";
+				document.getElementById("subjectInfo1").style.color="grey";
 			}
 			
-			if(validate($("#confidentialityProtection").val()) == false){
-				document.getElementById("confidentialityProtection").style.color="red";
+			if(validateForm($("#confidentialityProtection").val()) == false){
+				document.getElementById("confidentialityProtection1").style.color="red";
 				alert("Kindly fill all required fields");
 				return;
 			}
 			else{
-				document.getElementById("confidentialityProtection").style.color="grey";
+				document.getElementById("confidentialityProtection1").style.color="grey";
 			}
 			var theUrl="submission_ajax.php?cmd=5 & id="+id +"&confidentialityExtent="+$("#confidentialityExtent").val()+"&dataStorage=" + $("#dataStorage").val()+"&resultDissemination="+$("#resultDissemination").val() +"&subjectInfo="+$("#subjectInfo").val()+"&confidentialityProtection="+$("#confidentialityProtection").val();
 				$.ajax(theUrl,

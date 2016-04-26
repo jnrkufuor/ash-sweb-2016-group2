@@ -121,11 +121,13 @@
                             <div class="center">
                                 <p class="flow-text">Confidentiality</p>
                             </div>
+                            <div id="divStatus"></div>
                             <div class="spacer"></div>
+                            
                             <div class="row">
                                 <div class="col s12 input-field">
                                     <textarea id="confidentialityExtent" class="materialize-textarea"><?php echo $row['confidentialityExtent'] ?></textarea>
-                                    <label for="new-your-name">A. To what extent is the information confidential and to what extent are provisions made so that subjects are not identified?</label>
+                                    <label id="confidentialityExtent1" for="new-your-name">A. To what extent is the information confidential and to what extent are provisions made so that subjects are not identified?</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -133,7 +135,7 @@
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
                                     <textarea id="dataStorage" class="materialize-textarea"><?php echo $row['dataStorage'] ?></textarea>
-                                    <label for="new-your-name">B. What are the procedures for handling and storing data so that confidentiality of the subjects and privacy are protected?</label>
+                                    <label id="dataStorage1" for="new-your-name">B. What are the procedures for handling and storing data so that confidentiality of the subjects and privacy are protected?</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -141,31 +143,31 @@
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
                                     <textarea id="resultDissemination" class="materialize-textarea"><?php echo $row['resultDissemination'] ?></textarea>
-                                    <label for="new-your-name">C. How will the results of the research be disseminated?</label>
+                                    <label id="resultDissemination1" for="new-your-name">C. How will the results of the research be disseminated?</label>
                                 </div>
                             </div>
                             <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"><?php echo $row['confidentialityExtent'] ?></textarea>
-                                    <label for="new-your-name">How will the subjects be informed of the results? </label>
+                                    <textarea id="subjectInfo" class="materialize-textarea"><?php echo $row['subjectInfo'] ?></textarea>
+                                    <label id="subjectInfo1" for="new-your-name">How will the subjects be informed of the results? </label>
                                 </div>
                             </div>
                              <div class="row">
                                 
                                 <div class="spacer"></div>
                                 <div class="col s12 input-field">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="new-your-name">How will confidentiality of subjects or organizations be protected in the dissemination? </label>
+                                    <textarea id="confidentialityProtection" class="materialize-textarea"><?php echo $row['confidentialityProtection'] ?></textarea>
+                                    <label id="confidentialityProtection1" for="new-your-name">How will confidentiality of subjects or organizations be protected in the dissemination? </label>
                                 </div>
                             </div>
                         
                             <div class="row center">
                                 
-                                <button class="btn">Back</button>
-                                <button class="btn">Save</button>
-                                <button class="btn" onclick="confidentialityNext()">Next</button>
+                                <button class="btn" onclick="confidentialityBack(<?php echo $id ?>)">Back</button>
+                                <button class="btn" onclick="confidentialitySave(<?php echo $id ?>)">Save</button>
+                                <button class="btn" onclick="confidentialityNext(<?php echo $id ?>)">Next</button>
 
                                 
                             </div>
