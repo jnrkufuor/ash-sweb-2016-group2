@@ -10,10 +10,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>IRB Portal</title>
-    <meta name="description"
-          content="The simplest way to create and manage a group email list address, ideal for small groups and clubs. Easy to use Goggle & Yahoo and GMail group email list. 30 day free trial.">
-    <meta name="keywords" content="how to create a mailing list, create email group in gmail, create group in gmail, google group email, email group gmail, group emails, how to create a group email, email groups, email group, group email address">
-    <meta name="msvalidate.01" content="FF534E21549A07FC92544F7F7A60FCC7" />
+    
 
     <meta name="google-site-verification" content="GJrthr2CMj1CejyNqcSCQZikatG9wduDA2kCJZEitwQ" />
 
@@ -80,8 +77,8 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="" style="color:#AD1E26;"> <?php echo $_SESSION['FIRSTNAME'];?> </a></li>
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                <li><a href="/blog">File System</a></li>
-                <li><a href="/blog">IRB Reviews</a></li>
+                <li><a href="IRB_fileSystem.php">File System</a></li>
+                <li><a href="reviews.php">IRB Reviews</a></li>
                 <li><a href="logout.php">Logout</a></li>
                 
             </ul>
