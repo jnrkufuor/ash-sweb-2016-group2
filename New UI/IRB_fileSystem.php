@@ -20,8 +20,8 @@
 
     <link type="text/css" rel="stylesheet" href="home.css"/>
 
-	<script type="text/javascript" src="jquery-easyui-1.4.5/jquery.min.js"> </script>
-	<script type="text/javascript" src="jquery-easyui-1.4.5/jquery.easyui.min.js"> </script>
+	<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+	 <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
 	
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
@@ -157,16 +157,17 @@
 
         </div>
     </div>
-			
+		<!--	
 		<script type="text/javascript">
 		$(function(){
 			$('#files').form({
 				success:function(data){
-					$.messager.alert('Info', data, 'info');
+					$.messager.show('Info', data, 'info');
 				}
 			});
 		});
 		</script>
+		-->
 		
    
 </main>
