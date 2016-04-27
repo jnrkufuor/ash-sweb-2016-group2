@@ -80,7 +80,7 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="" style="color:#AD1E26;"> <?php echo $_SESSION['FIRSTNAME'];?> </a></li>
                 <li><a href="reviewer_dashboard.php">Dashboard</a></li>
-                <li><a href="IRB_home.php">Logout</a></li>
+             <li><a href="logout.php">Logout</a></li>
                 
             </ul>
         </div>
