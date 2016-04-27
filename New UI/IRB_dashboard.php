@@ -78,7 +78,7 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="" style="color:#AD1E26;"> <?php echo $_SESSION['FIRSTNAME'];?> </a></li>
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                <li><a href="/blog">File System</a></li>
+                <li><a href="IRB_fileSystem.php">File System</a></li>
                 <li><a href="reviews.php">IRB Reviews</a></li>
                 <li><a href="logout.php">Logout</a></li>
                 
@@ -109,13 +109,12 @@
                             <table class='highlight'>
                             <thead>
                               <tr>
-<<<<<<< HEAD
-                                  <th data-field='id'>Submission ID</th>
-                                  <th data-field='name'>Document</th>
-=======
+
+                               
+
                                   <th data-field='id'>Title</th>
                                   <th data-field='name'>Last Modified</th>
->>>>>>> 71a2403a3de3b274ccd488bde7d438086e621c7e
+
                                   <th data-field='price'>Status</th>
                               </tr>
                             </thead>

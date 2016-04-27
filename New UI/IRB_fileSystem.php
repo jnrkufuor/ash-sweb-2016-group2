@@ -20,6 +20,9 @@
 
     <link type="text/css" rel="stylesheet" href="home.css"/>
 
+	<script type="text/javascript" src="jquery-easyui-1.4.5/jquery.min.js"> </script>
+	<script type="text/javascript" src="jquery-easyui-1.4.5/jquery.easyui.min.js"> </script>
+	
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
     <link rel="shortcut icon" href="images/ash.jpg">
@@ -138,11 +141,12 @@
                         ?>
                     
                     </div>
-						<div style="background-color:Silver; padding: 1% 2% 1% 2%; width: 50%; position:relative; left:25%; border-radius:3%;">
+						<div style="background-color:Silver; padding: 0.7% 2% 0.7% 2%; width: 50%; position:relative; left:25%; top:25%; border-radius:3%;">
 						<h5>  Upload Supporting Documents </h5>
 						<p style="font-size: 90%;"> File extensions allowed include '.txt', '.docx', '.xlsx', '.pdf' </p>
-						<form action="" method="post" enctype="multipart">
-							<input type="file" name="doc">
+						<form action="../Submission/ajaxValidate.php" method="post" id="files" enctype="multipart/form-data">
+							<input type="text" name="sid" placeholder="Submission ID">
+							<input type="file" name="doc"> <input type="submit" value="Upload"> 	
 						</form>
 						<br>
 						</div>
@@ -153,38 +157,25 @@
 
         </div>
     </div>
-	
-						
+			
+		<script type="text/javascript">
+		$(function(){
+			$('#files').form({
+				success:function(data){
+					$.messager.alert('Info', data, 'info');
+				}
+			});
+		});
+		</script>
+		
    
 </main>
 <footer class="page-footer">
-<<<<<<< HEAD
-   
-=======
-    <div class="page-footer-icon">
-        <div>
-            <a href="IRB_home.php"><img alt="IRB footer logo" src="images/irb.jpg" ></a>
-        </div>
-    </div>
-    <div class="container row">
-        <div class="col s12 m6">
-            <div>
-                <a href="#about">About</a>
-            </div>
-            
-        </div>
-        <div class="col s12 m6">
-        <div>
-                <a href="mailto:irb@ashesi.edu.gh">Contact</a>
-            </div>
-            
-        </div>
-    </div>
->>>>>>> 71a2403a3de3b274ccd488bde7d438086e621c7e
+
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
-            <span class="right" href="#!">Made in London</span>
+            <span class="right" href="#!">Made in Berekuso</span>
         </div>
     </div>
 </footer>
