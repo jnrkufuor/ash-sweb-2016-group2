@@ -60,7 +60,7 @@
     <nav class="transparent black-text">
         <div class="nav-wrapper container">
             <a href="#" class="brand-logo brand-logo-small"><img id="header-logo" alt="Ashesi Logo" src="images/ash.jpg"/>
-                Ashesi IRB <span>Portal</span></a>
+               <span style="color:maroon"> <b> Ashesi </b></span> <span>Portal</span></a>
             <meta itemprop="url" content="http://gaggle.email/">
             <meta itemprop="name" content="Gaggle Mail">
             <div id="header-mobile-links" class=" row center hide-on-large-only">
@@ -110,7 +110,7 @@
                               <tr>
                                   <th data-field='id'>Submission ID</th>
                                   <th data-field='name'>Document</th>
-                                  <th data-field='price'>Delete</th>
+                                  <th data-field='price'>Status</th>
                               </tr>
                             </thead>
                             <tbody>
