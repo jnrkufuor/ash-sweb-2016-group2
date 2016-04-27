@@ -171,6 +171,15 @@ class submission extends adb{
 		return $this->query($strQuery);
 	}
 
+	function getfeedback($id){
+		$strQuery = "select title, submissionDate, feedback from submission where UsserID = '$id' && reviewed = '1'";
+		return $this->query($strQuery);
+	}
+
+	function getAdminSubmissions(){
+		$strQuery="select submissionID, submissionDate, title, FIRSTNAME, LASTNAME from submission, irb_user where UsserID = USER_ID && submitted ='1'";
+		return $this->query($strQuery);
+	}
 
 }
 

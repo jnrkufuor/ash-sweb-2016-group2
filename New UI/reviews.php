@@ -1,9 +1,9 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['USER_ID'])){
-        header("Location:IRB_home.php");
-        exit();
-    }
+	session_start();
+	if(!isset($_SESSION['USER_ID'])){
+		header("Location:IRB_home.php");
+		exit();
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,9 +64,7 @@
             <meta itemprop="url" content="http://gaggle.email/">
             <meta itemprop="name" content="Gaggle Mail">
             <div id="header-mobile-links" class=" row center hide-on-large-only">
-                <div class="col s4">
-                    <a href="/about">About</a>
-                </div>
+                
                 <div class="col s4">
                     <a href="/blog">Blog</a>
                 </div>
@@ -79,111 +77,86 @@
             </div>
             <ul class="right hide-on-med-and-down">
                 <li><a href="" style="color:#AD1E26;"> <?php echo $_SESSION['FIRSTNAME'];?> </a></li>
-                <li><a href="reviewer_dashboard.php">Dashboard</a></li>
-                 <li><a href="logout.php">Logout</a></li>
+                <li><a href="IRB_dashboard.php">Dashboard</a></li>
+                <li><a href="/blog">File System</a></li>
+                <li><a href="/blog">IRB Reviews</a></li>
+                <li><a href="logout.php">Logout</a></li>
                 
             </ul>
         </div>
     </nav>
 </header>
 <main>
-
-<?php
-        include_once("submission.php");
-        $obj = new submission();
-
-        $id ="";
-
-        if(isset($_REQUEST['id'])){
-            $id = $_REQUEST['id'];
-        }
-
-        $r = $obj -> getSubmissionByCode($id);
-                                    
-        if(!$r){
-            echo "Error getting the user to edit";
-            exit();
-        }
-        else{
-            $row = $obj ->fetch();
-        }
-
-        ?>
-
-    <div class="row" id="create-row">
-
-            <span id="create" class="scrollspy"></span>
-           
-            <div class="spacer"></div>
+    <div id="hero">
+        <div class="container" id="hero-text-container">
             <div class="row">
-                <div class="section center">
-                    <h3 class="thin">IRB Application Review</h3>
+                <div class="col s12 center-align">
+                    <div id="hero-title" style="margin-top: 3%">
+                        <h1 id="hero-title-one" itemprop="description"><span class="bold">IRB Reviews</span></h1>
+                        <?php
+
+                        include_once ("submission.php");
+
+                        $obj = new submission();
+
+                        $id=$_SESSION['USER_ID'];
+
+                        if(!$obj-> getfeedback($id)){
+                            echo "Error";
+                        }
+                        else{
+                            echo "
+                            <table class='highlight'>
+                            <thead>
+                              <tr>
+                                  <th data-field='id'>Title</th>
+                                  <th data-field='name'>Submission Date</th>
+                                  <th data-field='price'>Feedback</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            
+                            
+                            ";
+
+                            while ($row = $obj ->fetch()){
+                                
+                                echo "
+                                <tr>
+                                <td>{$row['title']}</td>
+                                <td>{$row['submissionDate']}</td>
+                                <td>{$row['feedback']}</td>
+                                </tr>";
+                            }
+                            echo "</table>";
+                        }
+
+                        ?>
+                       
+
+        
+    
                     
-                    <div class="spacer"></div>
- 
 
-                    <div class="create-list-login-panel center" style="max-width: 900px">
-                        <div>
-                            <input class="new-list-name-hidden" type="hidden" name="new-list-name">
-                            <div class="center">
-                                <p class="flow-text">Confidentiality</p>
-                            </div>
-                            <div id="divStatus"></div>
-                            <div class="spacer"></div>
-                            
-                            <div class="thin"><span class="bold">A. To what extent is the information confidential and to what extent are provisions made so that subjects are not identified?</span></div>
-                            <div class="row">
-                                <div class="col s12 input-field">
-                                    <textarea id="confidentialityExtent" class="materialize-textarea" readonly><?php echo $row['confidentialityExtent'] ?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="thin"><span class="bold">B. What are the procedures for handling and storing data so that confidentiality of the subjects and privacy are protected?</span></div>
-                            <div class="row">
-                                <div class="col s12 input-field">
-                                    <textarea id="dataStorage" class="materialize-textarea" readonly><?php echo $row['dataStorage'] ?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="thin"><span class="bold">C. How will the results of the research be disseminated?</span></div>
-                            <div class="row">
-                                <div class="col s12 input-field">
-                                    <textarea id="resultDissemination" class="materialize-textarea" readonly><?php echo $row['resultDissemination'] ?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="thin"><span class="bold">How will the subjects be informed of the results?</span></div>
-                            <div class="row">
-                                <div class="col s12 input-field">
-                                    <textarea id="subjectInfo" class="materialize-textarea" readonly><?php echo $row['subjectInfo'] ?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="thin"><span class="bold">How will confidentiality of subjects or organizations be protected in the dissemination?</span></div>
-                             <div class="row">
-                                <div class="col s12 input-field">
-                                    <textarea id="confidentialityProtection" class="materialize-textarea" readonly><?php echo $row['confidentialityProtection'] ?></textarea>
-                                </div>
-                            </div>
-                        
-                            <div class="row center">
-                                <button class="btn" onclick="reviewer_confidentialityBack(<?php echo $id ?>)">Back</button>
-                                <button class="btn" onclick="reviewer_confidentialityNext(<?php echo $id ?>)">Next</button>
-                            </div>
-                            
-
-                        </div>
                     </div>
-               
                 </div>
             </div>
-            
-            
+
+            <div class="row">
+                    <div class="center-align">
+                        <a href="IRB_form.php" class="btn btn-large hero-btn">New Application <svg style="width:24px;height:24px;top: 6px; position: relative; right: 2px;" viewBox="0 0 24 24">
+<path fill="#ffffff" d="M5.59,7.41L7,6L13,12L7,18L5.59,16.59L10.17,12L5.59,7.41M11.59,7.41L13,6L19,12L13,18L11.59,16.59L16.17,12L11.59,7.41Z" />
+</svg>
+
+
+</a>
+                       
+                    </div>
+              
+            </div>
         </div>
-
-    
-    
-
+    </div>
+   
 </main>
 <footer class="page-footer">
     <div class="page-footer-icon">
@@ -214,9 +187,8 @@
 </footer>
 
 
+    
     </div>
-
-
 
 
     
