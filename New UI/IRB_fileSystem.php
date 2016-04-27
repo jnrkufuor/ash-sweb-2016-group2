@@ -61,7 +61,7 @@
     <nav class="transparent black-text">
         <div class="nav-wrapper container">
             <a href="/" class="brand-logo brand-logo-small"><img id="header-logo" alt="Ashesi Logo" src="images/ash.jpg"/>
-                Ashesi IRB <span>Portal</span></a>
+                <span style="color:maroon"> <b> Ashesi </b></span> IRB <span>Portal</span></a>
             <meta itemprop="url" content="http://gaggle.email/">
             <meta itemprop="name" content="Gaggle Mail">
             <div id="header-mobile-links" class=" row center hide-on-large-only">
@@ -138,7 +138,7 @@
                         ?>
                     
                     </div>
-						<div style="background-color:Silver; padding: 1% 2% 1% 2%; width: 50%; position:relative; left:30%; border-radius:3%;">
+						<div style="background-color:Silver; padding: 1% 2% 1% 2%; width: 50%; position:relative; left:25%; border-radius:3%;">
 						<h5>  Upload Supporting Documents </h5>
 						<p style="font-size: 90%;"> File extensions allowed include '.txt', '.docx', '.xlsx', '.pdf' </p>
 						<form action="" method="post" enctype="multipart">
@@ -158,6 +158,9 @@
    
 </main>
 <footer class="page-footer">
+<<<<<<< HEAD
+   
+=======
     <div class="page-footer-icon">
         <div>
             <a href="IRB_home.php"><img alt="IRB footer logo" src="images/irb.jpg" ></a>
@@ -177,6 +180,7 @@
             
         </div>
     </div>
+>>>>>>> 71a2403a3de3b274ccd488bde7d438086e621c7e
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
