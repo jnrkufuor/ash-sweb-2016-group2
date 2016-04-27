@@ -56,6 +56,43 @@
             }
 
     </style>
+	
+	<script type="text/javascript">
+	var currentObj=null;
+	function deleteFileComplete(xhr,status){
+		if(status!="success"){
+			confirm("Unable to delete file");
+			return;
+		}
+		// alert("yattah!");
+		var obj=$.parseJSON(xhr.responseText);
+		if (obj.result==0){
+			alert(obj.message);
+		}
+		else {
+			var row = currentObj.parentNode.parentNode;
+			row.parentNode.removeChild(row);
+			alert(obj.message);
+		}
+	}
+
+	function deleteFile(obj,usercode,fileID){
+		var r = confirm("Are you sure you want to delete this file?");
+		if (r==false){
+			// alert("yattah");
+		}
+		else{
+			var ajaxURL="usersajax.php?cmd=1&usercode="+usercode+"&fileID="+fileID;
+			$.ajax(ajaxURL,
+				{async:true,
+					complete: deleteFileComplete}
+					);
+			currentObj=obj;
+		}
+	}
+	</script>
+	
+	
 </head>
 <body itemscope itemtype="http://schema.org/SoftwareApplication">
 <link itemprop="applicationCategory" href="http://schema.org/WebApplication"/>
@@ -132,7 +169,7 @@
                                 <tr onclick='view({$row['FileID']})'>
                                 <td>{$row['FileID']}</td>
                                 <td>{$row['FileName']}</td>
-                                <td><button> Delete </button></td>
+                                <td><button onclick='deleteFile(this,$id,{$row['FileID']})'> Delete </button></td>
                                 </tr>";
                             }
                             echo "</table>";
@@ -144,9 +181,9 @@
 						<div style="background-color:Silver; padding: 0.7% 2% 0.7% 2%; width: 50%; position:relative; left:25%; top:25%; border-radius:3%;">
 						<h5>  Upload Supporting Documents </h5>
 						<p style="font-size: 90%;"> File extensions allowed include '.txt', '.docx', '.xlsx', '.pdf' </p>
-						<form action="../Submission/ajaxValidate.php" method="post" id="files" enctype="multipart/form-data">
-							<input type="text" name="sid" placeholder="Submission ID">
-							<input type="file" name="doc"> <input type="submit" value="Upload"> 	
+						<form action="../Submission/ajaxValidate.php" method="POST" id="files" enctype="multipart/form-data">
+							<input type="text" name="sid" placeholder="Submission ID" required>
+							<input type="file" name="doc" required> <input type="submit" value="Upload"> 	
 						</form>
 						<br>
 						</div>
@@ -157,7 +194,7 @@
 
         </div>
     </div>
-		<!--	
+			
 		<script type="text/javascript">
 		$(function(){
 			$('#files').form({
@@ -167,7 +204,7 @@
 			});
 		});
 		</script>
-		-->
+		
 		
    
 </main>

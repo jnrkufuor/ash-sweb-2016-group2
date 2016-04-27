@@ -48,9 +48,12 @@
 					else{
 						 if($user->addFile($fileext, $filesize, $filename, $filetemp,$researcherID, $submissionID)){
 							echo "File succesfully added" ; //print if file is added to database
+							header("Location:../New UI/IRB_fileSystem.php");
 						}
 						else{
 							echo "File add has failed.";
+							echo "Submission ID: " . $submissionID . " does not exist for any application.";
+							("Location:../New UI/IRB_fileSystem.php");
 						
 					}
 					}

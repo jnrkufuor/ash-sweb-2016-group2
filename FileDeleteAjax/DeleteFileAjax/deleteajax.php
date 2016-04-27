@@ -2,6 +2,7 @@
 <head>
 	<link href="index.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="js/jquery-1.12.1.js"></script>
+	
 	<script type="text/javascript">
 	var currentObj=null;
 	function deleteFileComplete(xhr,status){
