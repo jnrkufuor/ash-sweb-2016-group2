@@ -59,10 +59,10 @@
 <header>
     <nav class="transparent black-text">
         <div class="nav-wrapper container">
-            <a href="/" class="brand-logo brand-logo-small"><img id="header-logo" alt="Gaggle Mail Logo" src="images/ash.jpg"/>
+            <a href="/" class="brand-logo brand-logo-small"><img id="header-logo" alt="Ashesi Logo" src="images/ash.jpg"/>
                 <span style="color:maroon"> <b> Ashesi </b></span>  IRB <span>Portal</span></a>
-            <meta itemprop="url" content="http://gaggle.email/">
-            <meta itemprop="name" content="Gaggle Mail">
+            <meta itemprop="url" content="#">
+            <meta itemprop="name" content="IRB">
             <div id="header-mobile-links" class=" row center hide-on-large-only">
                 
                 <div class="col s12 spacer"></div>
@@ -70,8 +70,9 @@
             <ul class="right hide-on-med-and-down">
             	<li><a href="" style="color:#AD1E26;"> <?php echo $_SESSION['FIRSTNAME'];?> </a></li>
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                 <li><a href="IRB_fileSystem.php">File System</a></li>
-                <li><a href="/blog">IRB Reviews</a></li>
+
+                <li><a href="IRB_fileSystem.php">File System</a></li>
+                <li><a href="reviews.php">IRB Reviews</a></li>
                 <li><a href="logout.php">Logout</a></li>
                 
             </ul>
@@ -131,11 +132,17 @@
                                 </div>
                             </div>
                             <div class="row center">
-                                
                                 <button style="position: relative; left:-5%;" class="btn" onclick="exemptionSave(<?php echo $sid ?>)">Save</button>
                                 <button style="position: relative; left:5%;" class="btn" onclick="exemptionNext(<?php echo $sid ?>)">Next</button>
                                 
+
                             </div>
+
+                            <div style="float: left;">20% Complete</div>
+                            <div class="spacer"></div>
+                            <div class="progress">
+                                  <div class="determinate" style="width: 20%"></div>
+                                </div>
                             
 
                         </div>
@@ -155,7 +162,7 @@
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
-            <span class="right" href="#!">Made in London</span>
+            <span class="right" href="#!">Made in Berekuso</span>
         </div>
     </div>
 </footer>

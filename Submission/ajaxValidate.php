@@ -42,13 +42,14 @@
 					//Add file and file information on database if there are no errors 
 					if(empty($error)==false){
 						print_r($error); //print error if file exceeds 5 MB or file extension is wrong
-					   
+					    header("Location:../New UI/IRB_fileSystem.php?err=19");
+						echo"<script> alert('Wrong File') </script>";
 					}        
 
 					else{
 						 if($user->addFile($fileext, $filesize, $filename, $filetemp,$researcherID, $submissionID)){
 							echo "File succesfully added" ; //print if file is added to database
-							header("Location:../New UI/IRB_fileSystem.php");
+							header("Location:../New UI/IRB_fileSystem.php?err=12");
 						}
 						else{
 							echo "File add has failed.";

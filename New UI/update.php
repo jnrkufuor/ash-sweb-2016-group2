@@ -157,7 +157,7 @@
 	$subjectInfo=$_REQUEST['subjectInfo'];
 	$confidentialityProtection=$_REQUEST['confidentialityProtection'];
 
-	$r = $obj -> updateConfidentiality($id,$dataStorage, $confidentialityExtent, $resultDissemination,
+	$r = $obj -> updateConfidentiality($id, $dataStorage, $confidentialityExtent, $resultDissemination,
 							$subjectInfo, $confidentialityProtection);
 	if($r == false){
 		echo "error";

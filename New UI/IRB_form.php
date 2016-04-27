@@ -80,8 +80,8 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="" style="color:#AD1E26;"> <?php echo $_SESSION['FIRSTNAME'];?> </a></li>
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                 <li><a href="IRB_fileSystem.php">File System</a></li>
-                <li><a href="/blog">IRB Reviews</a></li>
+                <li><a href="IRB_fileSystem.php">File System</a></li>
+                <li><a href="reviews.php">IRB Reviews</a></li>
                 <li><a href="logout.php">Logout</a></li>
                 
             </ul>
@@ -127,11 +127,15 @@
                                 </div>
                             </div>
                             <div class="row center">
-                                
                                 <button class="btn" onclick="titleSave(<?php echo $id ?>)" >Save</button>
                                 <button class="btn" onclick="titleNext(<?php echo $id ?>)">Next</button>
-                                
                             </div>
+
+                            <div style="float: left;">20% Complete</div>
+                            <div class="spacer"></div>
+                            <div class="progress">
+                                  <div class="determinate" style="width: 20%"></div>
+                                </div>
                             
 
                         </div>
@@ -170,7 +174,7 @@
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
-            <span class="right" href="#!">Made in London</span>
+            <span class="right" href="#!">Made in Berekuso</span>
         </div>
     </div>
 </footer>

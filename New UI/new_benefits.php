@@ -10,10 +10,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>IRB Portal</title>
-    <meta name="description"
-          content="The simplest way to create and manage a group email list address, ideal for small groups and clubs. Easy to use Goggle & Yahoo and GMail group email list. 30 day free trial.">
-    <meta name="keywords" content="how to create a mailing list, create email group in gmail, create group in gmail, google group email, email group gmail, group emails, how to create a group email, email groups, email group, group email address">
-    <meta name="msvalidate.01" content="FF534E21549A07FC92544F7F7A60FCC7" />
+    
 
     <meta name="google-site-verification" content="GJrthr2CMj1CejyNqcSCQZikatG9wduDA2kCJZEitwQ" />
 
@@ -60,9 +57,9 @@
     <nav class="transparent black-text">
         <div class="nav-wrapper container">
             <a href="#" class="brand-logo brand-logo-small"><img id="header-logo" alt="Ashesi Logo" src="images/ash.jpg"/>
-                Ashesi IRB <span>Portal</span></a>
-            <meta itemprop="url" content="http://gaggle.email/">
-            <meta itemprop="name" content="Gaggle Mail">
+                <span style="color:maroon"> <b> Ashesi </b></span> IRB <span>Portal</span></a>
+            <meta itemprop="url" content="#">
+            <meta itemprop="name" content="IRB">
             <div id="header-mobile-links" class=" row center hide-on-large-only">
                 <div class="col s4">
                     <a href="/about">About</a>
@@ -80,8 +77,8 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="" style="color:#AD1E26;"> <?php echo $_SESSION['FIRSTNAME'];?> </a></li>
                 <li><a href="IRB_dashboard.php">Dashboard</a></li>
-                <li><a href="/blog">File System</a></li>
-                <li><a href="/blog">IRB Reviews</a></li>
+                <li><a href="IRB_fileSystem.php">File System</a></li>
+                <li><a href="reviews.php">IRB Reviews</a></li>
                 <li><a href="logout.php">Logout</a></li>
                 
             </ul>
@@ -150,15 +147,21 @@
                                 </div>
                             </div>
                         
+							<br>
                             <div class="row center">
                                 
-                                <button class="btn" onclick="benefitsBack(<?php echo $id ?>)">Back</button>
-                                <button class="btn" onclick="benefitsSave(<?php echo $id ?>)">Save As Draft</button>
-                                <button class="btn" onclick="benefitsSend(<?php echo $id ?>)">Submit</button>
+                                <button style="position: relative; left:-7%;" class="btn" onclick="benefitsBack(<?php echo $id ?>)">Back</button>
+                                <button style="position: relative; left:0%;" class="btn" onclick="benefitsSave(<?php echo $id ?>)">Save As Draft</button>
+                                <button style="position: relative; left:7%;"class="btn" onclick="benefitsSend(<?php echo $id ?>)">Submit</button>
 
                                 
                             </div>
-                            
+                            <br> <br>
+                            <div style="float: left;">100% Complete</div>
+                            <div class="spacer"></div>
+                            <div class="progress">
+                                  <div class="determinate" style="width: 100%"></div>
+                                </div>
 
                         </div>
                     </div>
@@ -173,30 +176,10 @@
     
 
 </main>
-<footer class="page-footer">
-    <div class="page-footer-icon">
-        <div>
-            <a href="IRB_home.php"><img alt="IRB footer logo" src="images/irb.jpg" ></a>
-        </div>
-    </div>
-    <div class="container row">
-        <div class="col s12 m6">
-            <div>
-                <a href="#about">About</a>
-            </div>
-            
-        </div>
-        <div class="col s12 m6">
-        <div>
-                <a href="mailto:irb@ashesi.edu.gh">Contact</a>
-            </div>
-            
-        </div>
-    </div>
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
-            <span class="right" href="#!">Made in London</span>
+            <span class="right" href="#!">Made in Berekuso</span>
         </div>
     </div>
 </footer>

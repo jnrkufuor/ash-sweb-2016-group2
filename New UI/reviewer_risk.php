@@ -197,6 +197,11 @@
                                 <button class="btn" onclick="reviewer_riskNext(<?php echo $id ?>)">Next</button>
                             </div>
                             
+                            <div style="float: left;">60% Complete</div>
+                            <div class="spacer"></div>
+                            <div class="progress">
+                                  <div class="determinate" style="width: 60%"></div>
+                            </div>
 
                         </div>
                     </div>
@@ -234,7 +239,7 @@
     <div class="footer-copyright">
         <div class="container grey-text">
             © 2016 Copyright
-            <span class="right" href="#!">Made in London</span>
+            <span class="right" href="#!">Made in Berekuso</span>
         </div>
     </div>
 </footer>
