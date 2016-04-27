@@ -131,11 +131,15 @@
                                 </div>
                             </div>
                             <div class="row center">
-                                
                                 <button class="btn" onclick="exemptionSave(<?php echo $sid ?>)">Save</button>
                                 <button class="btn" onclick="exemptionNext(<?php echo $sid ?>)">Next</button>
-                                
                             </div>
+
+                            <div style="float: left;">20% Complete</div>
+                            <div class="spacer"></div>
+                            <div class="progress">
+                                  <div class="determinate" style="width: 20%"></div>
+                                </div>
                             
 
                         </div>

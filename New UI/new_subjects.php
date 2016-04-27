@@ -192,13 +192,17 @@
                                 </div>
                             </div>
                             <div class="row center">
-                                
                                 <button class="btn" onclick="subjectsBack(<?php echo $id ?>)">Back</button>
                                 <button class="btn"onclick="subjectsSave(<?php echo $id ?>)">Save</button>
                                 <button class="btn" onclick="subjectsNext(<?php echo $id ?>)">Next</button>
-
-                                
                             </div>
+
+                            
+                            <div style="float: left;">40% Complete</div>
+                            <div class="spacer"></div>
+                            <div class="progress">
+                                  <div class="determinate" style="width: 40%"></div>
+                                </div>
                             
 
                         </div>

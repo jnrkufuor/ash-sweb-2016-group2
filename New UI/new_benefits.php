@@ -156,6 +156,11 @@
                                 
                             </div>
                             
+                            <div style="float: left;">100% Complete</div>
+                            <div class="spacer"></div>
+                            <div class="progress">
+                                  <div class="determinate" style="width: 100%"></div>
+                                </div>
 
                         </div>
                     </div>

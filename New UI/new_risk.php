@@ -189,14 +189,16 @@
                                 </div>
                             </div>
                             <div class="row center">
-                                
                                 <button class="btn" onclick="riskBack(<?php echo $id ?>)">Back</button>
                                 <button class="btn" onclick="riskSave(<?php echo $id ?>)">Save</button>
                                 <button class="btn" onclick="riskNext(<?php echo $id ?>)">Next</button>
-
-                                
                             </div>
                             
+                            <div style="float: left;">60% Complete</div>
+                            <div class="spacer"></div>
+                            <div class="progress">
+                                  <div class="determinate" style="width: 60%"></div>
+                                </div>
 
                         </div>
                     </div>

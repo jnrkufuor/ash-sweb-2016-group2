@@ -173,14 +173,16 @@
                             </div>
                         
                             <div class="row center">
-                                
                                 <button class="btn" onclick="confidentialityBack(<?php echo $id ?>)">Back</button>
                                 <button class="btn" onclick="confidentialitySave(<?php echo $id ?>)">Save</button>
                                 <button class="btn" onclick="confidentialityNext(<?php echo $id ?>)">Next</button>
-
-                                
                             </div>
                             
+                            <div style="float: left;">80% Complete</div>
+                            <div class="spacer"></div>
+                            <div class="progress">
+                                  <div class="determinate" style="width: 80%"></div>
+                                </div>
 
                         </div>
                     </div>

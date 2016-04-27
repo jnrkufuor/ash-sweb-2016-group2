@@ -127,11 +127,15 @@
                                 </div>
                             </div>
                             <div class="row center">
-                                
                                 <button class="btn" onclick="titleSave(<?php echo $id ?>)" >Save</button>
                                 <button class="btn" onclick="titleNext(<?php echo $id ?>)">Next</button>
-                                
                             </div>
+
+                            <div style="float: left;">20% Complete</div>
+                            <div class="spacer"></div>
+                            <div class="progress">
+                                  <div class="determinate" style="width: 20%"></div>
+                                </div>
                             
 
                         </div>
