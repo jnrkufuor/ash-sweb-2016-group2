@@ -138,7 +138,7 @@
                         ?>
                     
                     </div>
-						<div style="background-color:Silver; padding: 1% 2% 1% 2%; width: 50%; position:relative; left:30%; border-radius:3%;">
+						<div style="background-color:Silver; padding: 1% 2% 1% 2%; width: 50%; position:relative; left:25%; border-radius:3%;">
 						<h5>  Upload Supporting Documents </h5>
 						<p style="font-size: 90%;"> File extensions allowed include '.txt', '.docx', '.xlsx', '.pdf' </p>
 						<form action="" method="post" enctype="multipart">
