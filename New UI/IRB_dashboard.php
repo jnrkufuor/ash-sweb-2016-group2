@@ -109,13 +109,8 @@
                             <table class='highlight'>
                             <thead>
                               <tr>
-<<<<<<< HEAD
-                                  <th data-field='id'>Submission ID</th>
-                                  <th data-field='name'>Document</th>
-=======
                                   <th data-field='id'>Title</th>
                                   <th data-field='name'>Last Modified</th>
->>>>>>> 71a2403a3de3b274ccd488bde7d438086e621c7e
                                   <th data-field='price'>Status</th>
                               </tr>
                             </thead>
